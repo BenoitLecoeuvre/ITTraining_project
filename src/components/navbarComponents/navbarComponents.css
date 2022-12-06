@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.bouton{
+.navigation .bouton{
     margin: 5px 100px;
     text-decoration: none;
     transition: transform 0.2s;
@@ -16,14 +16,11 @@
     opacity: 80%;
 }
 
-.bouton:before{
-    content: attr(data-text);
-}
-
-.bouton:hover{
-    transform: translateY(-20%);
-}
-
-.bouton:visited{
+.navigation a {
     text-decoration: none;
+    color: inherit;
+}
+
+.navigation .bouton:hover{
+    transform: translateY(-20%);
 }
