@@ -1,12 +1,13 @@
 import React from 'react';
 import './navbarComponents.css';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
+import HomeView from '../../views/homeView/homeView';
 
 const NavbarComponents = () => {
     return (
-        <div className='navigation'>
+        <div>
             <BrowserRouter>
-                <div className='menu'>
+                <div className='navigation'>
                     <button className='bouton' data-text="Acceuil">
                         <Link to="/"></Link>
                     </button>
@@ -21,7 +22,7 @@ const NavbarComponents = () => {
                     </button>
                 </div>
                 <Routes>
-                    <Route path="/"/>
+                    <Route path="/" element={<HomeView/>}/>
                     <Route path="formations"/>
                     <Route path="inscription"/>
                     <Route path="contact"/>
