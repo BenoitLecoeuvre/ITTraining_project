@@ -10,14 +10,14 @@ const NavbarComponents = () => {
                     <button className='bouton' data-text="Acceuil">
                         <Link to="/"></Link>
                     </button>
-                    <button className='bouton'>
-                        <Link to="/formations" data-text="Nos formations">Nos formations</Link>
+                    <button className='bouton' data-text="Nos formations">
+                        <Link to="/formations"></Link>
                     </button>
-                    <button className='bouton'>
-                        <Link to="/inscription" data-text="s'inscrire">S'inscrire</Link>
+                    <button className='bouton' data-text="s'inscrire">
+                        <Link to="/inscription"></Link>
                     </button>
-                    <button className='bouton'>
-                        <Link to="/contact" data-text="Contact">Contact</Link>
+                    <button className='bouton' data-text="Contact">
+                        <Link to="/contact"></Link>
                     </button>
                 </div>
                 <Routes>
