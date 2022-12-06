@@ -8,7 +8,7 @@ const NavbarComponents = () => {
         <div>
             <BrowserRouter>
                 <div className='navigation'>
-                    <button className='bouton' data-text="Acceuil">
+                    <button className='bouton' data-text="Accueil">
                         <Link to="/"></Link>
                     </button>
                     <button className='bouton' data-text="Nos formations">

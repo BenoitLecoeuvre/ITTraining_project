@@ -9,13 +9,16 @@
 
 .banner img {
     height: 150px;
-    margin-right: 50px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 10px 150px 10px 10px;
     padding: 5px;
     border: 3px solid;
 }
 
-.credo{
-    margin-left: 70px;
+.header{
+    margin-left: 300px;
 }
+
+.header h1{
+    text-align: center;
+}
+
