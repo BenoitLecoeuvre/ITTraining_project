@@ -1,0 +1,27 @@
+.navigation{
+    background-color: white;
+}
+
+.bouton{
+    margin: 5px 100px;
+    text-decoration: none;
+    transition: transform 0.3s;
+    /* border: 1px solid black; */
+    /* border-radius: 15px; */
+    color: black;
+    background-color: white;
+    border: none;
+
+}
+
+.bouton:before{
+    content: attr(data-text);
+}
+
+.bouton:hover{
+    transform: translateY(-10%);
+}
+
+.bouton:visited{
+    text-decoration: none;
+}
