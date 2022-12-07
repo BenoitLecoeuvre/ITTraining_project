@@ -5,9 +5,12 @@
         "category": "Compétences transverses",
         "subCategory": "Agilité",
         "description": "Comprendre les concepts de la méthode agile",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 3,
         "price": 399,
         "difficulty": 1,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["02 janvier 2023", "05 janvier 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -16,9 +19,12 @@
         "category": "Compétences transverses",
         "subCategory": "Agilité",
         "description": "Mettre en pratique les concepts de la méthode Agile sur des projets en équipe",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 5,
         "price": 499,
         "difficulty": 1,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["15 janvier 2023", "20 janvier 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -27,9 +33,11 @@
         "category": "Compétences transverses",
         "subCategory": "Agilité",
         "description": "Se former au métier de Product Owner",
-        "duree": 14,
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "price": 799,
         "difficulty": 3,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["01 février 2023", "14 février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -38,9 +46,12 @@
         "category": "Compétences transverses",
         "subCategory": "Gestion de projets",
         "description": "Maitriser et piloter un projet de A à Z",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 14,
         "price": 699,
         "difficulty": 3,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["15 janvier 2023", "29 janvier 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -49,9 +60,12 @@
         "category": "Compétences transverses",
         "subCategory": "Gestion de projets",
         "description": "Développer ses techniques de communication orales",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 5,
         "price": 450,
         "difficulty": 2,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["01 mars 2023", "05 mars 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -60,9 +74,12 @@
         "category": "Compétences transverses",
         "subCategory": "Gestion de projets",
         "description": "Acquérir les principes du LEAN management, l'amélioration continue, la conduite du changement...",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 3,
         "price": 350,
         "difficulty": 2,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["01 avril 2023", "03 avril 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -71,9 +88,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Base de données",
         "description": "Comprendre les bases de données relationnelles et leurs principes de fonctionnement",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 4,
         "price": 399,
         "difficulty": 2,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["06 avril 2023", "10 avril 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -82,9 +102,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Base de données",
         "description": "Exploiter les architectures Big Data et mettre en place les socles techniques pour des projets Big Data",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 5,
         "price": 599,
         "difficulty": 4,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["01 mai 2023", "05 mai 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -93,9 +116,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Base de données",
         "description": "Approfondir ses connaissances du langage SQL",
+        "descriptionDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis mollitia officiis aliquam, culpa eum doloribus doloremque. Non similique quis quae facere possimus? Eaque aperiam dolore doloremque tempore maxime velit similique?",
         "duree": 3,
         "price": 399,
         "difficulty": 3,
+        "lieux": ["Paris", "Lille"],
+        "dates": ["15 mai 2023", "17 mai 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -104,9 +130,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Langages de développement",
         "description": "Découvrir les bases du langage JavaScript et son utilisation sur le web",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 3,
         "price": 499,
         "difficulty": 2,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -115,9 +144,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Langages de développement",
         "description": "Développer des interfaces utlisateurs dynamiques à l'aide de ReactJS",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 5,
         "price": 699,
         "difficulty": 3,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -126,9 +158,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Langages de développement",
         "description": "Apprendre les bases du langage C# et découvrir l'environnement .NET",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 5,
         "price": 750,
         "difficulty": 3,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -137,9 +172,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Langages de développement",
         "description": "Mettre en oeuvre les concepts avancés du .NET Core et du langage C#",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 5,
         "price": 750,
         "difficulty": 4,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -148,9 +186,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Langages de développement",
         "description": "Apprendre à programmer en langage Python",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 14,
         "price": 850,
         "difficulty": 5,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -159,9 +200,12 @@
         "category": "Bases de données et langages",
         "subCategory": "Langages de développement",
         "description": "Identifier et comprendre les nouveautés du langage C++",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 3,
         "price": 299,
         "difficulty": 2,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -170,9 +214,12 @@
         "category": "SI et réseaux",
         "subCategory": "Système d'information",
         "description": "Créer une organisation informatique centrée sur l’apprentissage et l’amélioration+",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 5,
         "price": 450,
         "difficulty": 2,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -181,9 +228,12 @@
         "category": "SI et réseaux",
         "subCategory": "Système d'information",
         "description": "Apprendre le fonction de Control-M 20.x",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 3,
         "price": 300,
         "difficulty": 3,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -192,9 +242,12 @@
         "category": "SI et réseaux",
         "subCategory": "Système d'information",
         "description": "Identifier, décrire et transmettre les enjeux de la transformation digitale en entreprise",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat",
         "duree": 2,
         "price": 250,
         "difficulty": 1,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -203,9 +256,12 @@
         "category": "SI et réseaux",
         "subCategory": "Réseaux",
         "description": "Décrire les concepts, la normalisation et la terminologie du réseau",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat ",
         "duree": 2,
         "price": 250,
         "difficulty": 1,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     },
     {
@@ -214,9 +270,12 @@
         "category": "SI et réseaux",
         "subCategory": "Réseaux",
         "description": "Comprendre les fondamentaux de la virtualisation du réseau",
+        "descriptionDetail": "Veniam dolor sit ullamco id do occaecat enim incididunt duis aute reprehenderit occaecat ",
         "duree": 3,
         "price": 400,
         "difficulty": 3,
+        "lieux": ["Lille" , "Paris"],
+        "dates": ["3 Janvier 2023","7 Février 2023"],
         "logo":"./img/logo_m2i.jpg"
     }
 ]

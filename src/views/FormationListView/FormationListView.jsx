@@ -1,10 +1,11 @@
 import React from 'react';
 import FormationList from '../../../src/datas/FormationList.json';
-import AddFormationComponent from '../../Components/AddFormationComponent/AddFormationComponent';
-import FormationCardComponent from '../../Components/FormationCardComponent/FormationCardComponent';
+//import AddFormationComponent from '../../Components/AddFormationComponent/AddFormationComponent';
+import FormationCardComponent from '../../components/FormationCardComponent/FormationCardComponent';
 import './FormationListView.css'
 
 const FormationListView = () => {
+    
     return (
         <div>
             <div className="card-container">
@@ -19,7 +20,7 @@ const FormationListView = () => {
                 )}
             </div>
             <div>
-                <AddFormationComponent />
+                {/* <AddFormationComponent /> */}
             </div>
         </div>
     );

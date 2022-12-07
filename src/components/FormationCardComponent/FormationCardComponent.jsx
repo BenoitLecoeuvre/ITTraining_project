@@ -2,8 +2,8 @@ import React from 'react';
 import CareScaleComponent from '../CareScaleComponent/CareScaleComponent';
 import './FormationCardComponent.css';
 
-const FormationCardComponent = ({ formation, index }) => {
-    console.log(formation)
+const FormationCardComponent = ({ formation, index}) => {
+    console.table([formation.lieux]);
     return (
         <div className='card formation' key={index}>
             <div className="card-title">
@@ -30,6 +30,14 @@ const FormationCardComponent = ({ formation, index }) => {
             <div className="price">
                 <span><b>Prix : </b>{formation.price} €</span>
             </div>
+
+            <div>
+                <span><b>Lieux : </b>{formation.lieux}</span>
+            </div>
+
+            {/* <div>
+                <span><b>Date : </b>{Date.parse(formation.dates)} </span>
+            </div> */}
         </div>
     );
 }
