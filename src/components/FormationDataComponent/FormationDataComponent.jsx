@@ -1,4 +1,6 @@
 import React from 'react';
+import './FormationDataComponent.css'
+import 'bootstrap'
 
 const FormationDataComponent = ({ formationData }) => {
     // console.log(formationData)
@@ -6,8 +8,9 @@ const FormationDataComponent = ({ formationData }) => {
     return (
 
         <div className='section'>
-            <div className='detail'>
-                <div>
+            <div className='bloc'>
+
+                <div className='name'>
                     <span><b>{formationData.formationName}</b></span>
                 </div>
 
@@ -15,22 +18,32 @@ const FormationDataComponent = ({ formationData }) => {
                     <img className='img' src={formationData.logo} alt="Formation-logo" />
                 </div>
 
-                <div>
+                <div className='detail'>
                     <span>{`Description complète : ${formationData.descriptionDetail}`}</span>
                 </div>
 
-                <div>
-                    <span>{`Lieux de la formation : ${formationData.lieux[0]} ou ${formationData.lieux[1]}`}</span>
+                <div className='lieux'>
+                    <span>{`Lieux de la formation : `}</span>
+                    <span className='underline'><strong>{`${formationData.lieux[0]}`}</strong></span>
+                    <span>{` ou `}</span>
+                    <span className='underline'><strong>{`${formationData.lieux[1]}`}</strong></span>
 
                 </div>
 
-                <div>
-                    <span>{`Nous proposons deux dates de début pour cette formation, le ${formationData.dates[0]} et ${formationData.dates[1]}`}</span>
+                <div className='dates'>
+                    <span>{`Nous proposons deux dates de début de formation, le `}</span>
+                    <span className='underline'><strong>{`${formationData.dates[0]}`}</strong></span>
+                    <span>{` et `}</span>
+                    <span className='underline'><strong>{`${formationData.dates[1]}`}</strong></span>
                 </div>
 
                 <div>
-                    Avant de commencer nos formations nous devons nous assurer  que vous avez les prérequis.
-                    Voici un lien qui vous permettra de vous évaluer : <a href='https://www.w3schools.com/' target="_blank" rel="noreferrer">W3 School</a>
+                    <span className='underline'><strong>Important :</strong></span>
+                    <span> Avant de commencer nos formations nous devons nous assurer  que vous avez les prérequis. Voici un lien qui vous permettra de vous évaluer : <a href='https://www.w3schools.com/' target="_blank" rel="noreferrer">W3 School</a></span>
+                </div>
+
+                <div className='inscription'>
+                    <button>S'inscrire à cette formation</button>
                 </div>
             </div>
 
