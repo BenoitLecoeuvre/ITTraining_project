@@ -3,6 +3,8 @@ import './navbarComponents.css';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 import HomeView from '../../views/homeView/homeView';
 import FormationListView from '../../views/FormationListView/FormationListView'
+import RegisterView from '../../views/registerView/registerView';
+import AdminView from '../../views/adminView/adminView';
 
 const NavbarComponents = () => {
     return (
@@ -15,18 +17,19 @@ const NavbarComponents = () => {
                     <button className='bouton'>
                         <Link to="/formations">Nos formations</Link>
                     </button>
-                    <button className='bouton' >
+                    <button className='bouton'>
                         <Link to="/inscription">S'inscrire</Link>
                     </button>
-                    <button className='bouton' >
+                    <button className='bouton'>
                         <Link to="/contact">Contact</Link>
                     </button>
                 </div>
                 <Routes>
                     <Route path="/" element={<HomeView/>}/>
                     <Route path="/formations" element={<FormationListView/>}/>
-                    <Route path="/inscription"/>
+                    <Route path="/inscription" element={<RegisterView/>}/>
                     <Route path="/contact"/>
+                    <Route path="/admin" element={<AdminView/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
