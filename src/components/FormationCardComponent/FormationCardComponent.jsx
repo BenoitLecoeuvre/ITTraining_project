@@ -3,7 +3,7 @@ import CareScaleComponent from '../CareScaleComponent/CareScaleComponent';
 import './FormationCardComponent.css';
 
 const FormationCardComponent = ({ formation, index}) => {
-    console.table([formation.lieux]);
+    // console.log(formation)
     return (
         <div className='card formation' key={index}>
             <div className="card-title">
