@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import FormationList from '../../../src/datas/FormationList.json';
-//import AddFormationComponent from '../../Components/AddFormationComponent/AddFormationComponent';
 import FormationCardComponent from '../../components/FormationCardComponent/FormationCardComponent';
 import FilterComponent from '../../components/FilterComponent/FilterComponent';
 import './FormationListView.css'
@@ -77,9 +76,6 @@ const FormationListView = () => {
                             </div>
                             :
                             null)}
-            </div>
-            <div>
-                {/* <AddFormationComponent /> */}
             </div>
         </div>
     );
