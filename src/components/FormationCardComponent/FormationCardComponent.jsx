@@ -35,3 +35,4 @@ const FormationCardComponent = ({ formation, index }) => {
 }
 
 export default FormationCardComponent;
+

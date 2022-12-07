@@ -16,10 +16,6 @@
     opacity: 80%;
 }
 
-.bouton:before{
-    content: attr(data-text);
-}
-
 .bouton:hover{
     transform: translateY(-20%);
 }
