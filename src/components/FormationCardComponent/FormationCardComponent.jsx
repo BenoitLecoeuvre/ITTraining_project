@@ -2,8 +2,8 @@ import React from 'react';
 import CareScaleComponent from '../CareScaleComponent/CareScaleComponent';
 import './FormationCardComponent.css';
 
-const FormationCardComponent = ({ formation, index }) => {
-    console.log(formation)
+const FormationCardComponent = ({ formation, index}) => {
+    // console.log(formation)
     return (
         <div className='card formation' key={index}>
             <div className="card-title">
