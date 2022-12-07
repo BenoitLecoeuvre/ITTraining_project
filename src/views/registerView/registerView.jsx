@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import "./registerView.css";
 
 const RegisterView = () => {
+
+  const [changeForm, setChangeForm] = useState('apprenant');
+
   return (
     <div id="register">
       <section id="contact_header">
@@ -10,39 +13,44 @@ const RegisterView = () => {
           <div></div>
         </div>
 
+          <div><p>Déjà inscrit ? <a href="#">Connectez-vous</a></p></div>
         <div className="form_submit">
           <div>
-            <button type="button">Je suis stagiaire</button>
+            <button onClick={() => setChangeForm("apprenant")}>Je suis stagiaire</button>
           </div>
           <div>
-            <button type="button" className="button2">
+            <button className="button2" onClick={() => setChangeForm("formateur")}>
               Je suis formateur
             </button>
           </div>
         </div>
       </section>
 
-      <section id="contact_form" class="register">
+      <section id="contact_form" class={changeForm} >
         <form action="" method="post">
-          <div class="formflex">
+          <div className="formflex">
             <div>
-              <label for="name">E-mail</label>
-              <input type="text" id="name" name="name" required />
+              <label htmlFor="name">E-mail</label>
+              <input type="text" id="email" name="email" required />
             </div>
             <div>
-              <label for="firstname">Nom d'utilisateur</label>
-              <input type="text" id="firstname" name="first_name" required />
+              <label htmlFor="firstname">Entreprise</label>
+              <input type="text" id="firm" name="firm" required />
             </div>
             <div>
-              <label for="firm">Mot de passe</label>
-              <input id="firm" name="firm" type="text" />
+              <label htmlFor="firstname">Nom d'utilisateur</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div>
+              <label htmlFor="firm">Mot de passe</label>
+              <input id="password" name="password" type="password" />
             </div>
           </div>
 
           <div className="form_submit">
             <div>
               <button type="submit" className="register_button">
-                S'inscrire
+                S'inscrire comme {changeForm}
               </button>
             </div>
           </div>
