@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FormationList from '../../../src/datas/FormationList.json';
 import FormationCardComponent from '../../components/FormationCardComponent/FormationCardComponent';
 import FilterComponent from '../../components/FilterComponent/FilterComponent';
+import FormationDataComponent from '../../components/FormationDataComponent/FormationDataComponent';
 import './FormationListView.css'
 
 const FormationListView = () => {
@@ -47,9 +48,19 @@ const FormationListView = () => {
         resetsubCategoryArray();
     }
 
-    console.log(activeSubCategory)
 
-    return (
+    // Récupérer l'id de la formation au on click
+    const [editFormations, setEditFormations] = useState(true)
+    const [formationData, setFormationData] = useState("");
+
+    function editCardFormation(id) {
+        const tmpFormationData = FormationList.find((formation) => formation.id === id)
+        console.log(tmpFormationData);
+        setFormationData(tmpFormationData)
+        setEditFormations(false)
+    }
+
+    return editFormations ? (
         <div>
             <FilterComponent
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} categoryList={categoryList} resetInput={resetInput}
@@ -59,26 +70,36 @@ const FormationListView = () => {
                 {FormationList.map((formation, index) =>
                     activeSubCategory === '' ?
                         (!activeCategory || activeCategory === formation.category ?
-                            <div key={index}>
+                            <div key={index} onClick={() => editCardFormation(formation.id)}>
                                 <FormationCardComponent
+                                    setEditFormations={setEditFormations}
                                     key={index}
                                     formation={formation}
+                                //onClick={alert("Ca marche")}
+                                //onClick={() => editCardFormation(id)}
                                 />
                             </div>
                             :
                             null)
                         : (!activeSubCategory || activeSubCategory === formation.subCategory) ?
-                            <div key={index}>
+                            <div key={index} onClick={() => editCardFormation(formation.id)}>
                                 <FormationCardComponent
+                                    setEditFormations={setEditFormations}
                                     key={index}
                                     formation={formation}
+                                //onClick={() => editCardFormation(id)}
                                 />
                             </div>
                             :
                             null)}
             </div>
+        </div>)
+        :
+        <div>
+            <FormationDataComponent editFormations={editFormations} formationData={formationData} setFormationData={setFormationData} setEditFormations={setEditFormations} />
         </div>
-    );
+
+        ;
 }
 
 export default FormationListView;
