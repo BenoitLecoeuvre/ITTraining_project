@@ -96,7 +96,7 @@ const FormationListView = () => {
         </div>)
         :
         <div>
-            <FormationDataComponent editFormations={editFormations} formationData={formationData} setFormationData={setFormationData} setEditFormations={setEditFormations} />
+            <FormationDataComponent editFormations={editFormations} formationData={formationData} setFormationData={setFormationData} setEditFormations={setEditFormations}/> 
         </div>
 
         ;
