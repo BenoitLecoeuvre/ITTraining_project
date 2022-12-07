@@ -1,5 +1,6 @@
 import React from 'react';
 import FormationList from '../../../src/datas/FormationList.json';
+import AddFormationComponent from '../../Components/AddFormationComponent/AddFormationComponent';
 import FormationCardComponent from '../../Components/FormationCardComponent/FormationCardComponent';
 import './FormationListView.css'
 
@@ -9,14 +10,16 @@ const FormationListView = () => {
             <div className="card-container">
                 {FormationList.map((formation, index) =>
 
-                        <div key={index}>
-                            <FormationCardComponent
-                                key={index}
-                                formation={formation}
-                            />
-                        </div>       
-
+                    <div key={index}>
+                        <FormationCardComponent
+                            key={index}
+                            formation={formation}
+                        />
+                    </div>
                 )}
+            </div>
+            <div>
+                <AddFormationComponent />
             </div>
         </div>
     );
