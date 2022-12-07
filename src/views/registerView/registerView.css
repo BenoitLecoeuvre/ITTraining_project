@@ -1,0 +1,149 @@
+/* CONTACT */
+
+#register {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact_form, #contact_header {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0e2a39;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact_header .success_state{
+    margin-top: 8px;
+    background-color: #5CB85C;
+    border: 3px solid #9DCCB6;
+    border-radius: 5px;
+    color: white;
+    width: 50%
+}
+
+#contact_header h1 {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+#contact_header div {
+    display: flex;
+    justify-content: center;
+}
+
+#contact_header .shadow div {
+    width: 12vw;
+    height: 20px;
+    border-top: #0e2a39 solid;
+    margin-bottom: 20px;
+}
+
+#contact_form form .formflex {
+    display: flex;
+    justify-content: center;
+}
+
+#contact_form form .formflex div {
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+}
+
+#contact_form form .formflex div textarea {
+    width: 100%;
+}
+
+#contact_form form .formflex_mail {
+    display: flex;
+    justify-content: center;
+}
+
+#contact_form form .formflex_mail div {
+    display: flex;
+    flex-direction: column;
+    width: 21vw;
+}
+
+#contact_form form .formflex_message {
+    display: flex;
+    justify-content: center;
+}
+
+#contact_form form .formflex_message div {
+    display: flex;
+    flex-direction: column;
+    width: 42vw;
+}
+
+#contact_form form .formflex div input {
+    margin: 0 20px 20px 0;
+}
+
+#contact_form form .formflex_mail div input {
+    margin: 0 20px 20px 0;
+}
+
+#contact_form form .formflex_message div textarea {
+    margin: 0 20px 20px 0;
+}
+
+#contact_form form label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#register button {
+    margin: 20px 20px 20px 0;
+    width: 42vw;
+    padding: 2px;
+    height: 50px;
+    color: white;
+    background-color: rgba(66, 145, 182, 0.877);
+    border: 1px solid rgba(66, 145, 182, 0.877);
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#register button:hover {
+    background-color: rgba(46, 103, 129, 0.877);
+    border: 1px solid rgba(38, 99, 128, 0.877);
+}
+
+.register {
+    width: 60%;
+    border: 3px solid rgba(66, 145, 182, 0.877);
+    margin: 50px 0;
+    padding: 100px 0;
+}
+
+#contact_form .form_submit .register_button {
+    background-color: #0e2a39;
+    border: 1px solid #0e2a39;
+}
+#contact_form .form_submit .register_button:hover {
+    background-color: #133b50;
+    border: 1px solid #17465f;
+}
+
+#contact_header .button2 {
+    background-color: #916C80;
+    border: 1px solid #916C80;
+}
+#contact_header .button2:hover {
+    background-color: #6d5160;
+    border: 1px solid #775969;
+}
+
+#contact_form form .form_submit {
+    display: flex;
+    justify-content: center;
+}
+
+#contact_form form .form_submit div {
+    display: flex;
+    width: 42vw;
+}

@@ -1,7 +1,7 @@
 .banner {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     background-color: rgb(40, 44, 52);
     color: #3794eb;
     border-bottom: 5px solid rgba(66, 145, 182, 0.877);
@@ -14,11 +14,38 @@
     border: 3px solid;
 }
 
-.header{
-    margin-left: 450px;
-}
-
 .header h1{
     text-align: center;
+    margin-top: 0;
+}
+
+.banner .head_login {
+    margin-right: 20px;
+}
+
+.banner .head_login button {
+    margin: 20px 20px 20px 0;
+    width: 7vw;
+    padding: 2px;
+    height: 50px;
+    color: white;
+    background-color: rgba(66, 182, 124, 0.877);
+    border: 1px solid rgba(255, 255, 255, 0.877);
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.banner .head_login button:hover {
+    margin: 20px 20px 20px 0;
+    width: 7vw;
+    padding: 2px;
+    height: 50px;
+    color: white;
+    background-color: rgba(54, 145, 99, 0.877);
+    border: 1px solid rgba(255, 255, 255, 0.877);
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
 }
 

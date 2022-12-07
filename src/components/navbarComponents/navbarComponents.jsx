@@ -2,11 +2,9 @@ import React from 'react';
 import './navbarComponents.css';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 import HomeView from '../../views/homeView/homeView';
-<<<<<<< HEAD
-import ContactView from '../../views/contactView/contactView';
-=======
 import FormationListView from '../../views/FormationListView/FormationListView'
->>>>>>> 159b6d34b10dfa82bd242a21fcde54a7648e459d
+import RegisterView from '../../views/registerView/registerView';
+import AdminView from '../../views/adminView/adminView';
 
 const NavbarComponents = () => {
     return (
@@ -19,31 +17,19 @@ const NavbarComponents = () => {
                     <button className='bouton'>
                         <Link to="/formations">Nos formations</Link>
                     </button>
-<<<<<<< HEAD
                     <button className='bouton'>
                         <Link to="/inscription">S'inscrire</Link>
                     </button>
                     <button className='bouton'>
-=======
-                    <button className='bouton' >
-                        <Link to="/inscription">S'inscrire</Link>
-                    </button>
-                    <button className='bouton' >
->>>>>>> 159b6d34b10dfa82bd242a21fcde54a7648e459d
                         <Link to="/contact">Contact</Link>
                     </button>
                 </div>
                 <Routes>
                     <Route path="/" element={<HomeView/>}/>
-<<<<<<< HEAD
-                    <Route path="formations"/>
-                    <Route path="inscription"/>
-                    <Route path="/contact" element={<ContactView/>}/>
-=======
                     <Route path="/formations" element={<FormationListView/>}/>
-                    <Route path="/inscription"/>
+                    <Route path="/inscription" element={<RegisterView/>}/>
                     <Route path="/contact"/>
->>>>>>> 159b6d34b10dfa82bd242a21fcde54a7648e459d
+                    <Route path="/admin" element={<AdminView/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
