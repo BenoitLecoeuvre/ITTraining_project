@@ -55,7 +55,7 @@ const FormationListView = () => {
 
     function editCardFormation(id) {
         const tmpFormationData = FormationList.find((formation) => formation.id === id)
-        // console.log(tmpFormationData);
+        console.log(tmpFormationData);
         setFormationData(tmpFormationData)
         setEditFormations(false)
     }

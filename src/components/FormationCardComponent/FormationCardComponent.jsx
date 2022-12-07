@@ -30,6 +30,14 @@ const FormationCardComponent = ({ formation, index}) => {
             <div className="price">
                 <span><b>Prix : </b>{formation.price} €</span>
             </div>
+
+            {/* <div>
+                <span><b>Lieux : </b>{formation.lieux}</span>
+            </div> */}
+
+            {/* <div>
+                <span><b>Date : </b>{Date.parse(formation.dates)} </span>
+            </div> */}
         </div>
     );
 }
