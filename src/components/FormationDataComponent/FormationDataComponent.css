@@ -1,0 +1,10 @@
+.section{
+    display: flex;
+    flex-direction: row;
+}
+
+.detail{
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+}
