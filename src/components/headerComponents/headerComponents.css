@@ -1,0 +1,24 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: rgb(40, 44, 52);
+    color: rgb(55, 148, 235);
+    border-bottom: 5px solid rgba(66, 145, 182, 0.877);
+}
+
+.banner img {
+    height: 150px;
+    margin: 10px 150px 10px 10px;
+    padding: 5px;
+    border: 3px solid;
+}
+
+.header{
+    margin-left: 450px;
+}
+
+.header h1{
+    text-align: center;
+}
+
