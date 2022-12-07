@@ -1,6 +1,6 @@
 import React from 'react';
 import FormationList from '../../../src/datas/FormationList.json';
-import FormationCardComponent from '../../Components/FormationCardComponent/FormationCardComponent';
+import FormationCardComponent from '../../components/FormationCardComponent/FormationCardComponent';
 import './FormationListView.css'
 
 const FormationListView = () => {

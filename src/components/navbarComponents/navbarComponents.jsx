@@ -2,30 +2,31 @@ import React from 'react';
 import './navbarComponents.css';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 import HomeView from '../../views/homeView/homeView';
+import FormationListView from '../../views/FormationListView/FormationListView'
 
 const NavbarComponents = () => {
     return (
         <div>
             <BrowserRouter>
                 <div className='navigation'>
-                    <button className='bouton' data-text="Accueil">
-                        <Link to="/"></Link>
+                    <button className='bouton'>
+                        <Link to="/">Accueil</Link>
                     </button>
-                    <button className='bouton' data-text="Nos formations">
-                        <Link to="/formations"></Link>
+                    <button className='bouton'>
+                        <Link to="/formations">Nos formations</Link>
                     </button>
-                    <button className='bouton' data-text="s'inscrire">
-                        <Link to="/inscription"></Link>
+                    <button className='bouton' >
+                        <Link to="/inscription">S'inscrire</Link>
                     </button>
-                    <button className='bouton' data-text="Contact">
-                        <Link to="/contact"></Link>
+                    <button className='bouton' >
+                        <Link to="/contact">Contact</Link>
                     </button>
                 </div>
                 <Routes>
                     <Route path="/" element={<HomeView/>}/>
-                    <Route path="formations"/>
-                    <Route path="inscription"/>
-                    <Route path="contact"/>
+                    <Route path="/formations" element={<FormationListView/>}/>
+                    <Route path="/inscription"/>
+                    <Route path="/contact"/>
                 </Routes>
             </BrowserRouter>
         </div>
