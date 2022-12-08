@@ -34,7 +34,6 @@ const ArrayFormationComponent = (listTmp) => {
                         </tr>
                     ))
                     }
-                    {listTmp}
                 </tbody>
             </table>
         </div>

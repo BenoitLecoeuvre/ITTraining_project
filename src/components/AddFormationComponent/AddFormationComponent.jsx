@@ -28,6 +28,8 @@ const AddFormationComponent = ({setListTmp}) => {
             listTmp.push(newFormation);
             updateFormationList(listTmp);
             console.table(listTmp);
+            setListTmp={setListTmp};
+            console.table({setListTmp});
             alert(`La formation a bien été ajoutée`);
         } else {
             alert("Veuillez Remplir tous les champs")
