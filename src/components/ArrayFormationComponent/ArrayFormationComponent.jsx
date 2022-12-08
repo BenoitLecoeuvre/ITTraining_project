@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import FormationList from '../../datas/FormationList.json';
 import './ArrayFormationComponent.css'
 
-const ArrayFormationComponent = (listTmp) => {
+const ArrayFormationComponent = () => {
 
     const [listformation, updateFormationList] = useState(FormationList);
 
