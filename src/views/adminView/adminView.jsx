@@ -1,4 +1,5 @@
 import React from "react";
+import AddFormationComponent from "../../components/AddFormationComponent/AddFormationComponent";
 
 const AdminView = () => {
   return (
@@ -18,6 +19,12 @@ const AdminView = () => {
           </div>
         </div>
       </header>
+
+    <h4>Formulaire d'ajout de formation</h4>
+    <div>
+      <AddFormationComponent/>
+    </div>
+
     </div>
   );
 };
