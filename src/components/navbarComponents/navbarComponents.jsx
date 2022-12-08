@@ -7,7 +7,7 @@ import RegisterView from '../../views/registerView/registerView';
 import AdminView from '../../views/adminView/adminView';
 import ContactView from '../../views/contactView/contactView';
 
-const NavbarComponents = ({name, setName, firstname, setFirstname, firm, setFirm, mail, setMail, phone, setPhone, message, setMessage}) => {
+const NavbarComponents = ({userStatus, name, setName, firstname, setFirstname, firm, setFirm, mail, setMail, phone, setPhone, message, setMessage}) => {
     return (
         <div>
             <BrowserRouter>
@@ -24,6 +24,11 @@ const NavbarComponents = ({name, setName, firstname, setFirstname, firm, setFirm
                     <button className='bouton'>
                         <Link to="/contact">Contact</Link>
                     </button>
+                    {userStatus === 3 ? 
+                    <button className='bouton'>
+                        <Link to='/admin'>Admin</Link>
+                    </button>
+                    : null}
                 </div>
                 <Routes>
                     <Route path="/" element={<HomeView/>}/>

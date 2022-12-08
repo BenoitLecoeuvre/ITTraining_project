@@ -52,7 +52,10 @@
 /* TEST */
 
   input[type="text"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
     height: 25px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -62,8 +65,8 @@
     margin-top: 10px;
     cursor: pointer;
     font-size: 15px;
-    background: #01d28e;
-    border: 1px solid #01d28e;
+    background: rgba(66, 182, 124, 0.877);
+    border: 1px solid rgba(255, 255, 255, 0.877);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -104,3 +107,45 @@
     gap: 8px;
     margin: 10px;
   }
+
+  .user_div {
+    background-color: rgb(40, 44, 52);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 200px;
+    border: 5px solid rgba(66, 145, 182, 0.877);
+    border-radius: 5px;
+    margin-right: 15px;
+    font-weight: 500;
+    padding-bottom: 0;
+  }
+
+  .username_header {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .userstatus_header {
+    text-align: center;
+    padding-bottom: 2px;
+  }
+
+  .logout_button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logout_button button {
+    width: 7vw;
+    padding: 2px;
+    height: 50px;
+    color: white;
+    background-color: rgba(252, 74, 74, 0.877);
+    border: 1px solid rgba(255, 255, 255, 0.877);
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  
