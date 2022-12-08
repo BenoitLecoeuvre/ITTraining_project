@@ -5,6 +5,7 @@ import HomeView from '../../views/homeView/homeView';
 import FormationListView from '../../views/FormationListView/FormationListView'
 import RegisterView from '../../views/registerView/registerView';
 import AdminView from '../../views/adminView/adminView';
+import ContactView from '../../views/contactView/contactView';
 
 const NavbarComponents = () => {
     return (
@@ -28,7 +29,7 @@ const NavbarComponents = () => {
                     <Route path="/" element={<HomeView/>}/>
                     <Route path="/formations" element={<FormationListView/>}/>
                     <Route path="/inscription" element={<RegisterView/>}/>
-                    <Route path="/contact"/>
+                    <Route path="/contact" element={<ContactView/>}/>
                     <Route path="/admin" element={<AdminView/>}/>
                 </Routes>
             </BrowserRouter>

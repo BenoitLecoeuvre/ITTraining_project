@@ -1,27 +1,27 @@
-import React, {useState} from 'react';
-import './headerComponents.css'
+import React, { useState } from "react";
+import "./headerComponents.css";
 
 const HeaderComponents = () => {
-
-// States pour le login
+  // States pour le login
+  const [displayLogin, setDisplayLogin] = useState(false);
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
-// Users en dur
+  // Users en dur
   const userList = [
     {
       username: "user1",
-      password: "pass1"
+      password: "pass1",
     },
     {
       username: "user2",
-      password: "pass2"
-    }
+      password: "pass2",
+    },
   ];
 
   const errors = {
     username: "invalid username",
-    pass: "invalid password"
+    pass: "invalid password",
   };
 
   const handleSubmit = (event) => {
@@ -53,42 +53,43 @@ const HeaderComponents = () => {
       <div className="error">{errorMessages.message}</div>
     );
 
-    return (
-        <div className='banner'>
-            <div className="head_logo">
-                <img src="./img/ti_training_logo.jpg" alt="Logo-Ti-training" />
-            </div>
+  return (
+    <div className="banner">
+      <div className="head_logo">
+        <img src="./img/ti_training_logo.jpg" alt="Logo-Ti-training" />
+      </div>
 
-            <div className='header'>
-                <h1>IT - Training</h1>
-                <span className='credo'>La formation qui vous aidera à devenir le meilleur !</span>
-            </div>
+      <div className="header">
+        <h1>IT - Training</h1>
+        <span className="credo">
+          La formation qui vous aidera à devenir le meilleur !
+        </span>
+      </div>
 
-            <div className="head_login">
-                <button>
-                    Login
-                </button>
-            </div>
-
-            <div className="form">
-      <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="username" required />
-          {renderErrorMessage("username")}
-        </div>
-        <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
-      </form>
-    </div>
-        </div>
-    );
+      { !displayLogin ? <div className="head_login">
+        <button onClick={() => setDisplayLogin(true)}>Login</button>
+      </div>
+:
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label>Username </label>
+            <input type="text" name="username" required />
+            {renderErrorMessage("username")}
+          </div>
+          <div className="input-container">
+            <label>Password </label>
+            <input type="password" name="pass" required />
+            {renderErrorMessage("pass")}
+          </div>
+          <div className="button-container">
+            <input type="submit" />
+          </div>
+        </form>
+      </div>
 }
+    </div>
+  );
+};
 
 export default HeaderComponents;
