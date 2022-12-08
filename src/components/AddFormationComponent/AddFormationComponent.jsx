@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddFormationComponent.css'
+import FormationList from '../../datas/FormationList.json';
 
-const AddFormationComponent = () => {
+const AddFormationComponent = ({setListTmp}) => {
+
+    const [listformation , updateFormationList] = useState (FormationList);
 
     function createFormationHandler(e) {
         e.preventDefault();
-        let id = 21;
+        let id = listformation.length + 1;
         let formationName = e.target['formationName'].value;
         let category = e.target['category'].value;
         let subCategory = e.target['subCategory'].value;
@@ -21,6 +24,11 @@ const AddFormationComponent = () => {
         if (formationName !== "" && category !== "" && subCategory !== "" && description !== "" && descriptionDetail !== "" && duree !== "" && price !== "" && difficulty !== "" && lieux !== "" && dates !== "") {
             const newFormation = { id, formationName, category, subCategory, description, descriptionDetail, duree, price, difficulty, lieux, dates, logo }
             console.table(newFormation);
+            let listTmp = [...listformation];
+            listTmp.push(newFormation);
+            updateFormationList(listTmp);
+            console.table(listTmp);
+            alert(`La formation a bien été ajoutée`);
         } else {
             alert("Veuillez Remplir tous les champs")
         }
