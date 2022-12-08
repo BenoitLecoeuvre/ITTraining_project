@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import LoginComponent from "../../components/LoginComponent/LoginComponent";
 import "./registerView.css";
 
-const RegisterView = () => {
+const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
 
 
   // States

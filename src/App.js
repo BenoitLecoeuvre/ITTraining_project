@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <HeaderComponents userStatus={userStatus} setUserStatus={setUserStatus} userName={userName} setUserName={setUserName}/>
-      <NavbarComponents userStatus={userStatus}/>
+      <NavbarComponents userStatus={userStatus}  setUserStatus={setUserStatus} userName={userName} setUserName={setUserName}/>
       <FooterComponents/>
     </div>
   );

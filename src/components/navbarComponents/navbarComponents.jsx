@@ -7,7 +7,7 @@ import RegisterView from '../../views/registerView/registerView';
 import AdminView from '../../views/adminView/adminView';
 import ContactView from '../../views/contactView/contactView';
 
-const NavbarComponents = ({userStatus}) => {
+const NavbarComponents = ({setUserStatus, setUserName, userStatus }) => {
     return (
         <div>
             <BrowserRouter>
@@ -33,7 +33,7 @@ const NavbarComponents = ({userStatus}) => {
                 <Routes>
                     <Route path="/" element={<HomeView/>}/>
                     <Route path="/formations" element={<FormationListView/>}/>
-                    <Route path="/inscription" element={<RegisterView/>}/>
+                    <Route path="/inscription" element={<RegisterView setUserStatus={setUserStatus} setUserName={setUserName}/>}/>
                     <Route path="/contact" element={<ContactView/>}/>
                     <Route path="/admin" element={<AdminView/>}/>
                 </Routes>

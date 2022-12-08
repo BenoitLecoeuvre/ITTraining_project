@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LoginComponent from "../LoginComponent/LoginComponent";
 import "./headerComponents.css";
 
 const HeaderComponents = ({
@@ -87,23 +88,24 @@ const HeaderComponents = ({
             <button onClick={() => setDisplayLogin(true)}>Login</button>
           </div>
         ) : (
-          <div className="form">
-            <form onSubmit={handleSubmit}>
-              <div className="input-container">
-                <label>Username </label>
-                <input type="text" name="username" required />
-                {renderErrorMessage("username")}
-              </div>
-              <div className="input-container">
-                <label>Password </label>
-                <input type="password" name="pass" required />
-                {renderErrorMessage("pass")}
-              </div>
-              <div className="button-container">
-                <input type="submit" />
-              </div>
-            </form>
-          </div>
+          // <div className="form">
+          //   <form onSubmit={handleSubmit}>
+          //     <div className="input-container">
+          //       <label>Username </label>
+          //       <input type="text" name="username" required />
+          //       {renderErrorMessage("username")}
+          //     </div>
+          //     <div className="input-container">
+          //       <label>Password </label>
+          //       <input type="password" name="pass" required />
+          //       {renderErrorMessage("pass")}
+          //     </div>
+          //     <div className="button-container">
+          //       <input type="submit" />
+          //     </div>
+          //   </form>
+          // </div>
+          <LoginComponent/>
         )
       ) : (
         <div className="user_div">
