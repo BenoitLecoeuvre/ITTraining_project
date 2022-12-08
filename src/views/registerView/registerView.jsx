@@ -1,19 +1,26 @@
 import React, {useState} from "react";
+import LoginComponent from "../../components/LoginComponent/LoginComponent";
 import "./registerView.css";
 
 const RegisterView = () => {
 
-  const [changeForm, setChangeForm] = useState('apprenant');
 
+  // States
+  const [changeForm, setChangeForm] = useState('apprenant');
+  const [displayLogin, setDisplayLogin] = useState(false);
+
+  // Render
   return (
     <div id="register">
+      { !displayLogin ?
+      <React.Fragment>
       <section id="contact_header">
         <h1>Vous souhaitez nous rejoindre ? Inscrivez-vous ! </h1>
         <div className="shadow">
           <div></div>
         </div>
 
-          <div><p>Déjà inscrit ? <a href="#">Connectez-vous</a></p></div>
+          <div><p>Déjà inscrit ? <a href="#" onClick={() => setDisplayLogin(true)}>Connectez-vous</a></p></div>
         <div className="form_submit">
           <div>
             <button onClick={() => setChangeForm("apprenant")}>Je suis stagiaire</button>
@@ -56,6 +63,11 @@ const RegisterView = () => {
           </div>
         </form>
       </section>
+      </React.Fragment>
+        
+        :
+        <LoginComponent/>
+        }
     </div>
   );
 };
