@@ -6,10 +6,18 @@ import NavbarComponents from './components/navbarComponents/navbarComponents';
 
 
 function App() {
+
+const [name, setName] = useState("")
+const [firstname, setFirstname] = useState("")
+const [firm, setFirm] = useState("")
+const [mail, setMail] = useState("")
+const [phone, setPhone] = useState("")
+const [message, setMessage] = useState("")
+
   return (
     <div className="App">
       <HeaderComponents/>
-      <NavbarComponents/>
+      <NavbarComponents name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail}/>
       <FooterComponents/>
     </div>
   );
