@@ -11,10 +11,12 @@ const LoginComponent = () => {
     {
       username: "user1",
       password: "pass1",
+      status: 3
     },
     {
       username: "user2",
       password: "pass2",
+      status: 3
     },
   ];
 
