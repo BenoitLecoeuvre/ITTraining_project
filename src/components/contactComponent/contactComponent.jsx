@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactView from '../../views/contactView/contactView';
 
 const ContactComponent = ({name, firstname, firm, mail, phone, message}) => {
     return (
