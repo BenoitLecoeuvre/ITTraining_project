@@ -1,5 +1,6 @@
 import './App.css';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
+import { useState } from 'react';
 import HeaderComponents from './components/headerComponents/headerComponents';
 import FooterComponents from './components/footerComponents/footerComponents';
 import NavbarComponents from './components/navbarComponents/navbarComponents';
@@ -17,7 +18,7 @@ const [message, setMessage] = useState("")
   return (
     <div className="App">
       <HeaderComponents/>
-      <NavbarComponents name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail}/>
+      <NavbarComponents name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone} message={message} setMessage={setMessage}/>
       <FooterComponents/>
     </div>
   );

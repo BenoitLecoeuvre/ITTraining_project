@@ -95,7 +95,7 @@
         "difficulty": 2,
         "lieux": ["Paris", "Lille"],
         "dates": ["06 avril 2023", "10 avril 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/sql.jpg"
     },
     {
         "id": 8,
@@ -109,7 +109,7 @@
         "difficulty": 4,
         "lieux": ["Paris", "Lille"],
         "dates": ["01 mai 2023", "05 mai 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/logo-algo.png"
     },
     {
         "id": 9,
