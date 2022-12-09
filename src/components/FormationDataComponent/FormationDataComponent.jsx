@@ -1,8 +1,9 @@
 import React from 'react';
 import './FormationDataComponent.css'
 import 'bootstrap'
+import { NavLink } from 'react-router-dom';
 
-const FormationDataComponent = ({ formationData }) => {
+const FormationDataComponent = ({ formationData, setEditFormations }) => {
     // console.log(formationData)
 
     return (
@@ -10,12 +11,14 @@ const FormationDataComponent = ({ formationData }) => {
         <div className='section'>
             <div className='bloc'>
 
-                <div className='name'>
-                    <span><b>{formationData.formationName}</b></span>
-                </div>
-
                 <div>
-                    <img className='img' src={formationData.logo} alt="Formation-logo" />
+                    <div className='name'>
+                        <span><b>{formationData.formationName}</b></span>
+                    </div>
+
+                    <div>
+                        <img className='img' src={formationData.logo} alt="Formation-logo" />
+                    </div>
                 </div>
 
                 <div className='detail'>
@@ -39,11 +42,15 @@ const FormationDataComponent = ({ formationData }) => {
 
                 <div>
                     <span className='underline'><strong>Important :</strong></span>
-                    <span> Avant de commencer nos formations nous devons nous assurer  que vous avez les prérequis. Voici un lien qui vous permettra de vous évaluer : <a href='https://www.w3schools.com/' target="_blank" rel="noreferrer">W3 School</a></span>
+                    <span> Avant de commencer nos formations nous devons nous assurer que vous avez les prérequis. Voici un lien qui vous permettra de vous évaluer : <a href='https://www.w3schools.com/' target="_blank" rel="noreferrer">W3 School</a></span>
                 </div>
 
                 <div className='inscription'>
-                    <button>S'inscrire à cette formation</button>
+                    <button> <NavLink to={"/inscription"}> S'inscrire à cette formation </NavLink> </button>
+                </div>
+
+                <div>
+                    <button className='retour' onClick={() => setEditFormations(true)}> Retour </button>
                 </div>
             </div>
 

@@ -7,7 +7,7 @@ import RegisterView from '../../views/registerView/registerView';
 import AdminView from '../../views/adminView/adminView';
 import ContactView from '../../views/contactView/contactView';
 
-const NavbarComponents = ({userStatus}) => {
+const NavbarComponents = ({userStatus, name, setName, firstname, setFirstname, firm, setFirm, mail, setMail, phone, setPhone, message, setMessage}) => {
     return (
         <div>
             <BrowserRouter>
@@ -34,8 +34,8 @@ const NavbarComponents = ({userStatus}) => {
                     <Route path="/" element={<HomeView/>}/>
                     <Route path="/formations" element={<FormationListView/>}/>
                     <Route path="/inscription" element={<RegisterView/>}/>
-                    <Route path="/contact" element={<ContactView/>}/>
-                    <Route path="/admin" element={<AdminView/>}/>
+                    <Route path="/contact" element={<ContactView name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone} message={message} setMessage={setMessage} />}/>
+                    <Route path="/admin" element={<AdminView name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone} message={message} setMessage={setMessage}/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

@@ -1,14 +1,13 @@
 .section{
     display: flex;
-    text-align: center;
+    margin-top: 15px;
+    /* text-align: center; */
     justify-content: center;
-    /* align-content: center; */
 }
 
-.name {
-    /* margin: 20px 0;
-    margin-right: 55px; */
-    /* text-align: center; */
+.bloc{
+    text-align: center;
+    justify-content: center;
 }
 
 .img{
@@ -34,4 +33,8 @@
 
 .underline{
     text-decoration: underline;
+}
+
+.retour{
+    text-decoration: none;
 }

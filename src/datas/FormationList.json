@@ -11,7 +11,7 @@
         "difficulty": 1,
         "lieux": ["Paris", "Lille"],
         "dates": ["02 janvier 2023", "05 janvier 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 2,
@@ -25,7 +25,7 @@
         "difficulty": 1,
         "lieux": ["Paris", "Lille"],
         "dates": ["15 janvier 2023", "20 janvier 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 3,
@@ -39,7 +39,7 @@
         "difficulty": 3,
         "lieux": ["Paris", "Lille"],
         "dates": ["01 février 2023", "14 février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 4,
@@ -53,7 +53,7 @@
         "difficulty": 3,
         "lieux": ["Paris", "Lille"],
         "dates": ["15 janvier 2023", "29 janvier 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 5,
@@ -67,7 +67,7 @@
         "difficulty": 2,
         "lieux": ["Paris", "Lille"],
         "dates": ["01 mars 2023", "05 mars 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 6,
@@ -81,7 +81,7 @@
         "difficulty": 2,
         "lieux": ["Paris", "Lille"],
         "dates": ["01 avril 2023", "03 avril 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 7,
@@ -95,7 +95,7 @@
         "difficulty": 2,
         "lieux": ["Paris", "Lille"],
         "dates": ["06 avril 2023", "10 avril 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/sql.jpg"
     },
     {
         "id": 8,
@@ -109,7 +109,7 @@
         "difficulty": 4,
         "lieux": ["Paris", "Lille"],
         "dates": ["01 mai 2023", "05 mai 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/logo-algo.png"
     },
     {
         "id": 9,
@@ -123,7 +123,7 @@
         "difficulty": 3,
         "lieux": ["Paris", "Lille"],
         "dates": ["15 mai 2023", "17 mai 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/sql.jpg"
     },
     {
         "id": 10,
@@ -137,7 +137,7 @@
         "difficulty": 2,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/logo-js.png"
     },
     {
         "id": 11,
@@ -151,7 +151,7 @@
         "difficulty": 3,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/logo-react.png"
     },
     {
         "id": 12,
@@ -165,7 +165,7 @@
         "difficulty": 3,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/logo-csharp.png"
     },
     {
         "id": 13,
@@ -179,7 +179,7 @@
         "difficulty": 4,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/logo-dotnetcore.png"
     },
     {
         "id": 14,
@@ -193,7 +193,7 @@
         "difficulty": 5,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/python.jpg"
     },
     {
         "id": 15,
@@ -207,7 +207,7 @@
         "difficulty": 2,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/cpp_logo.png"
     },
     {
         "id": 16,
@@ -221,7 +221,7 @@
         "difficulty": 2,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 17,
@@ -235,7 +235,7 @@
         "difficulty": 3,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 18,
@@ -249,7 +249,7 @@
         "difficulty": 1,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 19,
@@ -263,7 +263,7 @@
         "difficulty": 1,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     },
     {
         "id": 20,
@@ -277,6 +277,6 @@
         "difficulty": 3,
         "lieux": ["Lille" , "Paris"],
         "dates": ["3 Janvier 2023","7 Février 2023"],
-        "logo":"./img/logo_m2i.jpg"
+        "logo":"./img/ti_training_logo.jpg"
     }
 ]

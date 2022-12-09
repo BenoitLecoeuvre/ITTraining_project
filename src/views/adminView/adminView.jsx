@@ -19,7 +19,5 @@ const AdminView = () => {
       <h2>Historique des formations</h2>
       <AdminHistoriqueFormationDisplay />
     </div>
-  );
-};
-
+)}
 export default AdminView;
