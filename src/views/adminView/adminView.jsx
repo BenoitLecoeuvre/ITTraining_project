@@ -39,7 +39,15 @@ const AdminView = ({ name, setName, firstname, setFirstname, firm, setFirm, mail
   function editFormation(index) {
     setModifFormation(!modifFormation);
     setFormationName(listformation[index].formationName)
-    console.log(formationName)
+    setCategory(listformation[index].category)
+    setSubCategory(listformation[index].subCategory)
+    setDescription(listformation[index].description)
+    setDescriptionDetail(listformation[index].descriptionDetail)
+    setDuree(listformation[index].duree)
+    setPrice(listformation[index].price)
+    setDifficulty(listformation[index].difficulty)
+    setLieux(listformation[index].lieux)
+    setDates(listformation[index].dates)
   }
 
   return (
@@ -71,6 +79,16 @@ const AdminView = ({ name, setName, firstname, setFirstname, firm, setFirm, mail
           }
       </div>
 
+      {addFormation ?
+        <AddEditFormationComponent listformation={listformation} updateFormationList={updateFormationList} modifFormation={modifFormation} setModifFormation={setModifFormation}
+          formationName={formationName} setFormationName={setFormationName} category={category} setCategory={setCategory} subCategory={subCategory} setSubCategory={setSubCategory} description={description} setDescription={setDescription} descriptionDetail={descriptionDetail} setDescriptionDetail={setDescriptionDetail}
+          duree={duree} setDuree={setDuree} price={price} setPrice={setPrice} difficulty={difficulty} setDifficulty={setDifficulty} lieux={lieux} setLieux={setLieux} dates={dates} setDates={setDates} />
+        : null}
+
+
+
+      {history ?
+        <AdminHistoriqueFormationDisplay /> : null}
 
 
 
