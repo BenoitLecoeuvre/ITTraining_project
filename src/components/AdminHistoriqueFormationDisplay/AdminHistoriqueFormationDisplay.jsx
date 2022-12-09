@@ -60,6 +60,7 @@ const AdminHistoriqueFormationDisplay = () => {
 
     return (
         <div>
+            <h2>Historique des formations</h2>
             <AdminFilterComponent
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} categoryList={categoryList} resetInputCat={resetInputCat}
                 activeStatus={activeStatus} statusList={statusList} setActiveStatut={setActiveStatut} resetInputStat={resetInputStat} />
