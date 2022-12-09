@@ -4,9 +4,7 @@ import React, { useState } from 'react';
 import FormationList from '../../datas/FormationList.json';
 import './ArrayFormationComponent.css'
 
-const ArrayFormationComponent = () => {
-
-    const [listformation, updateFormationList] = useState(FormationList);
+const ArrayFormationComponent = ({listformation, updateFormationList}) => {
 
     return (
         <div>
