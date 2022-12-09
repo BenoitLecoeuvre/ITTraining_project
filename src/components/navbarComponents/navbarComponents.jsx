@@ -8,6 +8,7 @@ import AdminView from '../../views/adminView/adminView';
 import ContactView from '../../views/contactView/contactView';
 
 const NavbarComponents = ({userStatus, name, setName, firstname, setFirstname, firm, setFirm, mail, setMail, phone, setPhone, message, setMessage}) => {
+    
     return (
         <div>
             <BrowserRouter>

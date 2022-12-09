@@ -4,6 +4,8 @@ import ArrayFormationComponent from "../../components/ArrayFormationComponent/Ar
 import AddFormationComponent from "../../components/AddFormationComponent/AddFormationComponent";
 
 const AdminView = ({ name, setName, firstname, setFirstname, firm, setFirm, mail, setMail, phone, setPhone, message, setMessage }) => {
+
+  console.log(name)
   return (
     <div>
       <h1>AdminView</h1>
