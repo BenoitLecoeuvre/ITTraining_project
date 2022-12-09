@@ -1,8 +1,9 @@
 import React from 'react';
-import ContactView from '../../views/contactView/contactView';
 
 const ContactComponent = ({name, firstname, firm, mail, phone, message}) => {
+    
     return (
+        
         <table>
             <thead>
                 <tr>
@@ -18,11 +19,11 @@ const ContactComponent = ({name, firstname, firm, mail, phone, message}) => {
             <tbody>
                 <tr>
                     <td>{name}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{firstname}</td>
+                    <td>{firm}</td>
+                    <td>{mail}</td>
+                    <td>{phone}</td>
+                    <td>{message}</td>
                 </tr>
             </tbody>
         </table>

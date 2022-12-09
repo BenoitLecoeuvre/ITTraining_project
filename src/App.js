@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 
 function App() {
-
+  
   // State pour les droits des utilisateurs ( 0= guest, 1= stagiaire, 2= formateur, 3=admin)
   const [userStatus, setUserStatus] = useState(0);
   const [userName, setUserName] = useState('');
@@ -16,7 +16,7 @@ function App() {
   const [mail, setMail] = useState("")
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
-
+  
 
   return (
     <div className="App">

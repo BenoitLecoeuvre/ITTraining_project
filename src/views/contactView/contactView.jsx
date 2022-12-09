@@ -3,7 +3,6 @@ import "./contactView.css";
 
 const ContactView = ({setName, setFirstname, setFirm, setMail, setPhone, setMessage}) => {
 
-
   return (
     <section id="contact_form">
       <h1>Des questions ? Contactez-nous ! </h1>
