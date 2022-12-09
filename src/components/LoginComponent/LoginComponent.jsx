@@ -1,22 +1,22 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
+import "./LoginComponent.css";
 
-const LoginComponent = () => {
-
-      // States pour le login
+const LoginComponent = ({ setUserStatus, setUserName }) => {
+  // States pour le login
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
   // Users en dur
   const userList = [
     {
-      username: "user1",
+      username: "benoit",
       password: "pass1",
-      status: 3
+      status: 3,
     },
     {
       username: "user2",
       password: "pass2",
-      status: 3
+      status: 1,
     },
   ];
 
@@ -41,6 +41,8 @@ const LoginComponent = () => {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmit(true);
+        setUserStatus(userData.status);
+        setUserName(userData.username);
       }
     } else {
       // Nom d'utilisateur erroné
@@ -48,17 +50,15 @@ const LoginComponent = () => {
     }
   };
 
-    // Render du message d'erreur
-    const renderErrorMessage = (name) =>
+  // Render du message d'erreur
+  const renderErrorMessage = (name) => {
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
+  };
 
-    return (
-        <div>
-            <h1>LoginComponent</h1>
-
-            <div className="form">
+  return (
+      <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="input-container">
             <label>Username </label>
@@ -75,8 +75,7 @@ const LoginComponent = () => {
           </div>
         </form>
       </div>
-        </div>
-    );
-}
+  );
+};
 
 export default LoginComponent;
