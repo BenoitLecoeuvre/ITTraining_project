@@ -10,8 +10,6 @@ const HeaderComponents = ({
 }) => {
   // States pour le login
   const [displayLogin, setDisplayLogin] = useState(false);
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
 
   // Fonction logout pour se déconnecter
   const logout = () => {

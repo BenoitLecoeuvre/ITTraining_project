@@ -1,69 +1,64 @@
-import React, {useState} from 'react';
-import "./LoginComponent.css"
+import React, { useState } from "react";
+import "./LoginComponent.css";
 
-const LoginComponent = ({
-  setUserStatus,
-  setUserName,
-}) => {
+const LoginComponent = ({ setUserStatus, setUserName }) => {
+  // States pour le login
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
-    // States pour le login
-    const [errorMessages, setErrorMessages] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
-  
-    // Users en dur
-    const userList = [
-      {
-        username: "benoit",
-        password: "pass1",
-        status: 3,
-      },
-      {
-        username: "user2",
-        password: "pass2",
-        status: 1,
-      },
-    ];
-  
-    const errors = {
-      username: "invalid username",
-      pass: "invalid password",
-    };
-  
-    const handleSubmit = (event) => {
-      // Empêcher la page de se réinitialiser
-      event.preventDefault();
-  
-      var { username, pass } = document.forms[0];
-  
-      // Voir si l'username existe dans la database
-      const userData = userList.find((user) => user.username === username.value);
-  
-      // Comparer les mots de passe et noms. Si true = erreur sinon le mot de passe est bon
-      if (userData) {
-        if (userData.password !== pass.value) {
-          // Mot de passe erroné
-          setErrorMessages({ name: "pass", message: errors.pass });
-        } else {
-          setIsSubmit(true);
-          setUserStatus(userData.status);
-          setUserName(userData.username);
-        }
+  // Users en dur
+  const userList = [
+    {
+      username: "benoit",
+      password: "pass1",
+      status: 3,
+    },
+    {
+      username: "user2",
+      password: "pass2",
+      status: 1,
+    },
+  ];
+
+  const errors = {
+    username: "invalid username",
+    pass: "invalid password",
+  };
+
+  const handleSubmit = (event) => {
+    // Empêcher la page de se réinitialiser
+    event.preventDefault();
+
+    var { username, pass } = document.forms[0];
+
+    // Voir si l'username existe dans la database
+    const userData = userList.find((user) => user.username === username.value);
+
+    // Comparer les mots de passe et noms. Si true = erreur sinon le mot de passe est bon
+    if (userData) {
+      if (userData.password !== pass.value) {
+        // Mot de passe erroné
+        setErrorMessages({ name: "pass", message: errors.pass });
       } else {
-        // Nom d'utilisateur erroné
-        setErrorMessages({ name: "username", message: errors.username });
+        setIsSubmit(true);
+        setUserStatus(userData.status);
+        setUserName(userData.username);
       }
-    };
-  
-    // Render du message d'erreur
-    const renderErrorMessage = (name) => {
-      name === errorMessages.name && (
-        <div className="error">{errorMessages.message}</div>
-        );
-      };
+    } else {
+      // Nom d'utilisateur erroné
+      setErrorMessages({ name: "username", message: errors.username });
+    }
+  };
 
-    return (
-        <div>
-            <div className="form">
+  // Render du message d'erreur
+  const renderErrorMessage = (name) => {
+    name === errorMessages.name && (
+      <div className="error">{errorMessages.message}</div>
+    );
+  };
+
+  return (
+      <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="input-container">
             <label>Username </label>
@@ -80,8 +75,7 @@ const LoginComponent = ({
           </div>
         </form>
       </div>
-        </div>
-    );
-}
+  );
+};
 
 export default LoginComponent;

@@ -9,7 +9,8 @@ textarea {
 }
 
 input[type="submit"] {
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   cursor: pointer;
   font-size: 15px;
   background: rgba(66, 182, 124, 0.877);
