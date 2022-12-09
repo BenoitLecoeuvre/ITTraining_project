@@ -1,12 +1,9 @@
 import React from 'react';
-import ContactView from '../../views/contactView/contactView';
 
 const ContactComponent = ({name, firstname, firm, mail, phone, message}) => {
-    console.log(name)
-    console.log(name)
-    console.log(name)
-    console.log(name)
+    
     return (
+        
         <table>
             <thead>
                 <tr>

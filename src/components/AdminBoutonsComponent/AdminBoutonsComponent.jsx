@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminBoutonsComponent = ({addFormation, setAddFormation, displayFormation, setDisplayFormation, todoList, setTodoList, history, setHistory }) => {
+const AdminBoutonsComponent = ({contact, setContact, addFormation, setAddFormation, displayFormation, setDisplayFormation, todoList, setTodoList, history, setHistory }) => {
 
 
     return (
@@ -9,6 +9,7 @@ const AdminBoutonsComponent = ({addFormation, setAddFormation, displayFormation,
             <button onClick={()=> setDisplayFormation(!displayFormation)}>Liste des formations</button>
             <button onClick={()=> setTodoList(!todoList)}>TodoList</button>
             <button onClick={()=> setHistory(!history)}>Historique des formations</button>
+            <button onClick={()=> setContact(!contact)}>Historique des messages</button>
         </div>
     );
 }

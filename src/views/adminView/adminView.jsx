@@ -5,6 +5,7 @@ import TodoListDisplayComponent from "../../components/TodoListDisplayComponent/
 import AdminHistoriqueFormationDisplay from "../../components/AdminHistoriqueFormationDisplay/AdminHistoriqueFormationDisplay";
 import FormationList from '../../datas/FormationList.json';
 import AdminBoutonsComponent from "../../components/AdminBoutonsComponent/AdminBoutonsComponent";
+import ContactComponent from "../../components/contactComponent/contactComponent";
 
 const AdminView = ({ name, setName, firstname, setFirstname, firm, setFirm, mail, setMail, phone, setPhone, message, setMessage }) => {
 
@@ -13,15 +14,16 @@ const AdminView = ({ name, setName, firstname, setFirstname, firm, setFirm, mail
   const [displayFormation, setDisplayFormation] = useState(false)
   const [todoList, setTodoList] = useState(false)
   const [history, setHistory] = useState(false)
+  const [contact, setContact] = useState(false)
 
-// State pour set la liste de formation
+  // State pour set la liste de formation
   const [listformation, updateFormationList] = useState(FormationList);
 
   // State pour passer en mode edit formation
   const [modifFormation, setModifFormation] = useState(false)
 
   // States pour recup les datas de la formation à modifier
-  const [formationName, setFormationName]=useState('');
+  const [formationName, setFormationName] = useState('');
   const [category, setCategory] = useState('');
   const [subCategory, setSubCategory] = useState('');
   const [description, setDescription] = useState('');
@@ -39,27 +41,40 @@ const AdminView = ({ name, setName, firstname, setFirstname, firm, setFirm, mail
     setFormationName(listformation[index].formationName)
     console.log(formationName)
   }
-  
+
   return (
     <div>
-      <AdminBoutonsComponent
-        addFormation={addFormation} displayFormation={displayFormation} todoList={todoList} history={history}
-        setAddFormation={setAddFormation} setDisplayFormation={setDisplayFormation} setTodoList={setTodoList} setHistory={setHistory} />
+      <div>
+        <AdminBoutonsComponent
+          addFormation={addFormation} displayFormation={displayFormation} todoList={todoList} history={history}
+          setAddFormation={setAddFormation} setDisplayFormation={setDisplayFormation} setTodoList={setTodoList} setHistory={setHistory}
+          contact={contact} setContact={setContact} />
 
-      {addFormation ?
-        <AddEditFormationComponent listformation={listformation} updateFormationList={updateFormationList} modifFormation={modifFormation} setModifFormation={setModifFormation} />
-        : null}
+        {addFormation ?
+          <AddEditFormationComponent listformation={listformation} updateFormationList={updateFormationList} modifFormation={modifFormation} setModifFormation={setModifFormation} />
+          : null}
 
-      {displayFormation ?
-        <ArrayFormationComponent listformation={listformation} updateFormationList={updateFormationList} editFormation={editFormation}
-          modifFormation={modifFormation} setModifFormation={setModifFormation} />
-        : null}
+        {displayFormation ?
+          <ArrayFormationComponent listformation={listformation} updateFormationList={updateFormationList} editFormation={editFormation}
+            modifFormation={modifFormation} setModifFormation={setModifFormation} />
+          : null}
 
-      {todoList ?
-        <TodoListDisplayComponent /> : null}
+        {todoList ?
+          <TodoListDisplayComponent /> : null}
 
-      {history ?
-        <AdminHistoriqueFormationDisplay /> : null}
+        {history ?
+          <AdminHistoriqueFormationDisplay /> : null}
+
+          {contact ?
+          <ContactComponent name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone} message={message} setMessage={setMessage} />
+           : null
+          }
+      </div>
+
+
+
+
     </div>
-)}
+  )
+}
 export default AdminView;
