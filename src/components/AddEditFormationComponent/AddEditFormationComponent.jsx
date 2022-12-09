@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AddFormationComponent.css'
-import FormationList from '../../datas/FormationList.json';
 
-const AddFormationComponent = ({listformation, updateFormationList}) => {
+const AddFormationComponent = ({listformation, updateFormationList, modifFormation,  setModifFormation}) => {
 
+    // Récupération des datas de la nouvelle formation à créer
     function createFormationHandler(e) {
         e.preventDefault();
         let id = listformation.length + 1;
@@ -18,7 +18,7 @@ const AddFormationComponent = ({listformation, updateFormationList}) => {
         let lieux = e.target['lieux'].value;
         let dates = e.target['dates'].value;
         let logo = e.target['logo'].files[0];
-
+        // Obliger user à compléter tous les champs (sauf image pour l'instant)
         if (formationName !== "" && category !== "" && subCategory !== "" && description !== "" && descriptionDetail !== "" && duree !== "" && price !== "" && difficulty !== "" && lieux !== "" && dates !== "") {
             const newFormation = { id, formationName, category, subCategory, description, descriptionDetail, duree, price, difficulty, lieux, dates, logo }
             console.table(newFormation);
@@ -27,12 +27,10 @@ const AddFormationComponent = ({listformation, updateFormationList}) => {
             updateFormationList(listTmp);
             console.log(newFormation)
             alert(`La formation a bien été ajoutée`);
-        } else {
-            alert("Veuillez Remplir tous les champs")
-        }
+        } else alert("Veuillez Remplir tous les champs")
     }
 
-    return (
+    return modifFormation === false ? (
         <div>
             <form onSubmit={createFormationHandler} id="addFormationForm">
                 <div className='formContainer'>
@@ -99,7 +97,9 @@ const AddFormationComponent = ({listformation, updateFormationList}) => {
                 </div>
             </form>
         </div>
-    );
+    )
+    : <h1>test</h1>
+    ;
 }
 
 export default AddFormationComponent;
