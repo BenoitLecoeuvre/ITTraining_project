@@ -33,7 +33,7 @@ const NavbarComponents = ({setUserStatus, setUserName, userStatus }) => {
                 <Routes>
                     <Route path="/" element={<HomeView/>}/>
                     <Route path="/formations" element={<FormationListView/>}/>
-                    <Route path="/inscription" element={<RegisterView setUserStatus={setUserStatus} setUserName={setUserName}/>}/>
+                    <Route path="/inscription" element={<RegisterView setUserStatus={setUserStatus} userStatus={userStatus} setUserName={setUserName}/>}/>
                     <Route path="/contact" element={<ContactView/>}/>
                     <Route path="/admin" element={<AdminView/>}/>
                 </Routes>

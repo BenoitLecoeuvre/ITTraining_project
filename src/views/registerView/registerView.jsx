@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import LoginComponent from "../../components/LoginComponent/LoginComponent";
 import "./registerView.css";
 
 const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
@@ -11,8 +10,8 @@ const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
 
   // Render
   return (
+    <main>
     <div id="register">
-      { !displayLogin ?
       <React.Fragment>
       <section id="contact_header">
         <h1>Vous souhaitez nous rejoindre ? Inscrivez-vous ! </h1>
@@ -20,7 +19,6 @@ const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
           <div></div>
         </div>
 
-          <div><p>Déjà inscrit ? <a href="#" onClick={() => setDisplayLogin(true)}>Connectez-vous</a></p></div>
         <div className="form_submit">
           <div>
             <button onClick={() => setChangeForm("apprenant")}>Je suis stagiaire</button>
@@ -64,11 +62,8 @@ const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
         </form>
       </section>
       </React.Fragment>
-        
-        :
-        <LoginComponent/>
-        }
     </div>
+  </main>
   );
 };
 
