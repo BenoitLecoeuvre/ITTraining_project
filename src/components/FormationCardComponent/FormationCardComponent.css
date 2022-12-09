@@ -2,7 +2,8 @@
     border-radius: 25px;   
     margin: 10px;
     padding: 10px;
-    border: 1px solid black;
+    border: 2px solid #0E2A39;
+    color: #0E2A39;
     cursor: pointer;
 }
 
