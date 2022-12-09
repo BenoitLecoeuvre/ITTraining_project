@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./LoginComponent.css"
 
 const LoginComponent = ({
   setUserStatus,
@@ -6,7 +7,6 @@ const LoginComponent = ({
 }) => {
 
     // States pour le login
-    const [displayLogin, setDisplayLogin] = useState(false);
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
   
@@ -54,16 +54,12 @@ const LoginComponent = ({
       }
     };
   
-    // Fonction logout pour se déconnecter
-    const logout = () => {setUserStatus(0);
-    setDisplayLogin(false);}
-  
     // Render du message d'erreur
     const renderErrorMessage = (name) => {
       name === errorMessages.name && (
         <div className="error">{errorMessages.message}</div>
-      );
-    };
+        );
+      };
 
     return (
         <div>
