@@ -1,11 +1,32 @@
 import React from 'react';
 import ContactView from '../../views/contactView/contactView';
 
-const ContactComponent = () => {
+const ContactComponent = ({name, firstname, firm, mail, phone, message}) => {
     return (
-        <div>
-            
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Société</th>
+                    <th>E-mail</th>
+                    <th>Téléphone</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{name}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
     );
 }
 

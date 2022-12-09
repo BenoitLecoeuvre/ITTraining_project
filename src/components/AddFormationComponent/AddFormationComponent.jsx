@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import './AddFormationComponent.css'
 import FormationList from '../../datas/FormationList.json';
 
-const AddFormationComponent = ({setListTmp}) => {
-
-    const [listformation , updateFormationList] = useState (FormationList);
+const AddFormationComponent = ({listformation, updateFormationList}) => {
 
     function createFormationHandler(e) {
         e.preventDefault();
@@ -27,9 +25,7 @@ const AddFormationComponent = ({setListTmp}) => {
             let listTmp = [...listformation];
             listTmp.push(newFormation);
             updateFormationList(listTmp);
-            console.table(listTmp);
-            setListTmp={setListTmp};
-            console.table({setListTmp});
+            console.log(newFormation)
             alert(`La formation a bien été ajoutée`);
         } else {
             alert("Veuillez Remplir tous les champs")

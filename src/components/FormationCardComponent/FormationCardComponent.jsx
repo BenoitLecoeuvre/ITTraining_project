@@ -2,10 +2,13 @@ import React from 'react';
 import CareScaleComponent from '../CareScaleComponent/CareScaleComponent';
 import './FormationCardComponent.css';
 
-const FormationCardComponent = ({ formation, index}) => {
+const FormationCardComponent = ({ formation, index }) => {
     // console.log(formation)
     return (
         <div className='card formation' key={index}>
+
+
+
             <div className="card-title">
                 <span><b>{formation.formationName}</b></span>
             </div>
@@ -14,17 +17,19 @@ const FormationCardComponent = ({ formation, index}) => {
                 <img className='img' src={formation.logo} alt="Formation-logo" />
             </div>
 
+
+
             <div className="description">
                 <span>{formation.description}</span>
             </div>
 
             <div className="duree">
-                <span> <b>Durée : </b>{formation.duree} jours {`(`}{formation.duree*7} heures{`)`}</span>
+                <span> <b>Durée : </b>{formation.duree} jours {`(`}{formation.duree * 7} heures{`)`}</span>
             </div>
 
             <div className="difficulty">
                 <span className='diff-label'><b>Difficulté : </b></span>
-                <CareScaleComponent ScaleValue={formation.difficulty} className="stars"/>
+                <CareScaleComponent ScaleValue={formation.difficulty} className="stars" />
             </div>
 
             <div className="price">
