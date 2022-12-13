@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import FormationList from '../../datas/FormationList.json';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './ArrayFormationComponent.css'
 
-const ArrayFormationComponent = () => {
+const ArrayFormationComponent = ({ listformation, updateFormationList, editFormation, modifFormation, setModifFormation}) => {
 
-    const [listformation, updateFormationList] = useState(FormationList);
+    // Function pour supprimer une formation
+    function deleteFormation(index) {
+        console.log(index)
+        if (window.confirm(`Etes-vous sur de vouloir supprimer la formation n°${index + 1}? Cette action est irréversible !`)) {
+            let newFormationList = listformation.filter((formation) => formation.id - 1 !== index);
+            updateFormationList(newFormationList)
+        }
+    }
 
     return (
         <div>
+            <h2 style={{ textAlign: 'center', margin: '40px 0px' }}>Liste des formations</h2>
             <table className='table'>
                 <thead>
                     <tr>
@@ -19,11 +26,11 @@ const ArrayFormationComponent = () => {
                         <th scope='col' className='colonne'>Prix</th>
                         <th scope='col' className='colonne'>Lieux</th>
                         <th scope='col' className='colonne'>Durée</th>
+                        <th scope='col' className='colonne'>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {listformation.map((formation, index) => (
-
                         <tr key={index}>
                             <th>{index + 1}</th>
                             <td>{formation.formationName}</td>
@@ -31,6 +38,10 @@ const ArrayFormationComponent = () => {
                             <td>{formation.price} €</td>
                             <td>{formation.lieux[0]} / {formation.lieux[1]}</td>
                             <td>{formation.duree} jours</td>
+                            <td>
+                                <FontAwesomeIcon icon={faPen} onClick={()=> editFormation(index)}/>
+                                <FontAwesomeIcon icon={faTrash} onClick={() => deleteFormation(index)} />
+                            </td>
                         </tr>
                     ))
                     }
