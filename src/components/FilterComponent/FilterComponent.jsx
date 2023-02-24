@@ -1,13 +1,13 @@
 import React from 'react';
-import './FilterComponent';
+import './FilterComponent.css';
 
 const FilterComponent = ({ activeCategory, setActiveCategory, categoryList, resetInput, activeSubCategory, setActivesubCategory, subCategoryList, resetsubInput }) => {
 
 
     return (
-        <div>
-            <div>
-                <select
+        <div className='filter-container' >
+            <div className="select">
+                <select 
                     name="category"
                     id="category"
                     value={activeCategory}
@@ -22,7 +22,8 @@ const FilterComponent = ({ activeCategory, setActiveCategory, categoryList, rese
                         )
                     }
                 </select>
-                <div >
+            
+                <div className="filter-buttons">
                     <button
                         onClick={() => resetInput()}>
                         Reset
@@ -30,7 +31,7 @@ const FilterComponent = ({ activeCategory, setActiveCategory, categoryList, rese
                 </div>
             </div>
             {activeCategory !== "" ?
-                <div >
+                <div className="select">
                     <select
                         name="subCategory"
                         id="subCategory"
@@ -46,7 +47,7 @@ const FilterComponent = ({ activeCategory, setActiveCategory, categoryList, rese
                             )
                         }
                     </select>
-                    <div>
+                    <div className="filter-buttons">
                         <button
                             onClick={() => resetsubInput()}>
                             Reset
