@@ -16,21 +16,16 @@ namespace webapi.Models
         public string Status { get; set; }
         public int Anciennete { get; set; }
         public int Note { get; set; }
-        public string SubCategory { get; }
+        public string? SubCategory { get; }
 
         public string Phone { get; set; }
 
-        public List<Formation> FormationsList { get; set; }
-
+        public List<Formation>? FormationsList { get; set; }
 
         public Formateur()
         {
             FormationsList = new List<Formation>();
         }
-
-
-
-
 
 
     }

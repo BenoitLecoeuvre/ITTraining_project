@@ -94,7 +94,7 @@ namespace webapi.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FormateurId")
+                    b.Property<int?>("FormateurId")
                         .HasColumnType("int");
 
                     b.Property<int>("Lieu")
@@ -175,7 +175,7 @@ namespace webapi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("FormationId")
+                    b.Property<int?>("FormationId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nom")
@@ -259,9 +259,7 @@ namespace webapi.Migrations
                 {
                     b.HasOne("webapi.Models.Formateur", "Formateur")
                         .WithMany("FormationsList")
-                        .HasForeignKey("FormateurId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FormateurId");
 
                     b.Navigation("Formateur");
                 });
@@ -281,9 +279,7 @@ namespace webapi.Migrations
                 {
                     b.HasOne("webapi.Models.Formation", "Formation")
                         .WithMany("TodoList")
-                        .HasForeignKey("FormationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FormationId");
 
                     b.Navigation("Formation");
                 });

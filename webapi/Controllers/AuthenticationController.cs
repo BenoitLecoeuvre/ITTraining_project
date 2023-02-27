@@ -83,20 +83,20 @@ namespace webapi.Controllers
         }
 
 
-        public async Task<IActionResult> RegisterFormateur([FromBody] Formateur formateur)
-        {
-            if (await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == formateur.Email) != null)
-                return BadRequest("Un compte avec cet email est déjà existant !");
+        //public async Task<IActionResult> RegisterFormateur([FromBody] Formateur formateur)
+        //{
+        //    if (await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == formateur.Email) != null)
+        //        return BadRequest("Un compte avec cet email est déjà existant !");
 
-            formateur.Password = EncryptPassword(formateur.Password);
-            formateur.Status = "user";
+        //    formateur.Password = EncryptPassword(formateur.Password);
+        //    formateur.Status = "user";
 
-            await _dbContext.Formateurs.AddAsync(formateur);
-            if (await _dbContext.SaveChangesAsync() > 0)
-                return Ok("Profil stagiaire enregistré");
-            return BadRequest("Erreur...");
+        //    await _dbContext.Formateurs.AddAsync(formateur);
+        //    if (await _dbContext.SaveChangesAsync() > 0)
+        //        return Ok("Profil stagiaire enregistré");
+        //    return BadRequest("Erreur...");
 
-        }
+        //}
 
 
 

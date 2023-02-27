@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrateur\\Desktop\\Version vs\\webapi\\webapi.csproj": {}
+    "C:\\Users\\Administrateur\\Desktop\\IT_Training_Version_Finale\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrateur\\Desktop\\Version vs\\webapi\\webapi.csproj": {
+    "C:\\Users\\Administrateur\\Desktop\\IT_Training_Version_Finale\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\Version vs\\webapi\\webapi.csproj",
+        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\IT_Training_Version_Finale\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\Administrateur\\Desktop\\Version vs\\webapi\\webapi.csproj",
+        "projectPath": "C:\\Users\\Administrateur\\Desktop\\IT_Training_Version_Finale\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrateur\\Desktop\\Version vs\\webapi\\obj\\",
+        "outputPath": "C:\\Users\\Administrateur\\Desktop\\IT_Training_Version_Finale\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.10.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.3, )"
@@ -99,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
