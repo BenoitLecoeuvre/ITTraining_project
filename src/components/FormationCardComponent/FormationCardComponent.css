@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 
-.img{
+.card.img{
     width: 350px;
     transform: translateX(-21px);
     margin-bottom: 15px;
