@@ -1,0 +1,44 @@
+.admin_buttons {
+    height: 67vh;
+    display : flex;
+    flex-flow : row wrap;
+    justify-content: space-around;
+}
+
+.button_div {
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+}
+
+.admin_button {
+    margin : 290px 50px 0 0;
+    padding: 30px;
+    border : none;
+    border-radius: 5px;
+    
+}
+
+.admin_add {
+    background-color: rgba(54, 145, 99, 0.877);
+}
+
+.admin_display {
+    background-color: rgba(252, 74, 74, 0.877);
+}
+
+.admin_todo {
+    background-color: rgb(40, 44, 52);
+}
+
+.admin_formhistory {
+    background-color: #3794eb;
+}
+
+.display_txt {
+ display: none;
+}
+
+.display_txt:hover {
+    display: inline;
+}
