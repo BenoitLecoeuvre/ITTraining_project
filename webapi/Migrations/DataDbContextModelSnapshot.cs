@@ -30,18 +30,21 @@ namespace webapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Anciennete")
+                    b.Property<int?>("Anciennete")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Entreprise")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Note")
+                    b.Property<int?>("Note")
                         .HasColumnType("int");
 
                     b.Property<string>("Password")
@@ -58,6 +61,9 @@ namespace webapi.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubCategory")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -237,6 +243,9 @@ namespace webapi.Migrations
             modelBuilder.Entity("webapi.Models.Apprenant", b =>
                 {
                     b.HasBaseType("webapi.Models.Utilisateur");
+
+                    b.Property<string>("Entreprise")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("FormationId")
                         .HasColumnType("int");

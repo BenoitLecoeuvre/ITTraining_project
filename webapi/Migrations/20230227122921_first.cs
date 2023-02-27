@@ -24,6 +24,7 @@ namespace webapi.Migrations
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Anciennete = table.Column<int>(type: "int", nullable: false),
                     Note = table.Column<int>(type: "int", nullable: false),
+                    SubCategory = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

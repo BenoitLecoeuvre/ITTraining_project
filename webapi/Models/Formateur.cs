@@ -14,9 +14,10 @@ namespace webapi.Models
         public string Password { get; set; }
 
         public string Status { get; set; }
-        public int Anciennete { get; set; }
-        public int Note { get; set; }
-        public string SubCategory { get; }
+        public int? Anciennete { get; set; }
+        public int? Note { get; set; }
+        public string? SubCategory { get; set; }
+        public string? Entreprise { get; set; }
 
         public string Phone { get; set; }
 

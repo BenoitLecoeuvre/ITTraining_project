@@ -15,7 +15,7 @@ namespace webapi.Models
 
         public List<Message>? MessagesList { get; set; }
 
-
+        public string? Entreprise  { get; set; }
         public Apprenant()
         {
             MessagesList = new List<Message>();
