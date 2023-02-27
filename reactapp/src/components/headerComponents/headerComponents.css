@@ -15,9 +15,16 @@
     border: 3px solid;
 }
 
-.header h1{
+.header h1 {
     text-align: center;
     margin-top: 0;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3em;
+}
+
+.credo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
 }
 
 .banner .head_login {

@@ -21,10 +21,16 @@
     font-weight: bold;
 }
 
-.img{
+.div_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
     width: 350px;
-    transform: translateX(-21px);
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .duree{

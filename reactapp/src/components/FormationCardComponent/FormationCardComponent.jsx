@@ -13,8 +13,8 @@ const FormationCardComponent = ({ formation, index }) => {
                 <span><b>{formation.formationName}</b></span>
             </div>
 
-            <div>
-                <img className='img' src={formation.logo} alt="Formation-logo" />
+            <div className='div_logo'>
+                <img className='logo' src={formation.logo} alt="Formation-logo" />
             </div>
 
 

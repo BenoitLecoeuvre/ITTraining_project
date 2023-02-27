@@ -16,8 +16,8 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
                         <span><b>{formationData.formationName}</b></span>
                     </div>
 
-                    <div>
-                        <img className='img' src={formationData.logo} alt="Formation-logo" />
+                    <div className='formationLogo'>
+                        <img className='dataLogo' src={formationData.logo} alt="Formation-logo" />
                     </div>
                 </div>
 
