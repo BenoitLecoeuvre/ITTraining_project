@@ -31,7 +31,7 @@ const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
         </div>
       </section>
 
-      <section id="contact_form" class={changeForm} >
+      <section id="contact_form" className={changeForm} >
         <form action="" method="post">
           <div className="formflex">
             <div>
