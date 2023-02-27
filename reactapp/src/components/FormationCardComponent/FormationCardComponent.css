@@ -1,0 +1,59 @@
+.card{
+    border-radius: 25px;   
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #0E2A39;
+    color: #0E2A39;
+    cursor: pointer;
+}
+
+.formation{
+    max-width: 350px;
+    height: 630px;
+    max-height: 700px;
+}
+.card-title{
+    display: flex;
+    font-size: 25px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.img{
+    width: 350px;
+    transform: translateX(-21px);
+    margin-bottom: 15px;
+}
+
+.duree{
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+.description {
+    margin-bottom: 15px;
+}
+
+.difficulty{
+    display:flex;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+.diff-label{
+    margin-right: 10px;
+}
+.stars{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price {
+    font-size: 20px;
+}

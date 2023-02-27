@@ -1,0 +1,60 @@
+.category{
+    display:flex;
+    flex-direction: row;
+}
+
+.filter-container {
+    display: flex;
+    flex-flow: column;
+}
+
+/* .filter-buttons button {
+    margin: 20px 20px 20px 0;
+    width: 15vw;
+    padding: 2px;
+    height: 50px;
+    color: white;
+    background-color: #3794eb;
+    border: 1px solid #3794eb;
+    border-radius: 6px;
+} */
+
+select {
+    /* Reset Select */
+    display: flex;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    font-weight: 700;
+    background-color: #3794eb;
+    background-image: none;
+    cursor: pointer;
+  }
+
+  /* Custom Select wrapper */
+  .select {
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #3794eb;
+    transition: .25s all ease;
+    pointer-events: none;
+  }

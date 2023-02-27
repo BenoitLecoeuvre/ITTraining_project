@@ -1,0 +1,26 @@
+.navigation{
+    background-color: #F8F8F8;
+    text-align: center;
+}
+
+.navigation .bouton{
+    margin: 5px 100px;
+    text-decoration: none;
+    transition: transform 0.2s;
+    color: black;
+    background-color: #F8F8F8;
+    border: none;
+    font-weight: bold;
+    font-size: 120%;
+    font-family: 'Bebas Neue', cursive;
+    opacity: 80%;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navigation .bouton:hover{
+    transform: translateY(-20%);
+}

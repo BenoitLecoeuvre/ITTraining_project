@@ -1,0 +1,25 @@
+﻿Test pour ajout stagiaire : fonctionne
+{
+  "id": 0,
+  "nom": "MAN",
+  "prenom": "Iron",
+  "email": "iron.man@gmail.com",
+  "password": "Pass01234+",
+  "phone": "0123456789",
+  "status" :""
+}
+jwt : 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdGFnaWFpcmUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJleHAiOjE2NzgxMDc1MzgsImlzcyI6Iml0dHJhaW5pbmciLCJhdWQiOiJpdHRyYWluaW5nIn0.wPd9A5q_XSPO-OIi8TfaUah0ykP9y-uyG-MtnfdU8Ao
+
+Test pour ajout admin
+{
+  "id": 0,
+  "nom": "ANTUNES",
+  "prenom": "Amandine",
+  "email": "amandine.antunes@gmail.com",
+  "password": "Pass01234+",
+  "phone": "0123456789",
+  "status" :""
+}
+jwt :
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMSIsImV4cCI6MTY3ODEwNzY0MiwiaXNzIjoiaXR0cmFpbmluZyIsImF1ZCI6Iml0dHJhaW5pbmcifQ.LBhVdpEPJWq1hHxKplg1gkA2_bd62-eAXntPAzkyPT4
