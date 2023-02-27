@@ -35,7 +35,6 @@ const HomeView = () => {
                         lors du processus ;). Avec nous vous êtes assurés d'avoir une formation complète, intensive avec un emploi à la clé !
                     </p>
                 </div>
-
             </div>
 
         </div>
