@@ -21,10 +21,21 @@
     font-weight: bold;
 }
 
-.card.img{
+/* b{
+    margin: 2px;
+} */
+
+.div_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    height: 350px;
     width: 350px;
-    transform: translateX(-21px);
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .duree{
