@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "user":"Arthur Joho",
+        "email":"arthur.joho@gmail.com",
+        "password":"arthurSuperBeau",
+        "status":"3"
+        
+    },
+    {
+        "id": 2,
+        "user":"Amicia Philibert",
+        "email":"amicia.philibert@gmail.com",
+        "password":"amimi",
+        "status":"3"
+    },
+    {
+        "id": 3,
+        "user":"Camille Vokas",
+        "email":"camille.vokas@yahoo.fr",
+        "password":"vokas1234",
+        "status":"3"      
+    }
+]

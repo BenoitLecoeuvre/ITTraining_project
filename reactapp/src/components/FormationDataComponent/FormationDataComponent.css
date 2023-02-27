@@ -1,0 +1,40 @@
+.section{
+    display: flex;
+    margin-top: 15px;
+    /* text-align: center; */
+    justify-content: center;
+}
+
+.bloc{
+    text-align: center;
+    justify-content: center;
+}
+
+.img{
+    height: 300px;
+    margin: 20px;
+}
+
+.detail{
+    margin: 20px;
+}
+
+.lieux{
+    margin: 20px;
+}
+
+.dates{
+    margin: 20px;
+}
+
+.inscription{
+    margin: 30px;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.retour{
+    text-decoration: none;
+}
