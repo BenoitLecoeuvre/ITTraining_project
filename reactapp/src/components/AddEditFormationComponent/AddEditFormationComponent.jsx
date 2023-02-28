@@ -76,8 +76,12 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
         <div>
             <form onSubmit={createFormationHandler} id="addFormationForm">
                 <div className='formContainer'>
-                    <label htmlFor='formationName'>Nom de la formation : </label>
+
+                    
+                    <label className='nomFormation' htmlFor='formationName'>Nom de la formation : </label>
                     <input type="text" placeholder={category} name='formationName' id='formationName' />
+
+
                     <div>
                         <label htmlFor='formationCategory' className='labelSelect'>Sélectionner une catégorie : </label>
                         <select name='category' id='category'>
