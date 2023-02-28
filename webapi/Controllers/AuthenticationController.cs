@@ -107,7 +107,7 @@ namespace webapi.Controllers
         [HttpPost("loginFormateur")]
         public async Task<IActionResult> LoginFormateur([FromBody] LoginRequestDTO login)
         {
-            //login.PassWord = EncryptPassword(login.PassWord);
+            login.PassWord = EncryptPassword(login.PassWord);
             var utilisateur = await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
 
             if (utilisateur == null)

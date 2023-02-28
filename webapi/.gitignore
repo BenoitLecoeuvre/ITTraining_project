@@ -13,6 +13,8 @@ obj/
 packages/
 Tools/
 Migrations/
+*.mdf
+*.ldf
 
 # User-specific files
 *.rsuser
