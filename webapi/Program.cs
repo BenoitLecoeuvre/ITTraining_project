@@ -16,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IRepository<Formation>, FormationRepository>();
 builder.Services.AddScoped<IRepository<Formateur>, FormateurRepository>();
 
-// permet de récupérer la section AppSetings du fichier appsettings.json
+// permet de rï¿½cupï¿½rer la section AppSetings du fichier appsettings.json
 var appSettingsSection = builder.Configuration.GetSection(nameof(AppSettings));
 // on l'enregistre dans les services
 builder.Services.Configure<AppSettings>(appSettingsSection);
@@ -62,7 +62,7 @@ builder.Services.AddAuthorization(options =>
     });
 });
 
-// Au cas où
+// Au cas oï¿½
 builder.Services.AddControllers().AddJsonOptions(x =>
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 

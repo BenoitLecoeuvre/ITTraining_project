@@ -268,7 +268,9 @@ namespace webapi.Migrations
                 {
                     b.HasOne("webapi.Models.Formateur", "Formateur")
                         .WithMany("FormationsList")
-                        .HasForeignKey("FormateurId");
+                        .HasForeignKey("FormateurId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Formateur");
                 });
@@ -288,7 +290,9 @@ namespace webapi.Migrations
                 {
                     b.HasOne("webapi.Models.Formation", "Formation")
                         .WithMany("TodoList")
-                        .HasForeignKey("FormationId");
+                        .HasForeignKey("FormationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Formation");
                 });
@@ -297,7 +301,9 @@ namespace webapi.Migrations
                 {
                     b.HasOne("webapi.Models.Formation", "Formation")
                         .WithMany("ApprenantsList")
-                        .HasForeignKey("FormationId");
+                        .HasForeignKey("FormationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Formation");
                 });

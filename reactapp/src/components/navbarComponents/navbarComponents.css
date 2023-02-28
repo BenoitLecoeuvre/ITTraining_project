@@ -1,26 +1,30 @@
-.navigation{
+.navigation {
     background-color: #F8F8F8;
     text-align: center;
+    border-bottom: solid 3px rgb(40, 44, 52);
 }
 
-.navigation .bouton{
-    margin: 5px 100px;
-    text-decoration: none;
-    transition: transform 0.2s;
-    color: black;
-    background-color: #F8F8F8;
-    border: none;
-    font-weight: bold;
-    font-size: 120%;
-    font-family: 'Bebas Neue', cursive;
-    opacity: 80%;
-}
+    .navigation .bouton {
+        width: 300px;
+        height: 60px;
+        text-decoration: none;
+        transition: transform 0.2s;
+        color: #0e2a39;
+        background-color: #F8F8F8;
+        border: none;
+        font-weight: bold;
+        font-size: 120%;
+        font-family: 'Bebas Neue', cursive;
+        opacity: 80%;
+    }
 
-.navigation a {
-    text-decoration: none;
-    color: inherit;
-}
+    .navigation a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-.navigation .bouton:hover{
-    transform: translateY(-20%);
-}
+    .navigation .bouton:hover {
+        /* transform: translateY(-20%); */
+        color: #F8F8F8;
+        background-color: #0e2a39;
+    }
