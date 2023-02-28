@@ -41,17 +41,12 @@ namespace webapi.Controllers
             return BadRequest("Une erreur est survenue...");
         }
 
-        //[HttpPost("/formations/{id}")]
-        //public async Task<IActionResult> AddFormateurToFormation([FromBody] int id, Formation formation, Formateur formateur)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         [HttpPut("/formations/{id}")]
-        public async Task<IActionResult> UpdateFormation(int id, [FromBody] Formation formation)
+        public async Task<IActionResult> UpdateFormation(int id, [FromBody] Formation formation, int? formateurId, int? todoId)
         {
-            var formationFromDb = _dbContext.Formations.FirstOrDefault(p => p.Id == id);
 
+            // Modification des éléments principaux de la formation
+            var formationFromDb = _dbContext.Formations.FirstOrDefault(p => p.Id == id);
             if (formationFromDb == null)
             {
                 return NotFound("Pas de formation à cet ID");
@@ -69,10 +64,34 @@ namespace webapi.Controllers
                 formationFromDb.Lieu = formation.Lieu;
                 formationFromDb.StartDate = formation.StartDate;
                 formationFromDb.Logo = formation.Logo;
-                formationFromDb.Formateur = formation.Formateur;
                 formationFromDb.Status = formation.Status;
                 formationFromDb.ApprenantsList = formation.ApprenantsList;
                 formationFromDb.TodoList = formation.TodoList;
+
+                // ajout d'un formateur à la formation (optionnel)
+                var formateurFromDb = _dbContext.Formateurs.FirstOrDefault(f => f.Id == formateurId);
+                if (formateurFromDb == null)
+                {
+                    return NotFound("Pas de formateur à cet ID");
+                }
+                else
+                {
+                    formationFromDb.Formateur = formateurFromDb;
+                    formationFromDb.Formateur.Prenom = formateurFromDb.Prenom;
+                    formationFromDb.Formateur.Nom = formateurFromDb.Nom;
+                }
+
+                // Mise à jour de la TodoList
+                var todoFromDB = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId);
+                if (todoFromDB == null)
+                {
+                    return NotFound("Pas de Todo à cet ID");
+                }
+                else
+                {
+                    todoFromDB.Status = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
+                    //todoFromDB.Status = formation.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
+                }
 
                 if (_dbContext.SaveChanges() > 0)
                 {
@@ -80,7 +99,6 @@ namespace webapi.Controllers
                 }
                 else return BadRequest("Une erreur est survenue...");
             }
-
         }
 
         [HttpDelete("/formations/{id}")]
