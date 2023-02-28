@@ -385,3 +385,4 @@ C:\Users\Administrateur\Desktop\Test\webapi\obj\Debug\net7.0\scopedcss\bundle\we
 C:\Users\Administrateur\Desktop\Test\webapi\obj\Debug\net7.0\webapi.csproj.CopyComplete
 C:\Users\Administrateur\Desktop\Test\webapi\obj\Debug\net7.0\webapi.genruntimeconfig.cache
 C:\Users\Administrateur\Desktop\Test\webapi\obj\Debug\net7.0\ref\webapi.dll
+C:\Users\Administrateur\Desktop\Test\webapi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.Design.dll

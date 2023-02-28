@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using webapi.Helpers;
 using webapi.Models;
 using webapi.Tools;
 
@@ -10,6 +11,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = Constants.RoleAdmin)]
     public class UtilisateurController : ControllerBase
     {
 
@@ -55,8 +57,9 @@ namespace webapi.Controllers
             return BadRequest("Erreur");
         }
 
-        // Un admin pourrait aussi créer un profil stagiaire
+        // Création d'un profil stagiaire
         [HttpPost("[action]")]
+        [AllowAnonymous]
         public async Task<IActionResult> AddStagiaire([FromBody] Apprenant apprenant)
         {
             // On vérifie s'il existe déjà un compte avec cet email
@@ -92,7 +95,6 @@ namespace webapi.Controllers
         }
 
         // Modification d'un profil stagiaire
-        // Supprimer une formation à un stagiaire revient à faire un update du stagiaire
         [HttpPut("[action]")]
         public async Task<IActionResult> UpdateStagiaire(int id, [FromBody] Apprenant apprenant)
         {
@@ -146,21 +148,28 @@ namespace webapi.Controllers
         }
 
 
-        //// ////// A tester
         // Ajouter une formation à un stagiaire
         [HttpPost("[action]")]
+        [Authorize(Roles = Constants.RoleUser + "," + Constants.RoleAdmin)]
         public async Task<IActionResult> AddFormation(int stagiaireId, int formationId)
         {
-            var tmp = await _dbContext.Utilisateurs.FirstOrDefaultAsync(s => s.Id == stagiaireId);
+            var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(s => s.Id == stagiaireId);
             if (tmp == null) return BadRequest("Pas de profil à cet id");
+
+            if (tmp.Inscrit) return BadRequest("Stagiaire déjà inscrit à une formation");
 
             var formation = await _dbContext.Formations.FirstOrDefaultAsync(f => f.Id == formationId);
             if (formation == null) return BadRequest("Pas de formation à cet id");
 
+            if (formation.NbInscrit == 15) return BadRequest("Formation complète");
+
+            tmp.FormationId = formationId;
+            tmp.Inscrit = true;
+            formation.NbInscrit++;
+            if (await _dbContext.SaveChangesAsync() == 0) return BadRequest("Erreur");
+
             return Ok("Formation ajoutée");
         }
-
-
 
 
         [NonAction]

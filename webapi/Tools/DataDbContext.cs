@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
 using webapi.Models;
 
 namespace webapi.Tools
@@ -10,7 +11,7 @@ namespace webapi.Tools
 
         public DbSet<Message> Messages { get; set; }
 
-        public DbSet<Utilisateur> Utilisateurs { get;  set; }
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
 
         public DbSet<Formation> Formations { get; set; }
 
