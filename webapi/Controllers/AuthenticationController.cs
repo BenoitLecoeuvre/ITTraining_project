@@ -35,7 +35,7 @@ namespace webapi.Controllers
             if (await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == apprenant.Email) != null)
                 return BadRequest("Un compte avec cet email est déjà existant !");
 
-            apprenant.Password = EncryptPassword(apprenant.Password);
+            //apprenant.Password = EncryptPassword(apprenant.Password);
             apprenant.Status = "user";
             apprenant.Inscrit = false;
 
@@ -53,7 +53,7 @@ namespace webapi.Controllers
             if (await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == utilisateur.Email) != null)
                 return BadRequest("Un compte avec cet email est déjà existant !");
 
-            utilisateur.Password = EncryptPassword(utilisateur.Password);
+            //utilisateur.Password = EncryptPassword(utilisateur.Password);
             utilisateur.Status = "admin";
 
             await _dbContext.Utilisateurs.AddAsync(utilisateur);
@@ -67,7 +67,7 @@ namespace webapi.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO login)
         {
-            login.PassWord = EncryptPassword(login.PassWord);
+            //login.PassWord = EncryptPassword(login.PassWord);
             var utilisateur = await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
 
             if (utilisateur == null)
@@ -107,7 +107,7 @@ namespace webapi.Controllers
         [HttpPost("loginFormateur")]
         public async Task<IActionResult> LoginFormateur([FromBody] LoginRequestDTO login)
         {
-            login.PassWord = EncryptPassword(login.PassWord);
+            //login.PassWord = EncryptPassword(login.PassWord);
             var utilisateur = await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
 
             if (utilisateur == null)
@@ -152,35 +152,35 @@ namespace webapi.Controllers
             if (await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == formateur.Email) != null)
                 return BadRequest("Un compte avec cet email est déjà existant !");
 
-        //    formateur.Password = EncryptPassword(formateur.Password);
-        //    formateur.Status = "user";
+            //    formateur.Password = EncryptPassword(formateur.Password);
+            //    formateur.Status = "user";
 
             await _dbContext.Formateurs.AddAsync(formateur);
             if (await _dbContext.SaveChangesAsync() > 0)
                 return Ok("Profil formateur enregistré");
             return BadRequest("Erreur...");
 
-        //}
+            //}
 
 
 
 
-        [NonAction]
-        private string EncryptPassword(string? password)
-        {
-            if (string.IsNullOrEmpty(password)) return "";
-            return Convert.ToBase64String(Encoding.UTF8.GetBytes(password + _securityKey));
+            //[NonAction]
+            //private string EncryptPassword(string? password)
+            //{
+            //    if (string.IsNullOrEmpty(password)) return "";
+            //    return Convert.ToBase64String(Encoding.UTF8.GetBytes(password + _securityKey));
+            //}
+
+
+            //[NonAction]
+            //private string DecryptPassword(string? cryptedString)
+            //{
+            //    if (string.IsNullOrEmpty(cryptedString)) return "";
+            //    string decryptedString = Encoding.UTF8.GetString(Convert.FromBase64String(cryptedString));
+            //    return decryptedString.Substring(0, decryptedString.Length - _securityKey!.Length);
+            //}
+
         }
-
-
-        [NonAction]
-        private string DecryptPassword(string? cryptedString)
-        {
-            if (string.IsNullOrEmpty(cryptedString)) return "";
-            string decryptedString = Encoding.UTF8.GetString(Convert.FromBase64String(cryptedString));
-            return decryptedString.Substring(0, decryptedString.Length - _securityKey!.Length);
-        }
-
-
     }
 }

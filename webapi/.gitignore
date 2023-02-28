@@ -11,6 +11,7 @@ _ReSharper.*
 bin/
 obj/
 packages/
+Tools/
 
 # User-specific files
 *.rsuser
