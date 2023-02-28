@@ -1,41 +1,21 @@
-﻿Test pour ajout stagiaire : fonctionne
+﻿Profil admin
 {
   "id": 0,
-  "nom": "MAN",
-  "prenom": "Iron",
-  "email": "iron.man@gmail.com",
-  "password": "Pass01234+",
-  "phone": "0123456789",
-  "status" :""
-}
-
-
-test pour ajout formateur
-{
-  "id": 0,
-  "nom": "DE GALLES",
-  "prenom": "Perceval",
-  "email": "perceval.degalles@gmail.com",
-  "password": "Pass0123+",
-  "status": "user",
-  "anciennete": 5,
-  "note": 4,
-  "subCategory": "Agilité",
-  "phone": "0123456789"
-}
-
-
-
-test pour ajout admin
-{
-  "id": 0,
-  "nom": "Antunes",
+  "nom": "ANTUNES",
   "prenom": "Amandine",
   "email": "amandine.antunes@gmail.com",
   "password": "Pass0123+",
-  "Status":""
+  "status": "string"
 }
 
 jwt : 
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTY3ODExMjQ0NiwiaXNzIjoiaXR0cmFpbmluZyIsImF1ZCI6Iml0dHJhaW5pbmcifQ.gPL5vHJ0_ygX4O5d0ppxUTPyS519kEuAlGNPdc68XJA
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMyIsImV4cCI6MTY3ODE5ODUyNCwiaXNzIjoiaXR0cmFpbmluZyIsImF1ZCI6Iml0dHJhaW5pbmcifQ.kLVASSiIoAV9vBo6OTUDP9jgCZxEt2y47vfRK_lvrS8
 
+Profil stagiaire
+{
+"email": "test.@test.fr",
+"password":"Pass0123+"
+}
+
+jwt:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIyIiwiZXhwIjoxNjc4MTk5MjYxLCJpc3MiOiJpdHRyYWluaW5nIiwiYXVkIjoiaXR0cmFpbmluZyJ9.qQjS_Mahccvw5A1QHvYJQyQdfq2vYPpbDs81kWTX7oQ
