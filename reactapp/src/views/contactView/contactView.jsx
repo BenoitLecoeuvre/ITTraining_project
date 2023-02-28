@@ -1,7 +1,7 @@
 import React from "react";
 import "./contactView.css";
 
-const ContactView = ({setName, setFirstname, setFirm, setMail, setPhone, setMessage}) => {
+const ContactView = ({ setName, setFirstname, setFirm, setMail, setPhone, setMessage }) => {
 
   return (
     <section id="contact_form">
@@ -22,7 +22,7 @@ const ContactView = ({setName, setFirstname, setFirm, setMail, setPhone, setMess
           </div>
           <div>
             <label htmlFor="firm">Société</label>
-            <input id="firm" name="firm" type="text" onChange={(e) => setFirm(e.target.value)}/>
+            <input id="firm" name="firm" type="text" onChange={(e) => setFirm(e.target.value)} />
           </div>
         </div>
         <div className="formflex_mail">

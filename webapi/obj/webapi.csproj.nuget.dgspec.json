@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj": {}
+    "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj": {
+    "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj",
+        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj",
+        "projectPath": "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\obj\\",
+        "outputPath": "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,6 +70,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

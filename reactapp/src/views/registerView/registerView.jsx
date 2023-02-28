@@ -13,7 +13,7 @@ const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
     <main>
     <div id="register">
       <React.Fragment>
-      <section id="contact_header">
+      <section id="register_header">
         <h1>Vous souhaitez nous rejoindre ? Inscrivez-vous ! </h1>
         <div className="shadow">
           <div></div>
@@ -31,24 +31,36 @@ const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
         </div>
       </section>
 
-      <section id="contact_form" class={changeForm} >
+      <section id="register_form" class={changeForm} >
         <form action="" method="post">
           <div className="formflex">
-            <div>
-              <label htmlFor="name">E-mail</label>
-              <input type="text" id="email" name="email" required />
+            <div className="formflex_sub">
+              <div>
+                <label htmlFor="email">E-mail</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div>
+                <label htmlFor="phone">Téléphone</label>
+                <input type="text" id="phone" name="email" required />
+              </div>
+              <div>
+                <label htmlFor="firm">Entreprise <i>(optionnel)</i></label>
+                <input type="text" id="firm" name="firm" required />
+              </div>
             </div>
-            <div>
-              <label htmlFor="firstname">Entreprise</label>
-              <input type="text" id="firm" name="firm" required />
-            </div>
-            <div>
-              <label htmlFor="firstname">Nom d'utilisateur</label>
-              <input type="text" id="username" name="username" required />
-            </div>
-            <div>
-              <label htmlFor="firm">Mot de passe</label>
-              <input id="password" name="password" type="password" />
+            <div className="formflex_sub formflex_sub2">
+              <div>
+                <label htmlFor="username">Nom</label>
+                <input type="text" id="lastname" name="lastname" required />
+              </div>
+              <div>
+                <label htmlFor="firstname">Prénom</label>
+                <input type="text" id="firstname" name="firstname" required />
+              </div>
+              <div>
+                <label htmlFor="password">Mot de passe</label>
+                <input id="password" name="password" type="password" />
+              </div>
             </div>
           </div>
 

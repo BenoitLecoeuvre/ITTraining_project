@@ -1,4 +1,4 @@
-/* CONTACT */
+/* REGISTER */
 
 #register {
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-#contact_form, #contact_header {
+#register_form, #register_header {
     font-family: Arial, Helvetica, sans-serif;
     color: #0e2a39;
     display: flex;
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-#contact_header .success_state{
+#register_header .success_state{
     margin-top: 8px;
     background-color: #5CB85C;
     border: 3px solid #9DCCB6;
@@ -25,80 +25,64 @@
     width: 50%
 }
 
-#contact_header h1 {
+#register_header h1 {
     text-align: center;
     margin: 50px 0 20px 0;
 }
 
-#contact_header div {
+#register_header div {
     display: flex;
     justify-content: center;
 }
 
-#contact_header .shadow div {
+#register_header .shadow div {
     width: 12vw;
     height: 20px;
     border-top: #3794eb solid;
     margin-bottom: 20px;
 }
 
-#contact_form form .formflex {
+#register_form form .formflex {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-#contact_form form .formflex div {
+#register_form form .formflex .formflex_sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+#register_form form .formflex .formflex_sub div {
     display: flex;
     flex-direction: column;
     width: 14vw;
+    margin-top: 20px;
 }
 
-#contact_form form .formflex div textarea {
-    width: 100%;
+#register_form form .formflex .formflex_sub2 div {
+ width: 11.5vw;
 }
 
-#contact_form form .formflex_mail {
-    display: flex;
-    justify-content: center;
-}
-
-#contact_form form .formflex_mail div {
-    display: flex;
-    flex-direction: column;
-    width: 21vw;
-}
-
-#contact_form form .formflex_message {
-    display: flex;
-    justify-content: center;
-}
-
-#contact_form form .formflex_message div {
-    display: flex;
-    flex-direction: column;
-    width: 42vw;
-}
-
-#contact_form form .formflex div input {
+#register_form form .formflex div input {
     margin: 0 20px 20px 0;
 }
 
-#contact_form form .formflex_mail div input {
-    margin: 0 20px 20px 0;
-}
-
-#contact_form form .formflex_message div textarea {
-    margin: 0 20px 20px 0;
-}
-
-#contact_form form label {
+#register_form form label {
     font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#register_form form label i{
+    font-weight: 400;
     margin-bottom: 5px;
 }
 
 #register button {
     margin: 20px 20px 20px 0;
-    width: 42vw;
+    width: 25vw;
     padding: 2px;
     height: 50px;
     color: white;
@@ -115,41 +99,50 @@
 
 .apprenant {
     width: 60%;
-    border: 3px solid #3794eb;
+    border: 5px solid #3794eb;
+    border-radius: 5px;
     margin: 50px 0 10px;
-    padding: 100px 0 70px;
+    padding: 80px 0 70px;
 }
 .formateur {
     width: 60%;
-    border: 3px solid #c08da8;
+    border: 5px solid #d4a2bd;
+    border-radius: 5px;
     margin: 50px 0 10px;
-    padding: 100px 0 70px;
+    padding: 80px 0 70px;
 }
 
-#contact_form .form_submit .register_button {
+#register_form .form_submit .register_button {
+    margin-top: 40px;
+    width: 25vw;
     background-color: #0e2a39;
     border: 1px solid #0e2a39;
 }
-#contact_form .form_submit .register_button:hover {
+#register_form .form_submit .register_button:hover {
     background-color: #133b50;
     border: 1px solid #17465f;
 }
 
-#contact_header .button2 {
-    background-color: #916C80;
-    border: 1px solid #916C80;
+#register_header .button2 {
+    background-color: #d4a2bd;
+    border: 1px solid #d4a2bd;
 }
-#contact_header .button2:hover {
+#register_header .button2:hover {
     background-color: #6d5160;
     border: 1px solid #775969;
 }
 
-#contact_form form .form_submit {
+#register_form form .form_submit {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-#contact_form form .form_submit div {
-    display: flex;
-    width: 42vw;
+#register_form #email, #register_form #phone, #register_form #firm {
+    width: 250px;
+}
+
+#register_form #lastname, #register_form #firstname, #register_form #password {
+    width: 200px;
+
 }
