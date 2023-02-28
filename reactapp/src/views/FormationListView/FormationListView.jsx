@@ -62,6 +62,9 @@ const FormationListView = () => {
 
     return editFormations ? (
         <div>
+
+            
+
             <FilterComponent
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} categoryList={categoryList} resetInput={resetInput}
                 activeSubCategory={activeSubCategory} setActivesubCategory={setActivesubCategory} subCategoryList={subCategoryList} resetsubInput={resetsubInput} />
