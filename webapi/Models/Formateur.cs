@@ -21,17 +21,12 @@ namespace webapi.Models
 
         public string Phone { get; set; }
 
-        public List<Formation> FormationsList { get; set; }
-
+        public List<Formation>? FormationsList { get; set; }
 
         public Formateur()
         {
             FormationsList = new List<Formation>();
         }
-
-
-
-
 
 
     }

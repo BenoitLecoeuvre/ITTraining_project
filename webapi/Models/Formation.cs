@@ -33,14 +33,14 @@ namespace webapi.Models
 
         public int NbInscrit { get; set; }
 
-        public List<Todo> TodoList { get; set; }
+        public List<Todo>? TodoList { get; set; }
 
-        public List<Apprenant> ApprenantsList { get; set; }
+        public List<Apprenant>? ApprenantsList { get; set; }
 
         [ForeignKey(nameof(FormateurId))]
-        public Formateur Formateur { get; set; }
+        public Formateur? Formateur { get; set; }
 
-        public int FormateurId { get; set; }
+        public int? FormateurId { get; set; }
 
         public enum LieuCentre
         {

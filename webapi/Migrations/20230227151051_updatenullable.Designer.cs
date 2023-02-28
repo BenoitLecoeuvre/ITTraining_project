@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webapi.Tools;
 
@@ -11,9 +12,11 @@ using webapi.Tools;
 namespace webapi.Migrations
 {
     [DbContext(typeof(DataDbContext))]
-    partial class DataDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230227151051_updatenullable")]
+    partial class updatenullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,21 +33,18 @@ namespace webapi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("Anciennete")
+                    b.Property<int>("Anciennete")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Entreprise")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Note")
+                    b.Property<int>("Note")
                         .HasColumnType("int");
 
                     b.Property<string>("Password")
@@ -61,9 +61,6 @@ namespace webapi.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SubCategory")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -243,9 +240,6 @@ namespace webapi.Migrations
             modelBuilder.Entity("webapi.Models.Apprenant", b =>
                 {
                     b.HasBaseType("webapi.Models.Utilisateur");
-
-                    b.Property<string>("Entreprise")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("FormationId")
                         .HasColumnType("int");

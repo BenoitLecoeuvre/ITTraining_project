@@ -6,10 +6,15 @@ using webapi.Helpers;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
-
+using Microsoft.EntityFrameworkCore;
+using FluentAssertions.Common;
+using webapi.Models;
+using webapi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IRepository<Formation>, FormationRepository>();
+builder.Services.AddScoped<IRepository<Formateur>, FormateurRepository>();
 
 // permet de récupérer la section AppSetings du fichier appsettings.json
 var appSettingsSection = builder.Configuration.GetSection(nameof(AppSettings));
@@ -18,11 +23,11 @@ builder.Services.Configure<AppSettings>(appSettingsSection);
 
 AppSettings appSettings = appSettingsSection.Get<AppSettings>();
 
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+builder.Services.AddDbContext<DataDbContext>(options => options.UseSqlServer(connectionString));
+
 
 // Add services to the container.
-
-builder.Services.AddControllers();
-builder.Services.AddDbContext<DataDbContext>();
 
 
 var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
