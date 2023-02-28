@@ -5,16 +5,18 @@
     justify-content: space-around;
 }
 
+.button_div {
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+}
+
 .admin_button {
-    margin : 290px 0 0 0;
+    margin : 290px 50px 0 0;
     padding: 30px;
     border : none;
     border-radius: 5px;
-}
-
-.admin_button:hover{
-    transform: translateY(-5%);
-    cursor: pointer;
+    
 }
 
 .admin_add {
