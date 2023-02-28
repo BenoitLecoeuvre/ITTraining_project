@@ -4,8 +4,30 @@
     margin: 20px;
 }
 
+.nomFormation, .formationCat{
+    margin: 10px;
+}
+
+.labelSelect{
+    font-family: 'Bebas Neue', cursive;
+}
+
+.formationName{
+    font-family: 'Bebas Neue', cursive;
+    margin-right: 3px;
+}
+
+.description, .formationDure, .formationPrix, .formationDifficulty, .formationLieux,
+.formationDate, .addFormationLogo{
+    margin: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+
+
 #formationName{
-    width: 100%;
+    width: 50%;
 }
 
 #description{

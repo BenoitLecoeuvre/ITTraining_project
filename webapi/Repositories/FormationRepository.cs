@@ -38,6 +38,7 @@ namespace webapi.Repositories
             return await _dbContext.Formations.FindAsync(id);
         }
 
+
         public async Task<bool> Update(Formation entity)
         {
             var formationfromDB = await _dbContext.Formations.FindAsync(entity.Id);
@@ -73,5 +74,7 @@ namespace webapi.Repositories
 
             return true;
         }
+
+        
     }
 }
