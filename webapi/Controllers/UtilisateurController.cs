@@ -57,14 +57,15 @@ namespace webapi.Controllers
             return BadRequest("Erreur");
         }
 
-        // Création d'un profil stagiaire
+        // Création d'un profil stagiaire par un admin
+        // A voir si c'est pertinent de le garder
         [HttpPost("[action]")]
         [AllowAnonymous]
         public async Task<IActionResult> AddStagiaire([FromBody] Apprenant apprenant)
         {
             // On vérifie s'il existe déjà un compte avec cet email
             var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == apprenant.Email);
-            if (tmp != null) return BadRequest("Un comtpe avec cet email est déjà existant !");
+            if (tmp != null) return BadRequest("Un compte avec cet email est déjà existant !");
 
             apprenant.Password = EncryptPassword(apprenant.Password);
             apprenant.Status = "user";
