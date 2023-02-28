@@ -77,13 +77,13 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
             <form onSubmit={createFormationHandler} id="addFormationForm">
                 <div className='formContainer'>
 
-                    
-                    <label className='nomFormation' htmlFor='formationName'>Nom de la formation : </label>
-                    <input type="text" placeholder={category} name='formationName' id='formationName' />
+                    <div className='nomFormation'>
+                        <label className='formationName' htmlFor='formationName'>- Nom de la formation : </label>
+                        <input type="text" placeholder={category} name='formationName' id='formationName' />
+                    </div>
 
-
-                    <div>
-                        <label htmlFor='formationCategory' className='labelSelect'>Sélectionner une catégorie : </label>
+                    <div className='formationCat'>
+                        <label htmlFor='category' className='labelSelect'>- Sélectionner une catégorie : </label>
                         <select name='category' id='category'>
                             <option value="">--Sélectionner une catégorie--</option>
                             <option value="Compétences transverses">Compétences transverses</option>
@@ -91,8 +91,9 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                             <option value="SI et réseaux">SI et réseaux</option>
                         </select>
                     </div>
-                    <div>
-                        <label htmlFor='formationSubCategory' className='labelSelect'>Sélectionner une catégorie : </label>
+
+                    <div className='formationCat'>
+                        <label htmlFor='subCategory' className='labelSelect'>- Sélectionner une catégorie : </label>
                         <select name='subCategory' id='subCategory'>
                             <option value="">--Sélectionner une sous-catégorie--</option>
                             <option value="Agilité">Agilité</option>
@@ -104,18 +105,28 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                         </select>
                     </div>
 
-                    <label className='label'>Description : </label>
-                    <input type="text" placeholder='Ecrivez une description courte (moins de 100 caractères)' name='description' id='description' />
-                    <div>
-                        <label className='label'>Description détaillée : </label>
+                    <div className='description'>
+                        <label className='label' htmlFor='description'>- Description : </label>
+                        <input type="text" placeholder='Ecrivez une description courte (moins de 100 caractères)' name='description' id='description' />
+                    </div>
+
+                    <div className='description'>
+                        <label className='label' htmlFor='descriptionDetail'>- Description détaillée : </label>
                         <input type="text" placeholder='Ecrivez une description plus détaillée' name='descriptionDetail' id='descriptionDetail' />
                     </div>
-                    <label className='label'>Durée de la formation : </label>
-                    <input type="number" placeholder='nombre de jours' name='duree' id='duree' />
-                    <label className='label'>Prix : </label>
-                    <input type="number" placeholder='--- €' name='price' id='price' />
+
+                    <div className='formationDure'>
+                        <label className='label' htmlFor='duree'>- Durée de la formation : </label>
+                        <input type="number" placeholder='nombre de jours' name='duree' id='duree' />
+                    </div>
+
+                    <div className='formationPrix'>
+                        <label className='label' htmlFor='price'>- Prix : </label>
+                        <input type="number" placeholder='--- €' name='price' id='price' />
+                    </div>
+
                     <div className='formationDifficulty'>
-                        <label htmlFor='difficulty' className='labelSelect'>Sélectionner la difficulté : </label>
+                        <label htmlFor='difficulty' className='labelSelect'>- Sélectionner la difficulté : </label>
                         <select name='difficulty' id='difficulty'>
                             <option value="">----</option>
                             <option value="1">1</option>
@@ -125,21 +136,30 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                             <option value="5">5</option>
                         </select>
                     </div>
+
                     <div className='formationLieux'>
-                        <label htmlFor='lieux' className='labelSelect'>Sélectionner le centre qui propose cette formation : </label>
+                        <label htmlFor='lieux' className='labelSelect'>- Sélectionner le centre qui propose cette formation : </label>
                         <select name='lieux' id='lieux'>
                             <option value="">----</option>
                             <option value="Lille">Lille</option>
                             <option value="Paris">Paris</option>
                         </select>
                     </div>
-                    <label htmlFor='dates'>Sélectionnez une date de début de formation : </label>
-                    <input type='date' name='dates' id='dates' />
-                    <label className='logo'>Logo : </label>
-                    <input type="file" name='logo' id='logo' />
+
+                    <div className='formationDate'>
+                        <label htmlFor='dates'>- Sélectionnez une date de début de formation : </label>
+                        <input type='date' name='dates' id='dates' />
+                    </div>
+
+                    <div className='addFormationLogo'>
+                        <label className='logo' htmlFor='logo'>- Logo : </label>
+                        <input type="file" name='logo' id='logo' />
+                    </div>
+
                     <div>
                         <input type="submit" />
                     </div>
+
                 </div>
             </form>
         </div>
@@ -148,10 +168,14 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
         <div>
             <form onSubmit={updateFormationData} id="addFormationForm">
                 <div className='formContainer'>
-                    <label htmlFor='formationName'>Nom de la formation : </label>
-                    <input type="text" placeholder={formationName} name='formationName' id='formationName' />
-                    <div>
-                        <label htmlFor='formationCategory' className='labelSelect'>Sélectionner une catégorie : </label>
+
+                    <div className='nomFormation'>
+                        <label className='formationName' htmlFor='formationName'>- Nom de la formation : </label>
+                        <input type="text" placeholder={formationName} name='formationName' id='formationName' />
+                    </div>
+
+                    <div className='formationCat'>
+                        <label htmlFor='category' className='labelSelect'>- Sélectionner une catégorie : </label>
                         <select name='category' id='category'>
                             <option value="">{category}</option>
                             <option value="Compétences transverses">Compétences transverses</option>
@@ -159,8 +183,9 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                             <option value="SI et réseaux">SI et réseaux</option>
                         </select>
                     </div>
-                    <div>
-                        <label htmlFor='formationSubCategory' className='labelSelect'>Sélectionner une catégorie : </label>
+
+                    <div className='formationCat'>
+                        <label htmlFor='subCategory' className='labelSelect'>- Sélectionner une catégorie : </label>
                         <select name='subCategory' id='subCategory'>
                             <option value="">{subCategory}</option>
                             <option value="Agilité">Agilité</option>
@@ -172,18 +197,28 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                         </select>
                     </div>
 
-                    <label className='label'>Description : </label>
-                    <input type="text" placeholder={description} name='description' id='description' />
-                    <div>
-                        <label className='label'>Description détaillée : </label>
+                    <div className='description'>
+                        <label className='label' htmlFor='description'>- Description : </label>
+                        <input type="text" placeholder={description} name='description' id='description' />
+                    </div>
+
+                    <div className='description'>
+                        <label className='label' htmlFor='descriptionDetail'>- Description détaillée : </label>
                         <input type="text" placeholder={descriptionDetail} name='descriptionDetail' id='descriptionDetail' />
                     </div>
-                    <label className='label'>Durée de la formation : </label>
-                    <input type="number" placeholder={duree} name='duree' id='duree' />
-                    <label className='label'>Prix : </label>
-                    <input type="number" placeholder={price} name='price' id='price' />
+
+                    <div className='formationDure'>
+                        <label className='label' htmlFor='duree'>- Durée de la formation : </label>
+                        <input type="number" placeholder={duree} name='duree' id='duree' />
+                    </div>
+
+                    <div className='formationPrix'>
+                        <label className='label' htmlFor='price'>- Prix : </label>
+                        <input type="number" placeholder={price} name='price' id='price' />
+                    </div>
+
                     <div className='formationDifficulty'>
-                        <label htmlFor='difficulty' className='labelSelect'>Sélectionner la difficulté : </label>
+                        <label htmlFor='difficulty' className='labelSelect'>- Sélectionner la difficulté : </label>
                         <select name='difficulty' id='difficulty'>
                             <option value="">{difficulty}</option>
                             <option value="1">1</option>
@@ -193,21 +228,30 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                             <option value="5">5</option>
                         </select>
                     </div>
+
                     <div className='formationLieux'>
-                        <label htmlFor='lieux' className='labelSelect'>Sélectionner le centre qui propose cette formation : </label>
+                        <label htmlFor='lieux' className='labelSelect'>- Sélectionner le centre qui propose cette formation : </label>
                         <select name='lieux' id='lieux'>
                             <option value="">{lieux}</option>
                             <option value="Lille">Lille</option>
                             <option value="Paris">Paris</option>
                         </select>
                     </div>
-                    <label htmlFor='dates'>Sélectionnez une date de début de formation : </label>
-                    <input type='date' name='dates' id='dates' />
-                    <label className='logo'>Logo : </label>
-                    <input type="file" name='logo' id='logo' />
+
+                    <div className='formationDate'>
+                        <label htmlFor='dates'>- Sélectionnez une date de début de formation : </label>
+                        <input type='date' name='dates' id='dates' />
+                    </div>
+
+                    <div className='addFormationLogo'>
+                        <label className='logo' htmlFor='logo'>- Logo : </label>
+                        <input type="file" name='logo' id='logo' />
+                    </div>
+
                     <div>
                         <input type="submit" />
                     </div>
+
                 </div>
             </form>
         </div>

@@ -28,14 +28,12 @@ const AdminBoutonsComponent = ({ contact, setContact, addFormation, setAddFormat
                 <button title='Historique des formations' type="button" className='admin_button admin_formhistory' onClick={() => setHistory(!history)}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 996q-78-69-170.5-106T120 853V424q94 0 186.5 43T480 587q81-77 173.5-120T840 424v429q-97 0-189.5 37T480 996Zm3-552q-65 0-109.5-44.5T329 290q0-65 44.5-109.5T483 136q65 0 109.5 44.5T637 290q0 65-44.5 109.5T483 444Z" /></svg>
                 </button>
-                {/* <p>Historique des formations</p> */}
             </div>
 
             <div className='button_div'>
                 <button title='Messagerie' type="button" className='admin_button admin_contacthistory' onClick={() => setContact(!contact)}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M240 657h313v-60H240v60Zm0-130h480v-60H240v60Zm0-130h480v-60H240v60ZM80 976V236q0-23 18-41.5t42-18.5h680q23 0 41.5 18.5T880 236v520q0 23-18.5 41.5T820 816H240L80 976Z" /></svg>
                 </button>
-                {/* <p>Historique des messages</p> */}
             </div>
         </div>
     );

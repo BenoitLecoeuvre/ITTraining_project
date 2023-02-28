@@ -1,3 +1,7 @@
+h2{
+    font-family: 'Bebas Neue', cursive;
+}
+
 .table {
     border: 2px solid black;
     width: 97%;
@@ -5,3 +9,31 @@
     text-align: center;
 }
 
+.formationID, .colonne{
+    font-family: 'Bebas Neue', cursive;
+    background-color: lightgray;
+}
+
+.colonneEdit{
+    font-family: 'Bebas Neue', cursive;
+    background-color: #3794eb;
+}
+
+.colonneSupp{
+    font-family: 'Bebas Neue', cursive;
+    background-color: #ee0e0e;
+}
+
+td{
+    background-color: lightgray;
+}
+
+.capsuleEdit:hover{
+    background-color: #3794eb;
+    cursor: pointer;
+}
+
+.capsuleSupp:hover{
+    background-color: #ee0e0e; 
+    cursor: pointer;
+}

@@ -17,35 +17,42 @@ const ArrayFormationComponent = ({ listformation, updateFormationList, editForma
     return (
         <div>
             <h2 style={{ textAlign: 'center', margin: '40px 0px' }}>Liste des formations</h2>
+
             <table className='table'>
                 <thead>
+
                     <tr>
-                        <th scope='col' className='formationID'>#</th>
+                        <th scope='col' className='formationID'>Formation N°</th>
                         <th scope='col' className='colonne'>Nom de la Formation</th>
                         <th scope='col' className='colonne'>Sous-Catégorie</th>
                         <th scope='col' className='colonne'>Prix</th>
                         <th scope='col' className='colonne'>Lieux</th>
                         <th scope='col' className='colonne'>Durée</th>
-                        <th scope='col' className='colonne'>Actions</th>
+                        <th scope='col' className='colonneEdit'>Modifier</th>
+                        <th scope='col' className='colonneSupp'>Supprimer</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     {listformation.map((formation, index) => (
                         <tr key={index}>
-                            <th>{index + 1}</th>
+                            <td>{index + 1}</td>
                             <td>{formation.formationName}</td>
                             <td>{formation.subCategory}</td>
                             <td>{formation.price} €</td>
                             <td>{formation.lieux[0]} / {formation.lieux[1]}</td>
                             <td>{formation.duree} jours</td>
-                            <td>
+                            <td className='capsuleEdit'>
                                 <FontAwesomeIcon icon={faPen} onClick={()=> editFormation(index)}/>
+                            </td>
+                            <td className='capsuleSupp'>
                                 <FontAwesomeIcon icon={faTrash} onClick={() => deleteFormation(index)} />
                             </td>
                         </tr>
                     ))
                     }
                 </tbody>
+
             </table>
         </div>
     );
