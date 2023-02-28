@@ -76,9 +76,13 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
         <div>
             <form onSubmit={createFormationHandler} id="addFormationForm">
                 <div className='formContainer'>
-                    <label htmlFor='formationName'>Nom de la formation : </label>
-                    <input type="text" placeholder={category} name='formationName' id='formationName' />
-                    <div>
+
+                    <div className='nomFormation'>
+                        <label className='formationName' htmlFor='formationName'>Nom de la formation : </label>
+                        <input type="text" placeholder={category} name='formationName' id='formationName' />
+                    </div>
+
+                    <div className='formationCat'>
                         <label htmlFor='formationCategory' className='labelSelect'>Sélectionner une catégorie : </label>
                         <select name='category' id='category'>
                             <option value="">--Sélectionner une catégorie--</option>
@@ -87,7 +91,8 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                             <option value="SI et réseaux">SI et réseaux</option>
                         </select>
                     </div>
-                    <div>
+
+                    <div className='formationCat'>
                         <label htmlFor='formationSubCategory' className='labelSelect'>Sélectionner une catégorie : </label>
                         <select name='subCategory' id='subCategory'>
                             <option value="">--Sélectionner une sous-catégorie--</option>
