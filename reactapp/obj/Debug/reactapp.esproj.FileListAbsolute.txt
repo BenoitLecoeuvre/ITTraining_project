@@ -6,3 +6,5 @@ C:\Users\Administrateur\Desktop\Version_vs\reactapp\obj\Debug\reactapp.esproj.Su
 C:\Users\Administrateur\Desktop\Version_vs\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
 C:\Users\benoi\Desktop\OnionDevHub\Formation_m2i\git_issues\develop_test\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
 C:\Users\benoi\Desktop\OnionDevHub\Formation_m2i\git_issues\develop_test\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Test\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\Test\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache

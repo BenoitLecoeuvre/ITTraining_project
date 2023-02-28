@@ -12,6 +12,7 @@ bin/
 obj/
 packages/
 Tools/
+Migrations/
 
 # User-specific files
 *.rsuser

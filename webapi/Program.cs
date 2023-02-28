@@ -23,9 +23,11 @@ builder.Services.Configure<AppSettings>(appSettingsSection);
 
 AppSettings appSettings = appSettingsSection.Get<AppSettings>();
 
-string connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
-builder.Services.AddDbContext<DataDbContext>(options => options.UseSqlServer(connectionString));
+//string connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+//builder.Services.AddDbContext<DataDbContext>(options => options.UseSqlServer(connectionString));
 
+builder.Services.AddControllers();
+builder.Services.AddDbContext<DataDbContext>();
 
 // Add services to the container.
 
