@@ -37,7 +37,6 @@ namespace webapi.Models
 
         public List<Apprenant>? ApprenantsList { get; set; }
 
-        [ForeignKey(nameof(FormateurId))]
         public Formateur? Formateur { get; set; }
 
         public int? FormateurId { get; set; }
@@ -50,59 +49,59 @@ namespace webapi.Models
 
         public Formation()
         {
-            TodoList = new List<Todo>
-            {
-                new Todo
-                {
-                    Nom = "Réservation de la salle",
-                    Detail = "",
-                    DateRealisation = DateTime.Now,
-                    Status = "A faire"
-                },
-                new Todo
-                {
-                    Nom = "Installation des machines et des logiciels requis",
-                    Detail = "",
-                    DateRealisation = DateTime.Now,
-                    Status = "A faire"
-                },
-                new Todo
-                {
-                    Nom = "Confirmation du formateur",
-                    Detail = "",
-                    DateRealisation = DateTime.Now,
-                    Status = "A faire"
-                },
-                new Todo
-                {
-                    Nom = "Impression des supports de cours",
-                    Detail = "",
-                    DateRealisation = DateTime.Now,
-                    Status = "A faire"
-                },
-                new Todo
-                {
-                    Nom = "Envoi des convocations",
-                    Detail = "",
-                    DateRealisation = DateTime.Now,
-                    Status = "A faire"
-                },
-                new Todo
-                {
-                    Nom = "Mise à jour du planning",
-                    Detail = "",
-                    DateRealisation = DateTime.Now,
-                    Status = "A faire"
-                },
-                new Todo
-                {
-                    Nom = "Impression des listes de présence",
-                    Detail = "",
-                    DateRealisation = DateTime.Now,
-                    Status = "A faire"
-                },
+            //TodoList = new List<Todo>
+            //{
+            //    new Todo
+            //    {
+            //        Nom = "Réservation de la salle",
+            //        Detail = "",
+            //        DateRealisation = DateTime.Now,
+            //        Status = "A faire"
+            //    },
+            //    new Todo
+            //    {
+            //        Nom = "Installation des machines et des logiciels requis",
+            //        Detail = "",
+            //        DateRealisation = DateTime.Now,
+            //        Status = "A faire"
+            //    },
+            //    new Todo
+            //    {
+            //        Nom = "Confirmation du formateur",
+            //        Detail = "",
+            //        DateRealisation = DateTime.Now,
+            //        Status = "A faire"
+            //    },
+            //    new Todo
+            //    {
+            //        Nom = "Impression des supports de cours",
+            //        Detail = "",
+            //        DateRealisation = DateTime.Now,
+            //        Status = "A faire"
+            //    },
+            //    new Todo
+            //    {
+            //        Nom = "Envoi des convocations",
+            //        Detail = "",
+            //        DateRealisation = DateTime.Now,
+            //        Status = "A faire"
+            //    },
+            //    new Todo
+            //    {
+            //        Nom = "Mise à jour du planning",
+            //        Detail = "",
+            //        DateRealisation = DateTime.Now,
+            //        Status = "A faire"
+            //    },
+            //    new Todo
+            //    {
+            //        Nom = "Impression des listes de présence",
+            //        Detail = "",
+            //        DateRealisation = DateTime.Now,
+            //        Status = "A faire"
+            //    },
 
-            };
+            //};
             ApprenantsList = new List<Apprenant>();
         }
 

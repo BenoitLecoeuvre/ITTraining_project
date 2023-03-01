@@ -151,7 +151,7 @@ namespace webapi.Controllers
 
         // Ajouter une formation à un stagiaire
         [HttpPost("[action]")]
-        [Authorize(Roles = Constants.RoleUser + "," + Constants.RoleAdmin)]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> AddFormation(int stagiaireId, int formationId)
         {
             var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(s => s.Id == stagiaireId);

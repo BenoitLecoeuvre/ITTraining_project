@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
+using webapi.Helpers;
 using webapi.Models;
 using webapi.Tools;
 
@@ -8,6 +11,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = Constants.RoleAdmin)]
     public class MessageController : ControllerBase
     {
 
@@ -28,9 +32,10 @@ namespace webapi.Controllers
 
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> AddMessage(int id, [FromBody] Message message)
+        [Authorize(Roles = Constants.RoleUser)]
+        public async Task<IActionResult> AddMessage(int idStagiaire, [FromBody] Message message)
         {
-            var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Id == id);
+            var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Id == idStagiaire);
             if (tmp == null) return BadRequest("Pas de profil à cet id");
 
             message.ApprenantId = tmp.Id;

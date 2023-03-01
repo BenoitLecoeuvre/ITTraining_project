@@ -71,6 +71,7 @@ namespace webapi.Controllers
 
 
         [HttpPost("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO login)
         {
             login.PassWord = EncryptPassword(login.PassWord);
@@ -112,6 +113,7 @@ namespace webapi.Controllers
 
         // Voir pour ajouter un role formateur
         [HttpPost("loginFormateur")]
+        [AllowAnonymous]
         public async Task<IActionResult> LoginFormateur([FromBody] LoginRequestDTO login)
         {
             login.PassWord = EncryptPassword(login.PassWord);
@@ -154,6 +156,7 @@ namespace webapi.Controllers
 
 
         [HttpPost("[action]")]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterFormateur([FromBody] Formateur formateur)
         {
             if (await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == formateur.Email) != null)

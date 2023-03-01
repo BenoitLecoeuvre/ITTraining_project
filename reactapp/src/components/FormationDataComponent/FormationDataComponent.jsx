@@ -4,7 +4,18 @@ import 'bootstrap'
 import { NavLink } from 'react-router-dom';
 
 const FormationDataComponent = ({ formationData, setEditFormations }) => {
-    // console.log(formationData)
+    console.log(formationData)
+
+    function dateFormat(date) {
+        let tmpDate = new Date(date).toLocaleDateString("fr")
+        return tmpDate
+    }
+
+    function lieuFormat(lieu){
+        if (lieu ===0)
+        return "Lille"
+        else return "Paris"
+    }
 
     return (
 
@@ -13,7 +24,7 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
 
                 <div>
                     <div className='name'>
-                        <span><b>{formationData.formationName}</b></span>
+                        <span><b>{formationData.name}</b></span>
                     </div>
 
                     <div className='formationLogo'>
@@ -27,17 +38,12 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
 
                 <div className='lieux'>
                     <span>{`Lieux de la formation : `}</span>
-                    <span className='underline'><strong>{`${formationData.lieux[0]}`}</strong></span>
-                    <span>{` ou `}</span>
-                    <span className='underline'><strong>{`${formationData.lieux[1]}`}</strong></span>
-
+                    <span className='underline'><strong>{`${lieuFormat(formationData.lieu)}`}</strong></span>
                 </div>
 
                 <div className='dates'>
-                    <span>{`Nous proposons deux dates de début de formation, le `}</span>
-                    <span className='underline'><strong>{`${formationData.dates[0]}`}</strong></span>
-                    <span>{` et `}</span>
-                    <span className='underline'><strong>{`${formationData.dates[1]}`}</strong></span>
+                <span>{`Dates de la formation : `}</span>
+                    <span className='underline'><strong>{`${dateFormat(formationData.startDate)} - ${dateFormat(formationData.endDate)}`}</strong></span>
                 </div>
 
                 <div>
