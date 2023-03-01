@@ -10,11 +10,14 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Runtime;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = Constants.RoleAdmin)]
     public class AuthenticationController : ControllerBase
     {
 
@@ -29,7 +32,9 @@ namespace webapi.Controllers
             _appSettings = appSettings.Value;
         }
 
+        // Création d'un compte stagiaire
         [HttpPost("[action]")]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterStagiaire([FromBody] Apprenant apprenant)
         {
             if (await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == apprenant.Email) != null)
@@ -46,6 +51,7 @@ namespace webapi.Controllers
 
         }
 
+        // Création d'un compte admin
 
         [HttpPost("[action]")]
         public async Task<IActionResult> RegisterAdmin([FromBody] Utilisateur utilisateur)
@@ -65,6 +71,7 @@ namespace webapi.Controllers
 
 
         [HttpPost("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO login)
         {
             login.PassWord = EncryptPassword(login.PassWord);
@@ -104,7 +111,9 @@ namespace webapi.Controllers
 
         }
 
+        // Voir pour ajouter un role formateur
         [HttpPost("loginFormateur")]
+        [AllowAnonymous]
         public async Task<IActionResult> LoginFormateur([FromBody] LoginRequestDTO login)
         {
             login.PassWord = EncryptPassword(login.PassWord);
@@ -147,6 +156,7 @@ namespace webapi.Controllers
 
 
         [HttpPost("[action]")]
+        [AllowAnonymous]
         public async Task<IActionResult> RegisterFormateur([FromBody] Formateur formateur)
         {
             if (await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == formateur.Email) != null)
