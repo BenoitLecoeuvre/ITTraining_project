@@ -1,0 +1,12 @@
+.category1, .category2{
+    margin: 10px;
+    /* border: 2px solid black; */
+}
+
+.category1 select, .category2 select{
+    border: 2px solid black;
+}
+
+.reset1, .reset2{
+    margin-top: 5px;
+}

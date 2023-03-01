@@ -16,7 +16,11 @@
     padding: 30px;
     border : none;
     border-radius: 5px;
-    
+}
+
+.admin_button:hover{
+    transform: translateY(-5%);
+    cursor: pointer;
 }
 
 .admin_add {

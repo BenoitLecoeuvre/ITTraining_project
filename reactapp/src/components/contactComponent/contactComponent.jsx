@@ -1,4 +1,5 @@
 import React from 'react';
+import './contactComponent.css'
 
 const ContactComponent = ({name, firstname, firm, mail, phone, message}) => {
     

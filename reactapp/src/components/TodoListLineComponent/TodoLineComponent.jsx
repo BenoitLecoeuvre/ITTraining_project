@@ -48,10 +48,9 @@ const TodoLineComponent = ({ checkedTodo, deleteTodo, todoList, setTodoList, tod
                         <td>{todo.id}</td>
                         <td>{todo.todo}</td>
                         <td>{todo.detail}</td>
-                        <td>
-                            <FontAwesomeIcon icon={faCheck} onClick={() => checkedTodo(index)} />
-                            <FontAwesomeIcon icon={faPen} onClick={() => toggleForm()} />
-                            <FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(index)} /></td>
+                        <td className='Checked'><FontAwesomeIcon icon={faCheck} onClick={() => checkedTodo(index)} /></td>
+                        <td className='Edit'><FontAwesomeIcon icon={faPen} onClick={() => toggleForm()} /></td>
+                        <td className='Delete'><FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(index)} /></td>
                         <td>{todo.date.date}</td>
                     </tr>
                     :
@@ -59,10 +58,10 @@ const TodoLineComponent = ({ checkedTodo, deleteTodo, todoList, setTodoList, tod
                         <td>{todo.id}</td>
                         <td>{todo.todo}</td>
                         <td>{todo.detail}</td>
-                        <td>
-                            <FontAwesomeIcon icon={faCheck} onClick={() => checkedTodo(index)} />
-                            <FontAwesomeIcon icon={faPen} onClick={() => toggleForm()} />
-                            <FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(index)} /></td>
+                        <td className='Checked'><FontAwesomeIcon icon={faCheck} onClick={() => checkedTodo(index)} /></td>
+                        <td className='Edit'><FontAwesomeIcon icon={faPen} onClick={() => toggleForm()} /></td>
+                        <td className='Delete'><FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(index)} /></td>
+                        <td>{todo.date.date}</td>
                     </tr>}
             </React.Fragment>
         )
@@ -79,3 +78,6 @@ const TodoLineComponent = ({ checkedTodo, deleteTodo, todoList, setTodoList, tod
 }
 
 export default TodoLineComponent;
+
+
+

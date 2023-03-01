@@ -36,12 +36,12 @@ const ArrayFormationComponent = ({ listformation, updateFormationList, editForma
                 <tbody>
                     {listformation.map((formation, index) => (
                         <tr key={index}>
-                            <td>{index + 1}</td>
-                            <td>{formation.formationName}</td>
-                            <td>{formation.subCategory}</td>
-                            <td>{formation.price} €</td>
-                            <td>{formation.lieux[0]} / {formation.lieux[1]}</td>
-                            <td>{formation.duree} jours</td>
+                            <td className='ListFormation'>{index + 1}</td>
+                            <td className='ListFormation'>{formation.formationName}</td>
+                            <td className='ListFormation'>{formation.subCategory}</td>
+                            <td className='ListFormation'>{formation.price} €</td>
+                            <td className='ListFormation'>{formation.lieux[0]} / {formation.lieux[1]}</td>
+                            <td className='ListFormation'>{formation.duree} jours</td>
                             <td className='capsuleEdit'>
                                 <FontAwesomeIcon icon={faPen} onClick={()=> editFormation(index)}/>
                             </td>
