@@ -35,9 +35,9 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
 
                 <div className='dates'>
                     <span>{`Nous proposons deux dates de début de formation, le `}</span>
-                    <span className='underline'><strong>{`${formationData.dates[0]}`}</strong></span>
+                    <span className='underline'><strong>{`${formationData.startDate[0]}`}</strong></span>
                     <span>{` et `}</span>
-                    <span className='underline'><strong>{`${formationData.dates[1]}`}</strong></span>
+                    <span className='underline'><strong>{`${formationData.startDate[1]}`}</strong></span>
                 </div>
 
                 <div>

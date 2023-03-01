@@ -33,11 +33,10 @@ namespace webapi.Models
 
         public int NbInscrit { get; set; }
 
-        public List<Todo>? TodoList { get; set; }
+        public List<Todo> TodoList { get; set; }
 
         public List<Apprenant>? ApprenantsList { get; set; }
 
-        [ForeignKey(nameof(FormateurId))]
         public Formateur? Formateur { get; set; }
 
         public int? FormateurId { get; set; }
@@ -96,18 +95,20 @@ namespace webapi.Models
                 },
                 new Todo
                 {
-                    Nom = "Impression des listes de présence",
+                    Nom = "Installation des machines et des logiciels requis",
                     Detail = "",
                     DateRealisation = DateTime.Now,
                     Status = "A faire"
                 },
-
+                new Todo
+                {
+                    Nom = "Impression des listes de présence",
+                    Detail = "",
+                    DateRealisation = DateTime.Now,
+                    Status = "A faire"
+                }
             };
             ApprenantsList = new List<Apprenant>();
         }
-
-
-
-
     }
 }

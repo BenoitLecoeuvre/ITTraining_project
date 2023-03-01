@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj": {}
+    "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj": {
+    "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj",
+        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\webapi.csproj",
+        "projectPath": "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\webapi.csproj",
         "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrateur\\Desktop\\ITtraining\\webapi\\obj\\",
+        "outputPath": "C:\\Users\\Administrateur\\Desktop\\ITTraining_Vraie_Version_Finale\\ITTraining_project\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.20.0, )"
+            },
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.10.0, )"
