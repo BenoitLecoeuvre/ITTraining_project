@@ -7,7 +7,6 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
-using FluentAssertions.Common;
 using webapi.Models;
 using webapi.Repositories;
 
@@ -83,15 +82,18 @@ builder.Services.AddSwaggerGen(c =>
         Type = SecuritySchemeType.Http
     });
     c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-                   {
-                     new OpenApiSecurityScheme                     {
-                       Reference = new OpenApiReference                       {
-                         Type = ReferenceType.SecurityScheme,
-                         Id = "Bearer"                       }
-                      },
-                      new string[] { }
-                    }
-                });
+        {
+            new OpenApiSecurityScheme
+            {
+            Reference = new OpenApiReference
+            {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+            }
+            },
+            new string[] { }
+        }
+    });
 });
 
 var app = builder.Build();

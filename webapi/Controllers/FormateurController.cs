@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
+using webapi.Helpers;
 using webapi.Models;
 using webapi.Repositories;
 using webapi.Tools;
@@ -7,6 +11,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = Constants.RoleAdmin)]
     public class FormateurController : ControllerBase
     {
 
@@ -20,7 +25,7 @@ namespace webapi.Controllers
         }
 
         [HttpGet("/formateurs")]
-        public async Task<IActionResult> GetAllFormations()
+        public async Task<IActionResult> GetAllFormateurs()
         {
             List<Formateur> formateurs;
             formateurs = (await _formateurRepository.GetAll()).ToList();
@@ -42,11 +47,11 @@ namespace webapi.Controllers
         [HttpPut("/formateurs/{id}")]
         public async Task<IActionResult> UpdateFormateur(int id, [FromBody] Formateur formateur)
         {
-            var formateurFromDb = _dbContext.Formateurs.FirstOrDefault(p => p.Id == id);
+            var formateurFromDb = await _dbContext.Formateurs.FirstOrDefaultAsync(p => p.Id == id);
 
             if (formateurFromDb == null)
             {
-                return NotFound("Pas de formation à cet ID");
+                return NotFound("Pas de formateur à cet ID");
             }
             else
             {
@@ -57,7 +62,7 @@ namespace webapi.Controllers
                 formateurFromDb.Status = formateur.Status;
                 formateurFromDb.Anciennete = formateur.Anciennete;
                 formateurFromDb.FormationsList = formateur.FormationsList;
-                if (_dbContext.SaveChanges() > 0)
+                if (await _dbContext.SaveChangesAsync() > 0)
                 {
                     return Ok("formateur modifié");
                 }
@@ -69,7 +74,7 @@ namespace webapi.Controllers
         [HttpDelete("/formateurs/{id}")]
         public async Task<IActionResult> Remove(int id)
         {
-            var formateur = _formateurRepository.GetById(id);
+            var formateur = await _formateurRepository.GetById(id);
 
             if (formateur == null) return NotFound(new
             {

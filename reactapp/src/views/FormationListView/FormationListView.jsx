@@ -1,18 +1,33 @@
 import React, { useState } from 'react';
-import FormationList from '../../../src/datas/FormationList.json';
+// import FormationList from '../../../src/datas/FormationList.json';
 import FormationCardComponent from '../../components/FormationCardComponent/FormationCardComponent';
 import FilterComponent from '../../components/FilterComponent/FilterComponent';
 import FormationDataComponent from '../../components/FormationDataComponent/FormationDataComponent';
+import axios from 'axios';
 import './FormationListView.css'
 
 const FormationListView = () => {
 
+    const [formationList, setFormationList] = useState([]);
+
+    const client = axios.create({ baseURL: "https://localhost:7083" });
+
+    React.useEffect(() => {
+        async function getFormationList() {
+            const response = await client.get("/formations");
+            setFormationList(response.data);
+        }
+        getFormationList();
+    }, []);
+
+    console.log(formationList);
+    console.table(formationList);
+
     // Premier filtre pour catégory
     const [activeCategory, setActiveCategory] = useState('');
-    const categoryList = FormationList.reduce(
+    const categoryList = formationList.reduce(
         (acc, elem) => acc.includes(elem.category) ? acc : acc.concat(elem.category), []
     )
-    // console.log(categoryList)       //: Compétences transverses / Bases de données et langages / SI et Réseaux
 
     // Second filtre pour subCategory
     const [activeSubCategory, setActivesubCategory] = useState('');
@@ -38,7 +53,7 @@ const FormationListView = () => {
     // Function pour reset le premier select et vider le tableau subCategory 
     function resetInput() {
         setActiveCategory('')
-        setActivesubCategory('')
+        // setActivesubCategory('')
         resetsubCategoryArray();
     }
 
@@ -54,55 +69,50 @@ const FormationListView = () => {
     const [formationData, setFormationData] = useState("");
 
     function editCardFormation(id) {
-        const tmpFormationData = FormationList.find((formation) => formation.id === id)
+        const tmpFormationData = formationList.find((formation) => formation.id === id)
         console.log(tmpFormationData);
         setFormationData(tmpFormationData)
         setEditFormations(false)
     }
 
+
+
     return editFormations ? (
+
         <div>
-
-            
-
             <FilterComponent
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} categoryList={categoryList} resetInput={resetInput}
-                activeSubCategory={activeSubCategory} setActivesubCategory={setActivesubCategory} subCategoryList={subCategoryList} resetsubInput={resetsubInput} />
-
-            <div className="card-container">
-                {FormationList.map((formation, index) =>
+                activeSubCategory={activeSubCategory} setActivesubCategory={setActivesubCategory} subCategoryList={subCategoryList} resetsubInput={resetsubInput}
+            />
+            <div className='card-container'>
+                {formationList.map((formation, index) =>
                     activeSubCategory === '' ?
                         (!activeCategory || activeCategory === formation.category ?
                             <div key={index} onClick={() => editCardFormation(formation.id)}>
-                                <FormationCardComponent
-                                    setEditFormations={setEditFormations}
-                                    key={index}
-                                    formation={formation}
-                                //onClick={alert("Ca marche")}
-                                //onClick={() => editCardFormation(id)}
-                                />
+                                <FormationCardComponent key={index} formation={formation} />
                             </div>
-                            :
-                            null)
+                            : null)
                         : (!activeSubCategory || activeSubCategory === formation.subCategory) ?
                             <div key={index} onClick={() => editCardFormation(formation.id)}>
                                 <FormationCardComponent
                                     setEditFormations={setEditFormations}
                                     key={index}
                                     formation={formation}
-                                //onClick={() => editCardFormation(id)}
                                 />
                             </div>
                             :
                             null)}
+
             </div>
-        </div>)
-        :
-        <div>
-            <FormationDataComponent editFormations={editFormations} formationData={formationData} setFormationData={setFormationData} setEditFormations={setEditFormations}/> 
         </div>
 
-        ;
+    )
+        :
+        <div>
+            <FormationDataComponent editFormations={editFormations} formationData={formationData} setFormationData={setFormationData} setEditFormations={setEditFormations} />
+        </div>
+
+
 }
 
 export default FormationListView;

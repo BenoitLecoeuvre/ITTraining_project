@@ -5,26 +5,31 @@ using webapi.Tools;
 using webapi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
+using webapi.Helpers;
 
 namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = Constants.RoleAdmin)]
     public class FormationController : ControllerBase
     {
         private readonly DataDbContext _dbContext;
         private IRepository<Formation> _formationRepository;
 
-        public FormationController(DataDbContext dbContext, IRepository <Formation> formationRepository)
+        public FormationController(DataDbContext dbContext, IRepository<Formation> formationRepository)
         {
             _dbContext = dbContext;
             _formationRepository = formationRepository;
         }
 
         [HttpGet("/formations")]
-        public async Task <IActionResult> GetAllFormations()
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAllFormations()
         {
-            List <Formation> formations;
+            List<Formation> formations;
             formations = (await _formationRepository.GetAll()).ToList();
 
             return Ok(formations);
@@ -46,7 +51,7 @@ namespace webapi.Controllers
         {
 
             // Modification des éléments principaux de la formation
-            var formationFromDb = _dbContext.Formations.FirstOrDefault(p => p.Id == id);
+            var formationFromDb = await _dbContext.Formations.FirstOrDefaultAsync(p => p.Id == id);
             if (formationFromDb == null)
             {
                 return NotFound("Pas de formation à cet ID");
@@ -69,31 +74,31 @@ namespace webapi.Controllers
                 formationFromDb.TodoList = formation.TodoList;
 
                 // ajout d'un formateur à la formation (optionnel)
-                var formateurFromDb = _dbContext.Formateurs.FirstOrDefault(f => f.Id == formateurId);
-                if (formateurFromDb == null)
-                {
-                    return NotFound("Pas de formateur à cet ID");
-                }
-                else
-                {
-                    formationFromDb.Formateur = formateurFromDb;
-                    formationFromDb.Formateur.Prenom = formateurFromDb.Prenom;
-                    formationFromDb.Formateur.Nom = formateurFromDb.Nom;
-                }
+                //var formateurFromDb = _dbContext.Formateurs.FirstOrDefault(f => f.Id == formateurId);
+                //if (formateurFromDb == null)
+                //{
+                //    return NotFound("Pas de formateur à cet ID");
+                //}
+                //else
+                //{
+                //    formationFromDb.Formateur = formateurFromDb;
+                //    formationFromDb.Formateur.Prenom = formateurFromDb.Prenom;
+                //    formationFromDb.Formateur.Nom = formateurFromDb.Nom;
+                //}
 
                 // Mise à jour de la TodoList
-                var todoFromDB = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId);
-                if (todoFromDB == null)
-                {
-                    return NotFound("Pas de Todo à cet ID");
-                }
-                else
-                {
-                    todoFromDB.Status = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
-                    //todoFromDB.Status = formation.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
-                }
+                //var todoFromDB = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId);
+                //if (todoFromDB == null)
+                //{
+                //    return NotFound("Pas de Todo à cet ID");
+                //}
+                //else
+                //{
+                //    todoFromDB.Status = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
+                //    //todoFromDB.Status = formation.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
+                //}
 
-                if (_dbContext.SaveChanges() > 0)
+                if (await _dbContext.SaveChangesAsync() > 0)
                 {
                     return Ok("formation modifiée !");
                 }
@@ -104,7 +109,7 @@ namespace webapi.Controllers
         [HttpDelete("/formations/{id}")]
         public async Task<IActionResult> Remove(int id)
         {
-            var formation = _formationRepository.GetById(id);
+            var formation = await _formationRepository.GetById(id);
 
             if (formation == null) return NotFound(new
             {

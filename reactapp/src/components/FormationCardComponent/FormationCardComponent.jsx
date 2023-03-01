@@ -10,7 +10,7 @@ const FormationCardComponent = ({ formation, index }) => {
 
 
             <div className="card-title">
-                <span><b>{formation.formationName}</b></span>
+                <span><b>{formation.name}</b></span>
             </div>
 
             <div className='div_logo'>
