@@ -25,28 +25,34 @@ const AdminView = ({
   setPhone,
   message,
   setMessage,
-  formationList, 
+  formationList,
   setFormationList,
   deleteFormation,
   postFormation,
-  putFormation
+  putFormation,
+  stagiaireList, setStagiaireList,
+  formateursList, setFormateursList
 }) => {
-    // States pour les boutons
-    const [addFormation, setAddFormation] = useState(false);
-    const [displayFormation, setDisplayFormation] = useState(false);
-    const [todoList, setTodoList] = useState(false);
-    const [history, setHistory] = useState(false);
-    const [contact, setContact] = useState(false);
-    const [formateurList, setFormateurList] = useState(false);
-    const [userList, setUserList] = useState(false);
 
-    // State pour set la liste de formation
-    const [listformation, updateFormationList] = useState(FormationList);
-    const [listformateurs, updateFormateurList] = useState(FormateurList);
-    const [listUsers, updateUserList] = useState(UserList);
+  console.log(formationList);
+  console.table(formationList);
 
-    // State pour passer en mode edit formation
-    const [modifFormation, setModifFormation] = useState(false);
+  // States pour les boutons
+  const [addFormation, setAddFormation] = useState(false);
+  const [displayFormation, setDisplayFormation] = useState(false);
+  const [todoList, setTodoList] = useState(false);
+  const [history, setHistory] = useState(false);
+  const [contact, setContact] = useState(false);
+  const [formateurList, setFormateurList] = useState(false);
+  const [userList, setUserList] = useState(false);
+
+  // State pour set la liste de formation
+  const [listformation, updateFormationList] = useState(FormationList);
+  const [listformateurs, updateFormateurList] = useState(FormateurList);
+  const [listUsers, updateUserList] = useState(UserList);
+
+  // State pour passer en mode edit formation
+  const [modifFormation, setModifFormation] = useState(false);
 
   // States pour recup les datas de la formation à modifier
   const [formationName, setFormationName] = useState("");
@@ -79,25 +85,25 @@ const AdminView = ({
     setId(formation.id);
   }
 
-    return (
-        <div>
-            <div>
-                <AdminBoutonsComponent
-                    addFormation={addFormation}
-                    displayFormation={displayFormation}
-                    todoList={todoList}
-                    history={history}
-                    setAddFormation={setAddFormation}
-                    setDisplayFormation={setDisplayFormation}
-                    setTodoList={setTodoList}
-                    setHistory={setHistory}
-                    contact={contact}
-                    setContact={setContact}
-                    formateurList={formateurList}
-                    setFormateurList={setFormateurList}
-                    userList={userList}
-                    setUserList={setUserList}
-                />
+  return (
+    <div>
+      <div>
+        <AdminBoutonsComponent
+          addFormation={addFormation}
+          displayFormation={displayFormation}
+          todoList={todoList}
+          history={history}
+          setAddFormation={setAddFormation}
+          setDisplayFormation={setDisplayFormation}
+          setTodoList={setTodoList}
+          setHistory={setHistory}
+          contact={contact}
+          setContact={setContact}
+          formateurList={formateurList}
+          setFormateurList={setFormateurList}
+          userList={userList}
+          setUserList={setUserList}
+        />
 
         {addFormation ? (
           <AddEditFormationComponent
@@ -125,8 +131,8 @@ const AdminView = ({
             setLieux={setLieux}
             dates={dates}
             setDates={setDates}
-            endDate = {endDate}
-            setEndDate = {setEndDate}
+            endDate={endDate}
+            setEndDate={setEndDate}
             postFormation={postFormation}
             putFormation={putFormation}
             id={id}
@@ -145,42 +151,44 @@ const AdminView = ({
         ) : null}
 
 
-                {userList ? (
-                    <UserListComponent
-                        listUsers={listUsers}
-                        updateUserList={updateUserList}
-                    />
-                ) : null}
+        {userList ? (
+          <UserListComponent
+            listUsers={listUsers}
+            updateUserList={updateUserList}
+            stagiaireList={stagiaireList} setStagiaireList={setStagiaireList}
+          />
+        ) : null}
 
-                {formateurList ? (
-                    <FormateurListComponent
-                        listformateurs={listformateurs}
-                        updateFormateurList={updateFormateurList}
-                    />
-                    ) : null}
+        {formateurList ? (
+          <FormateurListComponent
+            listformateurs={listformateurs}
+            updateFormateurList={updateFormateurList}
+            formateursList={formateursList} setFormateursList={setFormateursList}
+          />
+        ) : null}
 
-                {todoList ? <TodoListDisplayComponent /> : null}
+        {todoList ? <TodoListDisplayComponent /> : null}
 
-                {history ? <AdminHistoriqueFormationDisplay /> : null}
+        {history ? <AdminHistoriqueFormationDisplay formationList={formationList} /> : null}
 
-                {contact ? (
-                    <ContactComponent
-                        name={name}
-                        setName={setName}
-                        firstname={firstname}
-                        setFirstname={setFirstname}
-                        firm={firm}
-                        setFirm={setFirm}
-                        mail={mail}
-                        setMail={setMail}
-                        phone={phone}
-                        setPhone={setPhone}
-                        message={message}
-                        setMessage={setMessage}
-                    />
-                ) : null}
-            </div>
-        </div>
-    );
+        {contact ? (
+          <ContactComponent
+            name={name}
+            setName={setName}
+            firstname={firstname}
+            setFirstname={setFirstname}
+            firm={firm}
+            setFirm={setFirm}
+            mail={mail}
+            setMail={setMail}
+            phone={phone}
+            setPhone={setPhone}
+            message={message}
+            setMessage={setMessage}
+          />
+        ) : null}
+      </div>
+    </div>
+  );
 };
 export default AdminView;

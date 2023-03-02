@@ -8,9 +8,6 @@ import './FormationListView.css'
 
 const FormationListView = ({formationList}) => {
 
-    console.log(formationList);
-    console.table(formationList);
-
     // Premier filtre pour catégory
     const [activeCategory, setActiveCategory] = useState('');
     const categoryList = formationList.reduce(

@@ -1,16 +1,16 @@
 import React from 'react';
 import './FormateurListComponent.css';
 
-const FormateurListComponent = ({
-    listformateurs, UpdateFormateurList, id, nom, prenom, abilities, anciennete,
-    note }) => {
+const FormateurListComponent = ({ formateursList, setFormateursList }) => {
+
+    console.log(formateursList);
 
     return (
 
         <div>
 
             <div>
-                <h2 style={{textAlign:"center", margin:"40px 0px"}}>Liste des formateurs</h2>
+                <h2 style={{ textAlign: "center", margin: "40px 0px" }}>Liste des formateurs</h2>
             </div>
 
             <table class="table">
@@ -25,15 +25,15 @@ const FormateurListComponent = ({
                     </tr>
                 </thead>
                 <tbody>
-                    {listformateurs.map((formateur, index) => (
-                        <><tr key={index}>
+                    {formateursList.map((formateur, index) => (
+                        <tr key={index}>
                             <th scope="row">{index + 1}</th>
                             <td>{formateur.nom}</td>
                             <td>{formateur.prenom}</td>
-                            <td>{formateur.abilities}</td>
+                            <td>{formateur.subCategory}</td>
                             <td>{formateur.anciennete}</td>
                             <td>{formateur.note}</td>
-                        </tr></>
+                        </tr>
                     ))
                     }
                 </tbody>
@@ -43,7 +43,7 @@ const FormateurListComponent = ({
         </div>
 
 
-        );
+    );
 }
 
 export default FormateurListComponent;

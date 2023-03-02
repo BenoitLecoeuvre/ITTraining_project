@@ -7,11 +7,13 @@ namespace webapi.Tools
     public class DataDbContext : DbContext
     {
 
-        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrateur\Desktop\ITTraining_Vraie_Version_Finale\ITTraining_project\webapi\ITTrainingBDD.mdf;Integrated Security=True";
+        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\ec\Documents\DEV\Fil rouge 2\ITTraining_project\webapi\FakeDb.mdf"";Integrated Security=True;Connect Timeout=30";
 
         public DbSet<Message> Messages { get; set; }
 
         public DbSet<Utilisateur> Utilisateurs { get; set; }
+
+        public DbSet<Apprenant> Apprenants { get; set; }
 
         public DbSet<Formation> Formations { get; set; }
 
