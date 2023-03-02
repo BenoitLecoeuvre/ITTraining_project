@@ -26,6 +26,7 @@ namespace webapi.Controllers
         }
 
         [HttpGet("/formations")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllFormations()
         {
             List<Formation> formations;
