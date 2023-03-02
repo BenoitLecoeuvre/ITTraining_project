@@ -8,7 +8,6 @@ namespace webapi.Models
 
         public bool Inscrit { get; set; }
 
-        [ForeignKey(nameof(FormationId))]
         public Formation? Formation { get; set; }
 
         public int? FormationId { get; set; }

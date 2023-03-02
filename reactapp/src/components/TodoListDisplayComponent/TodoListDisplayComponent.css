@@ -1,0 +1,35 @@
+.Todo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.RenduTodo{
+    border: 2px solid black;
+    width: 97%;
+    margin: 20px;
+}
+
+.RenduTodo td, thead{
+    background-color: lightgray;
+}
+
+thead{
+    font-family: 'Bebas Neue', cursive;
+}
+
+.todoValide{
+    background-color: green;
+}
+
+.todoValide:hover{
+    background-color: green; 
+}
+
+.todoModif{
+    background-color: #3794eb;
+}
+
+.todoSupp{
+    background-color: #ee0e0e;
+}

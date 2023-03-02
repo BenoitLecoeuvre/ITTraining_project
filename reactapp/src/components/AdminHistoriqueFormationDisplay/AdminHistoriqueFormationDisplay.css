@@ -1,0 +1,18 @@
+.formationHistorique td{
+    background-color: lightgray;
+}
+
+h2{
+    margin-top: 20px;
+}
+
+.formHistory{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formationHistorique{
+    width: 97%;
+    margin: 0 20px 20px 20px;
+}

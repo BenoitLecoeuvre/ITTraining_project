@@ -25,7 +25,16 @@ namespace webapi.Tools
             optionsBuilder.UseSqlServer(ConnectionString);
         }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+ 
+            modelBuilder.Entity<Todo>()
+                .HasOne(t => t.Formation)
+                .WithMany(f => f.TodoList)
+                .HasForeignKey(t => t.FormationId)
+                .OnDelete(DeleteBehavior.Cascade);
+ 
+        }
 
     }
 }

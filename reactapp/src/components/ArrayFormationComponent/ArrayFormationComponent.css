@@ -24,13 +24,21 @@ h2{
     background-color: #ee0e0e;
 }
 
-td{
+.ListFormation{
+    background-color: lightgray;
+}
+
+.capsuleEdit{
     background-color: lightgray;
 }
 
 .capsuleEdit:hover{
     background-color: #3794eb;
     cursor: pointer;
+}
+
+.capsuleSupp{
+    background-color: lightgray;
 }
 
 .capsuleSupp:hover{

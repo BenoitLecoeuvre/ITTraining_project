@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IRepository<Formation>, FormationRepository>();
 builder.Services.AddScoped<IRepository<Formateur>, FormateurRepository>();
+builder.Services.AddScoped<IRepository<Todo>, TodoRepository>();
 
 // permet de r�cup�rer la section AppSetings du fichier appsettings.json
 var appSettingsSection = builder.Configuration.GetSection(nameof(AppSettings));

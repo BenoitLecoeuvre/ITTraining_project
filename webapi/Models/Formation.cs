@@ -33,7 +33,7 @@ namespace webapi.Models
 
         public int NbInscrit { get; set; }
 
-        public List<Todo>? TodoList { get; set; }
+        public List<Todo> TodoList { get; set; }
 
         public List<Apprenant>? ApprenantsList { get; set; }
 
@@ -104,9 +104,5 @@ namespace webapi.Models
             //};
             ApprenantsList = new List<Apprenant>();
         }
-
-
-
-
     }
 }

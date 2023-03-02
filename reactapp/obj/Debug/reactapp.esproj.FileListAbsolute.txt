@@ -12,3 +12,5 @@ C:\Users\Administrateur\Desktop\ITtraining\reactapp\obj\Debug\reactapp.esproj.Su
 C:\Users\Administrateur\Desktop\ITtraining\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
 C:\Users\Administrateur\Documents\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
 C:\Users\Administrateur\Documents\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\ITTraining_Vraie_Version_Finale\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\ITTraining_Vraie_Version_Finale\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache

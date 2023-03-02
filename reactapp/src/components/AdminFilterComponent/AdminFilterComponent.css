@@ -1,0 +1,30 @@
+.category1, .category2{
+    margin-bottom: 10px;
+    display: flex;
+    width: 12%;
+}
+
+.category1 select, .category2 select{
+    border: 2px solid black;
+}
+
+.reset1, .reset2{
+    margin-top: 5px;
+    margin-left: 5px;
+    background-color: lightgray;
+    color: white;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease-in-out;
+}
+
+.reset1:hover, .reset2:hover {
+    background-color: #d32f2f; /* Couleur de fond du bouton au survol */
+  }
+
+.Category{
+    margin-left: 20px;
+}
