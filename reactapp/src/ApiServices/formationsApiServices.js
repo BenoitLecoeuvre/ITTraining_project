@@ -1,12 +1,11 @@
-//import axios from 'axios'
+import axios from 'axios'
 
-//const __BASE_URL = 'http://localhost:3000/api';
+const __HEADERS = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+}
 
-//const __HEADERS = {
-//    'Accept' : 'application/json',
-//    'Content-Type': 'application/json'
-//}
-
+const __BASE_URL = "https://localhost:7083"
 
 //// ###
 //// # FORMATIONS
@@ -23,12 +22,12 @@
 
 
 //// GET
-//export const getFormationApiAdmin = (async () => {
-//    return await axios(__BASE_URL + '/admin', {
-//        method: 'get',
-//        headers:__HEADERS
-//    })
-//})
+export const getFormationList = (async () => {
+    return await axios(__BASE_URL + "/formations", {
+        method: 'get', headers: __HEADERS
+    });
+}
+)
 
 
 //// POST

@@ -6,19 +6,7 @@ import FormationDataComponent from '../../components/FormationDataComponent/Form
 import axios from 'axios';
 import './FormationListView.css'
 
-const FormationListView = () => {
-
-    const [formationList, setFormationList] = useState([]);
-
-    const client = axios.create({ baseURL: "https://localhost:7083" });
-
-    React.useEffect(() => {
-        async function getFormationList() {
-            const response = await client.get("/formations");
-            setFormationList(response.data);
-        }
-        getFormationList();
-    }, []);
+const FormationListView = ({formationList}) => {
 
     console.log(formationList);
     console.table(formationList);
