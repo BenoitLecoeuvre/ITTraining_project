@@ -35,6 +35,10 @@
     background-color: rgb(80, 61, 97);
 }
 
+.admin_user {
+    background-color: orangered;
+}
+
 .admin_formhistory {
     background-color: #3794eb;
 }
@@ -49,6 +53,10 @@
 
 .admin_todo:hover {
     background-color: rgb(65, 49, 78);
+}
+
+.admin_user:hover{
+    background-color: rgb(211, 58, 3);
 }
 
 .admin_formhistory:hover {

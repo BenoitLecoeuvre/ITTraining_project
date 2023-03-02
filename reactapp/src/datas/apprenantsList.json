@@ -16,7 +16,7 @@
         "prenom": "Spider",
         "email": "spider.man@gmail.com",
         "telephone": "01 23 45 67 89",
-        "created": "new Date()",
+        "created": "",
         "updated": "",
         "inscrit": false,
         "dateSortie": ""
@@ -105,9 +105,9 @@
         "email": "black.panther@gmail.com",
         "telephone": "01 23 45 67 89",
         "created": "",
-        "updated": "''",
+        "updated": "",
         "inscrit": false,
-        "dateSortie": "''"
+        "dateSortie": ""
     },
     {
         "id": 11,
@@ -116,9 +116,9 @@
         "email": "black.widow@gmail.com",
         "telephone": "01 23 45 67 89",
         "created": "",
-        "updated": "''",
+        "updated": "",
         "inscrit": false,
-        "dateSortie": "''"
+        "dateSortie": ""
     },
     {
         "id": 12,
@@ -127,9 +127,9 @@
         "email": "ant.man@gmail.com",
         "telephone": "01 23 45 67 89",
         "created": "",
-        "updated": "''",
+        "updated": "",
         "inscrit": false,
-        "dateSortie": "''"
+        "dateSortie": ""
     },
     {
         "id": 13,
@@ -138,9 +138,9 @@
         "email": "wade.wilson@gmail.com",
         "telephone": "01 23 45 67 89",
         "created": "",
-        "updated": "''",
+        "updated": "",
         "inscrit": false,
-        "dateSortie": "''"
+        "dateSortie": ""
     },
     {
         "id": 14,
@@ -149,9 +149,9 @@
         "email": "wanda.vision@gmail.com",
         "telephone": "01 23 45 67 89",
         "created": "",
-        "updated": "''",
+        "updated": "",
         "inscrit": false,
-        "dateSortie": "''"
+        "dateSortie": ""
     },
     {
         "id": 15,
@@ -160,9 +160,9 @@
         "email": "star.lord@gmail.com",
         "telephone": "01 23 45 67 89",
         "created": "",
-        "updated": "''",
+        "updated": "",
         "inscrit": false,
-        "dateSortie": "''"
+        "dateSortie": ""
     },
     {
         "id": 16,
