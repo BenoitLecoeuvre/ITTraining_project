@@ -22,15 +22,35 @@ namespace webapi.Repositories
         public async Task<bool> Delete(int id)
         {
             var formation = await GetById(id);
+            
+
             if (formation == null)
                 return false;
-            _dbContext.Formations.Remove(formation);
-            return await _dbContext.SaveChangesAsync() > 0;
+            else
+            {
+                var todolist = _dbContext.Todos.Where(t => t.FormationId == formation.Id).ToList();
+                for (int i = 0; i< todolist.Count; i++)
+                {
+                    _dbContext.Todos.Remove(todolist[i]);
+                }              
+                _dbContext.Formations.Remove(formation);
+                if (await _dbContext.SaveChangesAsync() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         public async Task<IEnumerable<Formation>> GetAll()
         {
-            return await _dbContext.Formations.Include(f => f.Formateur).ToListAsync();
+            return await _dbContext.Formations
+                .Include(f => f.Formateur)
+                .Include(f => f.TodoList)
+                .ToListAsync();
         }
 
         public async Task<Formation?> GetById(int id)
@@ -75,6 +95,6 @@ namespace webapi.Repositories
             return true;
         }
 
-        
+
     }
 }

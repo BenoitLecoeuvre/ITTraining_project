@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './ArrayFormationComponent.css'
 
-const ArrayFormationComponent = ({ listformation, updateFormationList, editFormation, modifFormation, setModifFormation}) => {
+const ArrayFormationComponent = ({ formationList, setFormationList, listformation, deleteFormation, updateFormationList, editFormation, modifFormation, setModifFormation }) => {
 
+    
     // Function pour supprimer une formation
-    function deleteFormation(index) {
-        console.log(index)
-        if (window.confirm(`Etes-vous sur de vouloir supprimer la formation n°${index + 1}? Cette action est irréversible !`)) {
-            let newFormationList = listformation.filter((formation) => formation.id - 1 !== index);
-            updateFormationList(newFormationList)
+    function removeFormation(id) {
+        const idFormation = id;
+        if (window.confirm(`Etes-vous sur de vouloir supprimer la formation n°${id}? Cette action est irréversible !`)) {
+            deleteFormation(idFormation);
         }
     }
 
@@ -34,19 +34,19 @@ const ArrayFormationComponent = ({ listformation, updateFormationList, editForma
                 </thead>
 
                 <tbody>
-                    {listformation.map((formation, index) => (
+                    {formationList.map((formation, index) => (
                         <tr key={index}>
-                            <td>{index + 1}</td>
-                            <td>{formation.formationName}</td>
-                            <td>{formation.subCategory}</td>
-                            <td>{formation.price} €</td>
-                            <td>{formation.lieux[0]} / {formation.lieux[1]}</td>
-                            <td>{formation.duree} jours</td>
+                            <td className='ListFormation'>{formation.id}</td>
+                            <td className='ListFormation'>{formation.name}</td>
+                            <td className='ListFormation'>{formation.subCategory}</td>
+                            <td className='ListFormation'>{formation.price} €</td>
+                            <td className='ListFormation'>{formation.lieu}</td>
+                            <td className='ListFormation'>{formation.duree} jours</td>
                             <td className='capsuleEdit'>
-                                <FontAwesomeIcon icon={faPen} onClick={()=> editFormation(index)}/>
+                                <FontAwesomeIcon icon={faPen} onClick={() => editFormation(formation)} />
                             </td>
                             <td className='capsuleSupp'>
-                                <FontAwesomeIcon icon={faTrash} onClick={() => deleteFormation(index)} />
+                                <FontAwesomeIcon icon={faTrash} onClick={() => removeFormation(formation.id)} />
                             </td>
                         </tr>
                     ))

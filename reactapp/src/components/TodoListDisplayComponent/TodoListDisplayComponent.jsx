@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import listTodo from '../../datas/Todolist.json';
 import TodoLineComponent from '../TodoListLineComponent/TodoLineComponent';
+import './TodoListDisplayComponent.css';
 
 const TodoList = () => {
 
@@ -29,21 +30,28 @@ const TodoList = () => {
     }
 
     return (
-        <table>
-            <thead>
-                <th>N°</th>
-                <th>A faire</th>
-                <th>Détails</th>
-                <th>Actions</th>
-                <th>Date</th>
-            </thead>
-            <tbody>
-                {
-                    todoList.map((todo, index) =>
-                        <TodoLineComponent key={index}
-                            checkedTodo={checkedTodo} deleteTodo={deleteTodo} todoList={todoList} setTodoList={setTodoList} todo={todo} index={index} />)}
-            </tbody>
-        </table>
+        <div className='Todo'>
+
+            <h2 style={{ textAlign: 'center', margin: '40px 0px' }}>Liste des tâches générales</h2>
+
+            <table className='RenduTodo'>
+                <thead>
+                    <th>Tâche N°</th>
+                    <th>A faire</th>
+                    <th>Détails de la tâche</th>
+                    <th className='todoValide'>Valider</th>
+                    <th className='todoModif'>Modifier</th>
+                    <th className='todoSupp'>Supprimer</th>
+                    <th>Date</th>
+                </thead>
+                <tbody>
+                    {
+                        todoList.map((todo, index) =>
+                            <TodoLineComponent key={index}
+                                checkedTodo={checkedTodo} deleteTodo={deleteTodo} todoList={todoList} setTodoList={setTodoList} todo={todo} index={index} />)}
+                </tbody>
+            </table>
+        </div>
     );
 }
 

@@ -16,7 +16,11 @@
     padding: 30px;
     border : none;
     border-radius: 5px;
-    
+}
+
+.admin_button:hover{
+    transform: translateY(-5%);
+    cursor: pointer;
 }
 
 .admin_add {
@@ -33,4 +37,20 @@
 
 .admin_formhistory {
     background-color: #3794eb;
+}
+
+.admin_add:hover{
+    background-color: rgba(43, 117, 80, 0.877);
+}
+
+.admin_display:hover {
+    background-color: rgba(216, 61, 61, 0.877);
+}
+
+.admin_todo:hover {
+    background-color: rgb(65, 49, 78);
+}
+
+.admin_formhistory:hover {
+    background-color: #2a74b9;
 }

@@ -13,7 +13,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = Constants.RoleAdmin)]
+    //[Authorize(Roles = Constants.RoleAdmin)]
     public class FormationController : ControllerBase
     {
         private readonly DataDbContext _dbContext;
@@ -26,7 +26,7 @@ namespace webapi.Controllers
         }
 
         [HttpGet("/formations")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> GetAllFormations()
         {
             List<Formation> formations;
@@ -35,9 +35,11 @@ namespace webapi.Controllers
             return Ok(formations);
         }
 
-        [HttpPost("/formations")]
+        [HttpPost("/admin/formations")]
         public async Task<IActionResult> AddFormation([FromBody] Formation formation)
         {
+            formation.NbInscrit = 0;
+            formation.Status = "";
             await _dbContext.Formations.AddAsync(formation);
 
             if (await _dbContext.SaveChangesAsync() >= 1)
@@ -46,7 +48,7 @@ namespace webapi.Controllers
             return BadRequest("Une erreur est survenue...");
         }
 
-        [HttpPut("/formations/{id}")]
+        [HttpPut("/admin/formations/{id}")]
         public async Task<IActionResult> UpdateFormation(int id, [FromBody] Formation formation, int? formateurId, int? todoId)
         {
 
@@ -73,7 +75,7 @@ namespace webapi.Controllers
                 formationFromDb.ApprenantsList = formation.ApprenantsList;
                 formationFromDb.TodoList = formation.TodoList;
 
-                // ajout d'un formateur à la formation (optionnel)
+                //// ajout d'un formateur à la formation (optionnel)
                 //var formateurFromDb = _dbContext.Formateurs.FirstOrDefault(f => f.Id == formateurId);
                 //if (formateurFromDb == null)
                 //{
@@ -86,18 +88,6 @@ namespace webapi.Controllers
                 //    formationFromDb.Formateur.Nom = formateurFromDb.Nom;
                 //}
 
-                // Mise à jour de la TodoList
-                //var todoFromDB = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId);
-                //if (todoFromDB == null)
-                //{
-                //    return NotFound("Pas de Todo à cet ID");
-                //}
-                //else
-                //{
-                //    todoFromDB.Status = formationFromDb.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
-                //    //todoFromDB.Status = formation.TodoList.FirstOrDefault(t => t.Id == todoId).Status;
-                //}
-
                 if (await _dbContext.SaveChangesAsync() > 0)
                 {
                     return Ok("formation modifiée !");
@@ -106,20 +96,76 @@ namespace webapi.Controllers
             }
         }
 
-        [HttpDelete("/formations/{id}")]
+        [HttpDelete("/admin/{id}")]
         public async Task<IActionResult> Remove(int id)
         {
             var formation = await _formationRepository.GetById(id);
 
-            if (formation == null) return NotFound(new
+            if (formation == null)
             {
-                Message = "Aucune formation avec cet ID"
-            });
-
-            if (!await _formationRepository.Delete(id)) return BadRequest("Une erreur est survenue...");
-
-            return Ok("Formation supprimé");
+                return NotFound(new
+                {
+                    Message = "Aucune formation avec cet ID"
+                });
+            }
+            else
+            {
+                if (!await _formationRepository.Delete(id)) return BadRequest("Une erreur est survenue...");
+                else return Ok("Formation supprimé");
+            }
         }
 
+        [HttpGet("/formations/{formationId}/todolist")]
+        public async Task<IActionResult> GetAllTodos(int formationId)
+        {
+            var formationFromDB = _dbContext.Formations.FirstOrDefault(f => f.Id == formationId);
+            if (formationFromDB == null)
+            {
+                return BadRequest("Pas de formation à cet Id...");
+            }
+            else
+            {
+                List<Todo> todoList = _dbContext.Todos.Where(t => t.FormationId == formationId).ToList();
+                if (todoList == null)
+                {
+                    return BadRequest("Pas de TodoList disponible pour cette formation...");
+                }
+
+                return Ok(todoList);
+            }
+        }
+
+        [HttpPut("/formations/{formationId}/todolist/{todoId}")]
+        public async Task<IActionResult> UpdateTodo([FromBody] Todo todo, int formationId, int todoId)
+        {
+            var formationFromDB = _dbContext.Formations.FirstOrDefault(f => f.Id == formationId);
+            if (formationFromDB == null)
+            {
+                return BadRequest("Pas de formation à cet Id...");
+            }
+            else
+            {
+                var todoFromDB = _dbContext.Todos.FirstOrDefault(t => t.Id == todoId);
+                if (todoFromDB == null)
+                {
+                    return BadRequest("Pas de Todo à cet Id");
+                }
+                else
+                {
+                    if (todoFromDB.Status != todo.Status)
+                    {
+                        todoFromDB.Status = todo.Status;
+                        todoFromDB.DateRealisation = DateTime.Now;
+                    }
+                    if (todoFromDB.Detail != todo.Detail)
+                        todoFromDB.Detail = todo.Detail;
+                }
+                if (_dbContext.SaveChanges() > 0)
+                {
+                    return Ok("Todo mise à jour !");
+                }
+                else return BadRequest("Une erreur est survenue...");
+            }
+        }
     }
 }

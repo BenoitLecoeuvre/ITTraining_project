@@ -22,12 +22,12 @@ namespace webapi.Models
 
         public int Difficulty { get; set; }
 
-        public LieuCentre Lieu { get; set; }
+        public string Lieu { get; set; }
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public string Logo { get; set; }
+        public string? Logo { get; set; }
 
         public string Status { get; set; }
 
@@ -41,11 +41,11 @@ namespace webapi.Models
 
         public int? FormateurId { get; set; }
 
-        public enum LieuCentre
-        {
-            Lille,
-            Paris,
-        }
+        //public enum LieuCentre
+        //{
+        //    Lille,
+        //    Paris,
+        //}
 
         public Formation()
         {
@@ -104,9 +104,5 @@ namespace webapi.Models
             //};
             ApprenantsList = new List<Apprenant>();
         }
-
-
-
-
     }
 }

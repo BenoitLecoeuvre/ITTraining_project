@@ -20,6 +20,11 @@ const AdminView = ({
   setPhone,
   message,
   setMessage,
+  formationList, 
+  setFormationList,
+  deleteFormation,
+  postFormation,
+  putFormation
 }) => {
   // States pour les boutons
   const [addFormation, setAddFormation] = useState(false);
@@ -45,20 +50,24 @@ const AdminView = ({
   const [difficulty, setDifficulty] = useState("");
   const [lieux, setLieux] = useState("");
   const [dates, setDates] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [id, setId] = useState("");
 
   // Function pour passer la formation à modifier dans le formulaire
-  function editFormation(index) {
+  function editFormation(formation) {
     setModifFormation(!modifFormation);
-    setFormationName(listformation[index].formationName);
-    setCategory(listformation[index].category);
-    setSubCategory(listformation[index].subCategory);
-    setDescription(listformation[index].description);
-    setDescriptionDetail(listformation[index].descriptionDetail);
-    setDuree(listformation[index].duree);
-    setPrice(listformation[index].price);
-    setDifficulty(listformation[index].difficulty);
-    setLieux(listformation[index].lieux);
-    setDates(listformation[index].dates);
+    setFormationName(formation.name);
+    setCategory(formation.category);
+    setSubCategory(formation.subCategory);
+    setDescription(formation.description);
+    setDescriptionDetail(formation.descriptionDetail);
+    setDuree(formation.duree);
+    setPrice(formation.price);
+    setDifficulty(formation.difficulty);
+    setLieux(formation.lieu);
+    setDates(formation.startDate);
+    setEndDate(formation.endDate);
+    setId(formation.id);
   }
 
   return (
@@ -103,16 +112,22 @@ const AdminView = ({
             setLieux={setLieux}
             dates={dates}
             setDates={setDates}
+            endDate = {endDate}
+            setEndDate = {setEndDate}
+            postFormation={postFormation}
+            putFormation={putFormation}
+            id={id}
           />
         ) : null}
 
         {displayFormation ? (
           <ArrayFormationComponent
-            listformation={listformation}
-            updateFormationList={updateFormationList}
+            formationList={formationList}
+            setFormationList={setFormationList}
             editFormation={editFormation}
             modifFormation={modifFormation}
             setModifFormation={setModifFormation}
+            deleteFormation={deleteFormation}
           />
         ) : null}
 

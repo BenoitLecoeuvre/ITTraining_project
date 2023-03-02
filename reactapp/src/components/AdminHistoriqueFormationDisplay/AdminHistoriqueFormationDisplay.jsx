@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AdminFormation from '../../datas/AdminFormationList.json';
 import AdminFilterComponent from '../AdminFilterComponent/AdminFilterComponent';
+import './AdminHistoriqueFormationDisplay.css'
 
 const AdminHistoriqueFormationDisplay = () => {
     // eslint-disable-next-line
@@ -59,14 +60,17 @@ const AdminHistoriqueFormationDisplay = () => {
     }
 
     return (
-        <div>
-            <h2>Historique des formations</h2>
+        <div className='formHistory'>
+            <h2 style={{ textAlign: 'center', margin: '40px 0px' }}>Historique des formations</h2>
+
             <AdminFilterComponent
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} categoryList={categoryList} resetInputCat={resetInputCat}
-                activeStatus={activeStatus} statusList={statusList} setActiveStatut={setActiveStatut} resetInputStat={resetInputStat} />
-            <table style={{ border: '1px solid black' }}>
+                activeStatus={activeStatus} statusList={statusList} setActiveStatut={setActiveStatut} resetInputStat={resetInputStat} 
+            />
+
+            <table className='formationHistorique' style={{ border: '1px solid black' }}>
                 <thead>
-                    <th>#</th>
+                    <th>Formation N°</th>
                     <th>Catégorie</th>
                     <th>Sous-catégorie</th>
                     <th>Durée</th>
