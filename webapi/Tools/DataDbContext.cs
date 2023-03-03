@@ -8,7 +8,7 @@ namespace webapi.Tools
     public class DataDbContext : DbContext
     {
 
-        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrateur\Documents\ITTraining_project\webapi\ITTrainingBDD.mdf;Integrated Security = True";
+        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Administrateur\Desktop\IT_training\ITTraining_project\webapi\ITTrainingBDD.mdf;Integrated Security=True";
 
         public DbSet<Message> Messages { get; set; }
 
