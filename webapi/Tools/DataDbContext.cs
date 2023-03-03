@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
 using webapi.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace webapi.Tools
 {
@@ -12,6 +13,8 @@ namespace webapi.Tools
         public DbSet<Message> Messages { get; set; }
 
         public DbSet<Utilisateur> Utilisateurs { get; set; }
+
+        public DbSet<Apprenant> Apprenants { get; set; }
 
         public DbSet<Formation> Formations { get; set; }
 

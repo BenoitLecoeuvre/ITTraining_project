@@ -11,7 +11,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = Constants.RoleAdmin)]
+    //[Authorize(Roles = Constants.RoleAdmin)]
     public class UtilisateurController : ControllerBase
     {
 
@@ -21,14 +21,6 @@ namespace webapi.Controllers
         public UtilisateurController(DataDbContext dbContext)
         {
             _dbContext = dbContext;
-        }
-
-
-        // Afficher la liste complète des stagiaires uniquement
-        [HttpGet("Stagiaires")]
-        public async Task<IActionResult> GetStagiaires()
-        {
-            return Ok(await _dbContext.Utilisateurs.Where(s => s is Apprenant).ToListAsync());
         }
 
 
@@ -59,25 +51,25 @@ namespace webapi.Controllers
 
         // Création d'un profil stagiaire par un admin
         // A voir si c'est pertinent de le garder
-        [HttpPost("[action]")]
-        [AllowAnonymous]
-        public async Task<IActionResult> AddStagiaire([FromBody] Apprenant apprenant)
-        {
-            // On vérifie s'il existe déjà un compte avec cet email
-            var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == apprenant.Email);
-            if (tmp != null) return BadRequest("Un compte avec cet email est déjà existant !");
+        //[HttpPost("[action]")]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> AddStagiaire([FromBody] Apprenant apprenant)
+        //{
+        //    // On vérifie s'il existe déjà un compte avec cet email
+        //    var tmp = await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == apprenant.Email);
+        //    if (tmp != null) return BadRequest("Un compte avec cet email est déjà existant !");
 
-            apprenant.Password = EncryptPassword(apprenant.Password);
-            apprenant.Status = "user";
-            apprenant.Inscrit = false;
+        //    apprenant.Password = EncryptPassword(apprenant.Password);
+        //    apprenant.Status = "user";
+        //    apprenant.Inscrit = false;
 
-            await _dbContext.Utilisateurs.AddAsync(apprenant);
-            if (await _dbContext.SaveChangesAsync() > 0)
-                return Ok("Profil stagiaire créé");
+        //    await _dbContext.Utilisateurs.AddAsync(apprenant);
+        //    if (await _dbContext.SaveChangesAsync() > 0)
+        //        return Ok("Profil stagiaire créé");
 
-            return BadRequest("Erreur");
+        //    return BadRequest("Erreur");
 
-        }
+        //}
 
 
         // Suppression d'un profil
@@ -94,35 +86,6 @@ namespace webapi.Controllers
 
             return BadRequest("Erreur");
         }
-
-        // Modification d'un profil stagiaire
-        [HttpPut("[action]")]
-        public async Task<IActionResult> UpdateStagiaire(int id, [FromBody] Apprenant apprenant)
-        {
-            var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(a => a.Id == id);
-            if (tmp == null) return BadRequest("Pas de profil à cet id");
-
-            if (tmp.Nom != apprenant.Nom)
-                tmp.Nom = apprenant.Nom;
-            if (tmp.Prenom != apprenant.Prenom)
-                tmp.Prenom = apprenant.Prenom;
-            if (tmp.Email != apprenant.Email)
-                tmp.Email = apprenant.Email;
-            if (tmp.Phone != apprenant.Phone)
-                tmp.Phone = apprenant.Phone;
-            if (tmp.Entreprise != apprenant.Entreprise)
-                tmp.Entreprise = apprenant.Entreprise;
-            if (tmp.Inscrit != apprenant.Inscrit)
-                tmp.Inscrit = apprenant.Inscrit;
-
-            tmp.Password = EncryptPassword(apprenant.Password);
-            tmp.Status = "user";
-            if (await _dbContext.SaveChangesAsync() == 0) return BadRequest("Erreur");
-
-            return Ok("Profil mis à jour");
-
-        }
-
 
 
         // Modification d'un profil admin
@@ -149,28 +112,6 @@ namespace webapi.Controllers
         }
 
 
-        // Ajouter une formation à un stagiaire
-        [HttpPost("[action]")]
-        [Authorize(Roles = "admin")]
-        public async Task<IActionResult> AddFormation(int stagiaireId, int formationId)
-        {
-            var tmp = (Apprenant)await _dbContext.Utilisateurs.FirstOrDefaultAsync(s => s.Id == stagiaireId);
-            if (tmp == null) return BadRequest("Pas de profil à cet id");
-
-            if (tmp.Inscrit) return BadRequest("Stagiaire déjà inscrit à une formation");
-
-            var formation = await _dbContext.Formations.FirstOrDefaultAsync(f => f.Id == formationId);
-            if (formation == null) return BadRequest("Pas de formation à cet id");
-
-            if (formation.NbInscrit == 15) return BadRequest("Formation complète");
-
-            tmp.FormationId = formationId;
-            tmp.Inscrit = true;
-            formation.NbInscrit++;
-            if (await _dbContext.SaveChangesAsync() == 0) return BadRequest("Erreur");
-
-            return Ok("Formation ajoutée");
-        }
 
 
         [NonAction]
