@@ -2,7 +2,8 @@ import React from 'react';
 import './contactComponent.css'
 
 const ContactComponent = ({name, firstname, firm, mail, phone, message, messageList, setMessageList}) => {
-    console.log(messageList);
+    console.log(messageList[0].text);
+
 
     return (
         <div className='messageBox'>
@@ -20,14 +21,18 @@ const ContactComponent = ({name, firstname, firm, mail, phone, message, messageL
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>{name}</td>
-                        <td>{firstname}</td>
-                        <td>{firm}</td>
-                        <td>{mail}</td>
-                        <td>{phone}</td>
-                        <td>{message}</td>
-                    </tr>
+                    {messageList.map((message, index) => 
+                    <tr key={index}>
+                    <td>{messageList[index].apprenant.nom}</td>
+                    <td>{messageList[index].apprenant.prenom}</td>
+                    <td>{messageList[index].apprenant.entreprise}</td>
+                    <td>{messageList[index].apprenant.email}</td>
+                    <td>{messageList[index].apprenant.phone}</td> 
+                     <td>{messageList[index].text}</td>
+                </tr>
+
+                    )}
+
                 </tbody>
             </table>
 

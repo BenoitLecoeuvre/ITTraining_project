@@ -14,17 +14,17 @@ namespace webapi.Models
 
         public int? ApprenantId { get; set; }
 
-        public DateTime Date { get; set; }
+        //public DateTime Date { get; set; }
 
         public bool ReadOrNot { get; set; }
 
         public string? Response { get; set; }
 
 
-        public Message()
-        {
-            Date = DateTime.Now;
-        }
+        //public Message()
+        //{
+        //    Date = DateTime.Now;
+        //}
 
 
 

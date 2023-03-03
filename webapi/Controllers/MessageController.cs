@@ -31,15 +31,15 @@ namespace webapi.Controllers
 
 
 
-        [HttpPost("[action]")]
+        [HttpPost("/contact")]
         //[Authorize(Roles = Constants.RoleUser)]
-        public async Task<IActionResult> AddMessage(int idStagiaire, [FromBody] Message message)
+        public async Task<IActionResult> AddMessage([FromBody] Message message)
         {
-            var tmp = await _dbContext.Apprenants.FirstOrDefaultAsync(u => u.Id == idStagiaire);
-            if (tmp == null) return BadRequest("Pas de profil à cet id");
+            //var tmp = await _dbContext.Apprenants.FirstOrDefaultAsync(u => u.Id == idStagiaire);
+            //if (tmp == null) return BadRequest("Pas de profil à cet id");
 
-            message.ApprenantId = tmp.Id;
-            message.Apprenant = tmp;
+            //message.ApprenantId = tmp.Id;
+            //message.Apprenant = tmp;
             message.ReadOrNot = false;
 
             await _dbContext.Messages.AddAsync(message);

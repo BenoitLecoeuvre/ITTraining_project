@@ -6,12 +6,12 @@ const ContactView = ({ setName, setFirstname, setFirm, setMail, setPhone, setMes
   function createMessage(e) {
     e.preventDefault();
     let text = e.target['message'].value;
-    let date = new Date().toLocaleDateString("en-GB");
     let readornot = false;
     let response = "";
     let apprenantId = 1;
-    const newMessage = { text, date, apprenantId, date, readornot, response };
+    const newMessage = { text, apprenantId, readornot, response };
     postMessage(newMessage);
+    alert("Votre message a été envoyé");
   }
 
 

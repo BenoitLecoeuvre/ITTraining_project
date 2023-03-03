@@ -82,7 +82,9 @@ function App() {
   }, [])
 
   async function postMessage(newMessage) {
-    console.log(newMessage);
+    await client.post("/contact", newMessage)
+    const response = await client.get("/admin/messages");
+    setMessageList(response.data);
   }
 
 

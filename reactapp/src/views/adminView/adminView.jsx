@@ -35,8 +35,8 @@ const AdminView = ({
   messageList, setMessageList
 }) => {
 
-  console.log(formationList);
-  console.table(formationList);
+  // console.log(formationList);
+  // console.table(formationList);
 
   // States pour les boutons
   const [addFormation, setAddFormation] = useState(false);
