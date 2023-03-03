@@ -10,7 +10,7 @@ import FormateurList from "../../../src/datas/formateursList.json";
 import UserList from "../../../src/datas/apprenantsList.json";
 import UserListComponent from "../../components/UserListComponent/UserListComponent";
 import FormateurListComponent from "../../components/FormateurListComponent/FormateurListComponent";
-
+import "./adminView.css";
 
 const AdminView = ({
   name,
@@ -85,25 +85,29 @@ const AdminView = ({
     setId(formation.id);
   }
 
-  return (
-    <div>
-      <div>
-        <AdminBoutonsComponent
-          addFormation={addFormation}
-          displayFormation={displayFormation}
-          todoList={todoList}
-          history={history}
-          setAddFormation={setAddFormation}
-          setDisplayFormation={setDisplayFormation}
-          setTodoList={setTodoList}
-          setHistory={setHistory}
-          contact={contact}
-          setContact={setContact}
-          formateurList={formateurList}
-          setFormateurList={setFormateurList}
-          userList={userList}
-          setUserList={setUserList}
-        />
+    return (
+        <section id="admin_view">
+            <h1>Panneau d'administration</h1>
+            <div className="shadow">
+              <div></div>
+            </div>
+            <div>
+                <AdminBoutonsComponent
+                    addFormation={addFormation}
+                    displayFormation={displayFormation}
+                    todoList={todoList}
+                    history={history}
+                    setAddFormation={setAddFormation}
+                    setDisplayFormation={setDisplayFormation}
+                    setTodoList={setTodoList}
+                    setHistory={setHistory}
+                    contact={contact}
+                    setContact={setContact}
+                    formateurList={formateurList}
+                    setFormateurList={setFormateurList}
+                    userList={userList}
+                    setUserList={setUserList}
+                />
 
         {addFormation ? (
           <AddEditFormationComponent
@@ -171,24 +175,24 @@ const AdminView = ({
 
         {history ? <AdminHistoriqueFormationDisplay formationList={formationList} /> : null}
 
-        {contact ? (
-          <ContactComponent
-            name={name}
-            setName={setName}
-            firstname={firstname}
-            setFirstname={setFirstname}
-            firm={firm}
-            setFirm={setFirm}
-            mail={mail}
-            setMail={setMail}
-            phone={phone}
-            setPhone={setPhone}
-            message={message}
-            setMessage={setMessage}
-          />
-        ) : null}
-      </div>
-    </div>
-  );
+                {contact ? (
+                    <ContactComponent
+                        name={name}
+                        setName={setName}
+                        firstname={firstname}
+                        setFirstname={setFirstname}
+                        firm={firm}
+                        setFirm={setFirm}
+                        mail={mail}
+                        setMail={setMail}
+                        phone={phone}
+                        setPhone={setPhone}
+                        message={message}
+                        setMessage={setMessage}
+                    />
+                ) : null}
+            </div>
+        </section>
+    );
 };
 export default AdminView;
