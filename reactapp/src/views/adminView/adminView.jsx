@@ -10,21 +10,26 @@ import FormateurList from "../../../src/datas/formateursList.json";
 import UserList from "../../../src/datas/apprenantsList.json";
 import UserListComponent from "../../components/UserListComponent/UserListComponent";
 import FormateurListComponent from "../../components/FormateurListComponent/FormateurListComponent";
-
+import "./adminView.css";
 
 const AdminView = ({
-    name,
-    setName,
-    firstname,
-    setFirstname,
-    firm,
-    setFirm,
-    mail,
-    setMail,
-    phone,
-    setPhone,
-    message,
-    setMessage,
+  name,
+  setName,
+  firstname,
+  setFirstname,
+  firm,
+  setFirm,
+  mail,
+  setMail,
+  phone,
+  setPhone,
+  message,
+  setMessage,
+  formationList, 
+  setFormationList,
+  deleteFormation,
+  postFormation,
+  putFormation
 }) => {
     // States pour les boutons
     const [addFormation, setAddFormation] = useState(false);
@@ -43,35 +48,43 @@ const AdminView = ({
     // State pour passer en mode edit formation
     const [modifFormation, setModifFormation] = useState(false);
 
-    // States pour recup les datas de la formation à modifier
-    const [formationName, setFormationName] = useState("");
-    const [category, setCategory] = useState("");
-    const [subCategory, setSubCategory] = useState("");
-    const [description, setDescription] = useState("");
-    const [descriptionDetail, setDescriptionDetail] = useState("");
-    const [duree, setDuree] = useState("");
-    const [price, setPrice] = useState("");
-    const [difficulty, setDifficulty] = useState("");
-    const [lieux, setLieux] = useState("");
-    const [dates, setDates] = useState("");
+  // States pour recup les datas de la formation à modifier
+  const [formationName, setFormationName] = useState("");
+  const [category, setCategory] = useState("");
+  const [subCategory, setSubCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [descriptionDetail, setDescriptionDetail] = useState("");
+  const [duree, setDuree] = useState("");
+  const [price, setPrice] = useState("");
+  const [difficulty, setDifficulty] = useState("");
+  const [lieux, setLieux] = useState("");
+  const [dates, setDates] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [id, setId] = useState("");
 
-    // Function pour passer la formation à modifier dans le formulaire
-    function editFormation(index) {
-        setModifFormation(!modifFormation);
-        setFormationName(listformation[index].formationName);
-        setCategory(listformation[index].category);
-        setSubCategory(listformation[index].subCategory);
-        setDescription(listformation[index].description);
-        setDescriptionDetail(listformation[index].descriptionDetail);
-        setDuree(listformation[index].duree);
-        setPrice(listformation[index].price);
-        setDifficulty(listformation[index].difficulty);
-        setLieux(listformation[index].lieux);
-        setDates(listformation[index].dates);
-    }
+  // Function pour passer la formation à modifier dans le formulaire
+  function editFormation(formation) {
+    setModifFormation(!modifFormation);
+    setFormationName(formation.name);
+    setCategory(formation.category);
+    setSubCategory(formation.subCategory);
+    setDescription(formation.description);
+    setDescriptionDetail(formation.descriptionDetail);
+    setDuree(formation.duree);
+    setPrice(formation.price);
+    setDifficulty(formation.difficulty);
+    setLieux(formation.lieu);
+    setDates(formation.startDate);
+    setEndDate(formation.endDate);
+    setId(formation.id);
+  }
 
     return (
-        <div>
+        <section id="admin_view">
+            <h1>Panneau d'administration</h1>
+            <div className="shadow">
+              <div></div>
+            </div>
             <div>
                 <AdminBoutonsComponent
                     addFormation={addFormation}
@@ -90,44 +103,50 @@ const AdminView = ({
                     setUserList={setUserList}
                 />
 
-                {addFormation ? (
-                    <AddEditFormationComponent
-                        listformation={listformation}
-                        updateFormationList={updateFormationList}
-                        modifFormation={modifFormation}
-                        setModifFormation={setModifFormation}
-                        formationName={formationName}
-                        setFormationName={setFormationName}
-                        category={category}
-                        setCategory={setCategory}
-                        subCategory={subCategory}
-                        setSubCategory={setSubCategory}
-                        description={description}
-                        setDescription={setDescription}
-                        descriptionDetail={descriptionDetail}
-                        setDescriptionDetail={setDescriptionDetail}
-                        duree={duree}
-                        setDuree={setDuree}
-                        price={price}
-                        setPrice={setPrice}
-                        difficulty={difficulty}
-                        setDifficulty={setDifficulty}
-                        lieux={lieux}
-                        setLieux={setLieux}
-                        dates={dates}
-                        setDates={setDates}
-                    />
-                ) : null}
+        {addFormation ? (
+          <AddEditFormationComponent
+            listformation={listformation}
+            updateFormationList={updateFormationList}
+            modifFormation={modifFormation}
+            setModifFormation={setModifFormation}
+            formationName={formationName}
+            setFormationName={setFormationName}
+            category={category}
+            setCategory={setCategory}
+            subCategory={subCategory}
+            setSubCategory={setSubCategory}
+            description={description}
+            setDescription={setDescription}
+            descriptionDetail={descriptionDetail}
+            setDescriptionDetail={setDescriptionDetail}
+            duree={duree}
+            setDuree={setDuree}
+            price={price}
+            setPrice={setPrice}
+            difficulty={difficulty}
+            setDifficulty={setDifficulty}
+            lieux={lieux}
+            setLieux={setLieux}
+            dates={dates}
+            setDates={setDates}
+            endDate = {endDate}
+            setEndDate = {setEndDate}
+            postFormation={postFormation}
+            putFormation={putFormation}
+            id={id}
+          />
+        ) : null}
 
-                {displayFormation ? (
-                    <ArrayFormationComponent
-                        listformation={listformation}
-                        updateFormationList={updateFormationList}
-                        editFormation={editFormation}
-                        modifFormation={modifFormation}
-                        setModifFormation={setModifFormation}
-                    />
-                ) : null}
+        {displayFormation ? (
+          <ArrayFormationComponent
+            formationList={formationList}
+            setFormationList={setFormationList}
+            editFormation={editFormation}
+            modifFormation={modifFormation}
+            setModifFormation={setModifFormation}
+            deleteFormation={deleteFormation}
+          />
+        ) : null}
 
 
                 {userList ? (
@@ -165,7 +184,7 @@ const AdminView = ({
                     />
                 ) : null}
             </div>
-        </div>
+        </section>
     );
 };
 export default AdminView;

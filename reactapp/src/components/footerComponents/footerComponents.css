@@ -1,4 +1,8 @@
 .footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    font-family: 'League Spartan', sans-serif;
     background-color: rgb(40, 44, 52);
     color: white;
     padding: 5px;

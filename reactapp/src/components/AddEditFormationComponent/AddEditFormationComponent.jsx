@@ -1,15 +1,14 @@
 import React from 'react';
 import './AddFormationComponent.css'
 
-const AddFormationComponent = ({ listformation, updateFormationList, modifFormation,
+const AddFormationComponent = ({ id, postFormation, listformation, updateFormationList, modifFormation,
     formationName, setFormationName, category, setCategory, subCategory, setSubCategory, description, setDescription, descriptionDetail, setDescriptionDetail,
-    duree, setDuree, price, setPrice, difficulty, setDifficulty, lieux, setLieux, dates, setDates }) => {
+    duree, setDuree, price, setPrice, difficulty, setDifficulty, lieux, setLieux, dates, setDates, endDate, setEndDate, putFormation }) => {
 
     // Récupération des datas de la nouvelle formation à créer
     function createFormationHandler(e) {
         e.preventDefault();
-        let id = listformation.length + 1;
-        let formationName = e.target['formationName'].value;
+        let name = e.target['name'].value;
         let category = e.target['category'].value;
         let subCategory = e.target['subCategory'].value;
         let description = e.target['description'].value;
@@ -17,15 +16,16 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
         let duree = e.target['duree'].value;
         let price = e.target['price'].value;
         let difficulty = e.target['difficulty'].value;
-        let lieux = e.target['lieux'].value;
-        let dates = e.target['dates'].value;
+        let lieu = e.target['lieu'].value;
+        let startdate = e.target['startdate'].value;
+        let endDate = e.target['endDate'].value;
         let logo = e.target['logo'].files[0];
+        let status = "";
+        let nbInscrits = 0;
         // Obliger user à compléter tous les champs (sauf image pour l'instant)
-        if (formationName !== "" && category !== "" && subCategory !== "" && description !== "" && descriptionDetail !== "" && duree !== "" && price !== "" && difficulty !== "" && lieux !== "" && dates !== "") {
-            const newFormation = { id, formationName, category, subCategory, description, descriptionDetail, duree, price, difficulty, lieux, dates, logo }
-            let listTmp = [...listformation];
-            listTmp.push(newFormation);
-            updateFormationList(listTmp);
+        if (name !== "" && category !== "" && subCategory !== "" && description !== "" && descriptionDetail !== "" && duree !== "" && price !== "" && difficulty !== "" && lieu !== "" && startdate !== "" && endDate !== "") {
+            const newFormation = { name, category, subCategory, description, descriptionDetail, duree, price, difficulty, lieu, startdate, endDate, logo, status, nbInscrits };
+            postFormation(newFormation);
             alert(`La formation a bien été ajoutée`);
         } else alert("Veuillez Remplir tous les champs")
     }
@@ -33,8 +33,8 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
     // Récupération des datas de la formation modifiée
     function updateFormationData(e) {
         e.preventDefault();
-        let id = listformation.length + 1;
-        let formationName = e.target['formationName'].value;
+        let idFormation = id;
+        let name = e.target['name'].value;
         let category = e.target['category'].value;
         let subCategory = e.target['subCategory'].value;
         let description = e.target['description'].value;
@@ -42,32 +42,17 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
         let duree = e.target['duree'].value;
         let price = e.target['price'].value;
         let difficulty = e.target['difficulty'].value;
-        let lieux = e.target['lieux'].value;
-        let dates = e.target['dates'].value;
+        let lieu = e.target['lieu'].value;
+        let startdate = e.target['startdate'].value;
+        let endDate = e.target['endDate'].value;
         let logo = e.target['logo'].files[0];
+        let status = "";
+        let nbInscrits = 0;
         // Obliger user à compléter tous les champs (sauf image pour l'instant)
-        if (formationName !== "" && category !== "" && subCategory !== "" && description !== "" && descriptionDetail !== "" && duree !== "" && price !== "" && difficulty !== "" && lieux !== "" && dates !== "") {
-            const newFormation = { id, formationName, category, subCategory, description, descriptionDetail, duree, price, difficulty, lieux, dates, logo }
-            let tmpList = [];
-            for (let formation of listformation) {
-                if (formation.id === newFormation.id) {
-                    formation.id = newFormation.id;
-                    formation.formationName = newFormation.formationName;
-                    formation.category = newFormation.category;
-                    formation.subCategory = newFormation.subCategory;
-                    formation.description = newFormation.description;
-                    formation.descriptionDetail = newFormation.descriptionDetail;
-                    formation.duree = newFormation.duree;
-                    formation.price = newFormation.price;
-                    formation.difficulty = newFormation.difficulty;
-                    formation.lieux = newFormation.lieux;
-                    formation.dates = newFormation.dates;
-                    formation.logo = newFormation.logo;
-                    tmpList.push(formation)
-                } else tmpList.push(formation)
-            }
-            console.log(tmpList)
-            updateFormationList(tmpList)
+        if (name !== "" && category !== "" && subCategory !== "" && description !== "" && descriptionDetail !== "" && duree !== "" && price !== "" && difficulty !== "" && lieu !== "" && startdate !== "" && endDate !== "") {
+            const newFormation = { name, category, subCategory, description, descriptionDetail, duree, price, difficulty, lieu, startdate, endDate, logo, status, nbInscrits };
+            console.log(newFormation);
+            putFormation(idFormation, newFormation);
             alert(`La formation a bien été modifiée`);
         } else alert("Veuillez Remplir tous les champs")
     }
@@ -78,8 +63,8 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                 <div className='formContainer'>
 
                     <div className='nomFormation'>
-                        <label className='formationName' htmlFor='formationName'>- Nom de la formation : </label>
-                        <input type="text" placeholder={category} name='formationName' id='formationName' />
+                        <label className='formationName' htmlFor='name'>- Nom de la formation : </label>
+                        <input type="text" placeholder={category} name='name' id='name' />
                     </div>
 
                     <div className='formationCat'>
@@ -138,17 +123,18 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                     </div>
 
                     <div className='formationLieux'>
-                        <label htmlFor='lieux' className='labelSelect'>- Sélectionner le centre qui propose cette formation : </label>
-                        <select name='lieux' id='lieux'>
-                            <option value="">----</option>
-                            <option value="Lille">Lille</option>
-                            <option value="Paris">Paris</option>
-                        </select>
+                        <label htmlFor='lieu' className='labelSelect'>- Sélectionner le centre qui propose cette formation : </label>
+                        <input type="text" name="lieu" id="lieu" />
                     </div>
 
                     <div className='formationDate'>
-                        <label htmlFor='dates'>- Sélectionnez une date de début de formation : </label>
-                        <input type='date' name='dates' id='dates' />
+                        <label htmlFor='startdate'>- Sélectionnez une date de début de formation : </label>
+                        <input type='date' name='startdate' id='startdate' />
+                    </div>
+
+                    <div className='formationDate'>
+                        <label htmlFor='endDate'>- Sélectionnez une date de fin de formation : </label>
+                        <input type='date' name='endDate' id='endDate' />
                     </div>
 
                     <div className='addFormationLogo'>
@@ -170,8 +156,8 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                 <div className='formContainer'>
 
                     <div className='nomFormation'>
-                        <label className='formationName' htmlFor='formationName'>- Nom de la formation : </label>
-                        <input type="text" placeholder={formationName} name='formationName' id='formationName' />
+                        <label className='formationName' htmlFor='name'>- Nom de la formation : </label>
+                        <input type="text" placeholder={formationName} name='name' id='name' />
                     </div>
 
                     <div className='formationCat'>
@@ -230,17 +216,18 @@ const AddFormationComponent = ({ listformation, updateFormationList, modifFormat
                     </div>
 
                     <div className='formationLieux'>
-                        <label htmlFor='lieux' className='labelSelect'>- Sélectionner le centre qui propose cette formation : </label>
-                        <select name='lieux' id='lieux'>
-                            <option value="">{lieux}</option>
-                            <option value="Lille">Lille</option>
-                            <option value="Paris">Paris</option>
-                        </select>
+                        <label htmlFor='lieu' className='labelSelect'>- Sélectionner le centre qui propose cette formation : </label>
+                        <input type="text" name="lieu" id="lieu" placeholder={lieux} />
                     </div>
 
                     <div className='formationDate'>
-                        <label htmlFor='dates'>- Sélectionnez une date de début de formation : </label>
-                        <input type='date' name='dates' id='dates' />
+                        <label htmlFor='startdate'>- Sélectionnez une date de début de formation : </label>
+                        <input type='date' name='startdate' id='startdate' />
+                    </div>
+
+                    <div className='formationDate'>
+                        <label htmlFor='endDate'>- Sélectionnez une date de fin de formation : </label>
+                        <input type='date' name='endDate' id='endDate' />
                     </div>
 
                     <div className='addFormationLogo'>

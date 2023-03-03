@@ -27,13 +27,13 @@ namespace webapi.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public string Logo { get; set; }
+        public string? Logo { get; set; }
 
         public string Status { get; set; }
 
         public int NbInscrit { get; set; }
 
-        public List<Todo> TodoList { get; set; }
+        public List<Todo>? TodoList { get; set; }
 
         public List<Apprenant>? ApprenantsList { get; set; }
 
