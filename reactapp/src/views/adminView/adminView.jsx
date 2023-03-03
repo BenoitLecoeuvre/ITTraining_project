@@ -31,7 +31,8 @@ const AdminView = ({
   postFormation,
   putFormation,
   stagiaireList, setStagiaireList,
-  formateursList, setFormateursList
+  formateursList, setFormateursList,
+  messageList, setMessageList
 }) => {
 
   console.log(formationList);
@@ -189,6 +190,7 @@ const AdminView = ({
                         setPhone={setPhone}
                         message={message}
                         setMessage={setMessage}
+                        messageList={messageList} setMessageList={setMessageList}
                     />
                 ) : null}
             </div>

@@ -10,7 +10,10 @@ import ContactView from '../../views/contactView/contactView';
 const NavbarComponents = ({ formationList, setFormationList, putFormation, deleteFormation, postFormation,
     setUserStatus, setUserName, userStatus, name, setName, firstname, setFirstname, firm, setFirm, mail, setMail, phone, setPhone, message, setMessage,
     stagiaireList, setStagiaireList,
-    formateursList, setFormateursList }) => {
+    formateursList, setFormateursList,
+    postStagiaire, postFormateur, postMessage,
+    messageList, setMessageList
+}) => {
     return (
         <div>
             <BrowserRouter>
@@ -36,23 +39,30 @@ const NavbarComponents = ({ formationList, setFormationList, putFormation, delet
                         </button>
                     </Link>
                     {userStatus === 3 ?
-                    <Link to='/admin'> 
-                        <button className='admin bouton'>
-                            <p>Admin</p>
-                        </button>
-                    </Link>
-                    : null}
+                        <Link to='/admin'>
+                            <button className='admin bouton'>
+                                <p>Admin</p>
+                            </button>
+                        </Link>
+                        : null}
                 </div>
                 <Routes>
                     <Route path="/" element={<HomeView />} />
                     <Route path="/formations" element={<FormationListView formationList={formationList} />} />
-                    <Route path="/inscription" element={<RegisterView setUserStatus={setUserStatus} userStatus={userStatus} setUserName={setUserName} />} />
-                    <Route path="/contact" element={<ContactView name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone} message={message} setMessage={setMessage} />} />
+                    <Route path="/inscription" element={<RegisterView setUserStatus={setUserStatus} userStatus={userStatus} setUserName={setUserName}
+                        postStagiaire={postStagiaire} postFormateur={postFormateur} />} />
+                    <Route path="/contact" element={<ContactView
+                        name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone}
+                        message={message} setMessage={setMessage}
+                        postMessage={postMessage}
+                    />} />
                     <Route path="/admin" element={<AdminView
                         formationList={formationList} setFormationList={setFormationList} deleteFormation={deleteFormation} postFormation={postFormation} putFormation={putFormation}
                         name={name} setName={setName} firstname={firstname} setFirstname={setFirstname} firm={firm} setFirm={setFirm} mail={mail} setMail={setMail} phone={phone} setPhone={setPhone} message={message} setMessage={setMessage}
                         stagiaireList={stagiaireList} setStagiaireList={setStagiaireList}
-                        formateursList={formateursList} setFormateursList={setFormateursList} />} />
+                        formateursList={formateursList} setFormateursList={setFormateursList}
+                        messageList={messageList} setMessageList={setMessageList}
+                        />} />
                 </Routes>
             </BrowserRouter>
         </div>

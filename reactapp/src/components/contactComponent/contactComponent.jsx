@@ -1,8 +1,9 @@
 import React from 'react';
 import './contactComponent.css'
 
-const ContactComponent = ({name, firstname, firm, mail, phone, message}) => {
-    
+const ContactComponent = ({name, firstname, firm, mail, phone, message, messageList, setMessageList}) => {
+    console.log(messageList);
+
     return (
         <div className='messageBox'>
             <h2 style={{ textAlign: 'center', margin: '40px 0px' }}>Historique des messages</h2>

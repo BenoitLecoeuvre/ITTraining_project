@@ -1,7 +1,20 @@
 import React from "react";
 import "./contactView.css";
 
-const ContactView = ({ setName, setFirstname, setFirm, setMail, setPhone, setMessage }) => {
+const ContactView = ({ setName, setFirstname, setFirm, setMail, setPhone, setMessage, postMessage }) => {
+
+  function createMessage(e) {
+    e.preventDefault();
+    let text = e.target['message'].value;
+    let date = new Date().toLocaleDateString("en-GB");
+    let readornot = false;
+    let response = "";
+    let apprenantId = 1;
+    const newMessage = { text, date, apprenantId, date, readornot, response };
+    postMessage(newMessage);
+  }
+
+
 
   return (
     <section id="contact_form">
@@ -10,7 +23,7 @@ const ContactView = ({ setName, setFirstname, setFirm, setMail, setPhone, setMes
         <div></div>
       </div>
 
-      <form action="" method="post">
+      <form action="" method="post" onSubmit={createMessage}>
         <div className="formflex">
           <div>
             <label htmlFor="name">Nom</label>

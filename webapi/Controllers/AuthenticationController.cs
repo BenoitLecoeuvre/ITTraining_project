@@ -33,7 +33,7 @@ namespace webapi.Controllers
         }
 
         // Création d'un compte stagiaire
-        [HttpPost("[action]")]
+        [HttpPost("/inscription/stagiaire")]
         //[AllowAnonymous]
         public async Task<IActionResult> RegisterStagiaire([FromBody] Apprenant apprenant)
         {
@@ -52,7 +52,7 @@ namespace webapi.Controllers
         }
 
         // Création d'un compte admin
-        [HttpPost("[action]")]
+        [HttpPost("/admin/inscription/admin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] Utilisateur utilisateur)
         {
             if (await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == utilisateur.Email) != null)
@@ -68,136 +68,8 @@ namespace webapi.Controllers
 
         }
 
-
-        [HttpPost("[action]")]
-        //[AllowAnonymous]
-        public async Task<IActionResult> LoginAdmin([FromBody] LoginRequestDTO login)
-        {
-            login.PassWord = EncryptPassword(login.PassWord);
-            var utilisateur = await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
-
-            if (utilisateur == null)
-            {
-                return BadRequest("Pas de compte avec cet adresse email");
-
-            }
-
-            var role = utilisateur.Status;
-
-            List<Claim> claims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Role, role),
-                new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString()),
-            };
-
-            SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
-
-            JwtSecurityToken jwt = new JwtSecurityToken(
-                issuer: _appSettings.ValidIssuer,
-                audience: _appSettings.ValidAudience,
-                claims: claims,
-                signingCredentials: signingCredentials,
-                expires: DateTime.Now.AddDays(7));
-
-            var token = new JwtSecurityTokenHandler().WriteToken(jwt);
-
-            return Ok(new
-            {
-                Token = token,
-                Message = "Connexion réussie !",
-                User = utilisateur
-            });
-
-        }
-
-        // Voir pour ajouter un role formateur
-        [HttpPost("loginFormateur")]
-        //[AllowAnonymous]
-        public async Task<IActionResult> LoginFormateur([FromBody] LoginRequestDTO login)
-        {
-            login.PassWord = EncryptPassword(login.PassWord);
-            var utilisateur = await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
-
-            if (utilisateur == null)
-            {
-                return BadRequest("Pas de compte avec cet adresse email");
-
-            }
-
-            var role = utilisateur.Status;
-
-            List<Claim> claims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Role, role),
-                new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString()),
-            };
-
-            SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
-
-            JwtSecurityToken jwt = new JwtSecurityToken(
-                issuer: _appSettings.ValidIssuer,
-                audience: _appSettings.ValidAudience,
-                claims: claims,
-                signingCredentials: signingCredentials,
-                expires: DateTime.Now.AddDays(7));
-
-            var token = new JwtSecurityTokenHandler().WriteToken(jwt);
-
-            return Ok(new
-            {
-                Token = token,
-                Message = "Connexion réussie !",
-                User = utilisateur
-            });
-
-        }
-
-
-        // Voir pour ajouter un role formateur
-        [HttpPost("loginStagiaire")]
-        //[AllowAnonymous]
-        public async Task<IActionResult> LoginStagiaire([FromBody] LoginRequestDTO login)
-        {
-            login.PassWord = EncryptPassword(login.PassWord);
-            var stagiaire = await _dbContext.Apprenants.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
-
-            if (stagiaire == null)
-            {
-                return BadRequest("Pas de compte avec cet adresse email");
-
-            }
-
-            var role = stagiaire.Status;
-
-            List<Claim> claims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Role, role),
-                new Claim(ClaimTypes.NameIdentifier, stagiaire.Id.ToString()),
-            };
-
-            SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
-
-            JwtSecurityToken jwt = new JwtSecurityToken(
-                issuer: _appSettings.ValidIssuer,
-                audience: _appSettings.ValidAudience,
-                claims: claims,
-                signingCredentials: signingCredentials,
-                expires: DateTime.Now.AddDays(7));
-
-            var token = new JwtSecurityTokenHandler().WriteToken(jwt);
-
-            return Ok(new
-            {
-                Token = token,
-                Message = "Connexion réussie !",
-                User = stagiaire
-            });
-
-        }
-
-
-
-        [HttpPost("[action]")]
+        // Création d'un compte formateur
+        [HttpPost("/inscription/formateur")]
         //[AllowAnonymous]
         public async Task<IActionResult> RegisterFormateur([FromBody] Formateur formateur)
         {
@@ -211,6 +83,248 @@ namespace webapi.Controllers
             if (await _dbContext.SaveChangesAsync() > 0)
                 return Ok("Profil formateur enregistré");
             return BadRequest("Erreur...");
+
+        }
+
+        //// Connexion admin
+        //[HttpPost("/connexion/admin")]
+        ////[AllowAnonymous]
+        //public async Task<IActionResult> LoginAdmin([FromBody] LoginRequestDTO login)
+        //{
+        //    login.PassWord = EncryptPassword(login.PassWord);
+        //    var utilisateur = await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
+
+        //    if (utilisateur == null)
+        //    {
+        //        return BadRequest("Pas de compte avec cet adresse email");
+
+        //    }
+
+        //    var role = utilisateur.Status;
+
+        //    List<Claim> claims = new List<Claim>()
+        //    {
+        //        new Claim(ClaimTypes.Role, role),
+        //        new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString()),
+        //    };
+
+        //    SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
+
+        //    JwtSecurityToken jwt = new JwtSecurityToken(
+        //        issuer: _appSettings.ValidIssuer,
+        //        audience: _appSettings.ValidAudience,
+        //        claims: claims,
+        //        signingCredentials: signingCredentials,
+        //        expires: DateTime.Now.AddDays(7));
+
+        //    var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+        //    return Ok(new
+        //    {
+        //        Token = token,
+        //        Message = "Connexion réussie !",
+        //        User = utilisateur
+        //    });
+
+        //}
+
+        //// Connextion formateur Voir pour ajouter un role formateur
+        //[HttpPost("/connexion/formateur")]
+        ////[AllowAnonymous]
+        //public async Task<IActionResult> LoginFormateur([FromBody] LoginRequestDTO login)
+        //{
+        //    login.PassWord = EncryptPassword(login.PassWord);
+        //    var utilisateur = await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
+
+        //    if (utilisateur == null)
+        //    {
+        //        return BadRequest("Pas de compte avec cet adresse email");
+
+        //    }
+
+        //    var role = utilisateur.Status;
+
+        //    List<Claim> claims = new List<Claim>()
+        //    {
+        //        new Claim(ClaimTypes.Role, role),
+        //        new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString()),
+        //    };
+
+        //    SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
+
+        //    JwtSecurityToken jwt = new JwtSecurityToken(
+        //        issuer: _appSettings.ValidIssuer,
+        //        audience: _appSettings.ValidAudience,
+        //        claims: claims,
+        //        signingCredentials: signingCredentials,
+        //        expires: DateTime.Now.AddDays(7));
+
+        //    var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+        //    return Ok(new
+        //    {
+        //        Token = token,
+        //        Message = "Connexion réussie !",
+        //        User = utilisateur
+        //    });
+
+        //}
+
+
+        //// Connexion stagiaire
+        //[HttpPost("/connexion/stagiaire")]
+        ////[AllowAnonymous]
+        //public async Task<IActionResult> LoginStagiaire([FromBody] LoginRequestDTO login)
+        //{
+        //    login.PassWord = EncryptPassword(login.PassWord);
+        //    var stagiaire = await _dbContext.Apprenants.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
+
+        //    if (stagiaire == null)
+        //    {
+        //        return BadRequest("Pas de compte avec cet adresse email");
+
+        //    }
+
+        //    var role = stagiaire.Status;
+
+        //    List<Claim> claims = new List<Claim>()
+        //    {
+        //        new Claim(ClaimTypes.Role, role),
+        //        new Claim(ClaimTypes.NameIdentifier, stagiaire.Id.ToString()),
+        //    };
+
+        //    SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
+
+        //    JwtSecurityToken jwt = new JwtSecurityToken(
+        //        issuer: _appSettings.ValidIssuer,
+        //        audience: _appSettings.ValidAudience,
+        //        claims: claims,
+        //        signingCredentials: signingCredentials,
+        //        expires: DateTime.Now.AddDays(7));
+
+        //    var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+        //    return Ok(new
+        //    {
+        //        Token = token,
+        //        Message = "Connexion réussie !",
+        //        User = stagiaire
+        //    });
+
+        //}
+
+
+        // Test une seule méthode de connexion
+        [HttpPost("/connexion")]
+        public async Task<IActionResult> Login([FromBody] LoginRequestDTO login)
+        {
+            login.PassWord = EncryptPassword(login.PassWord);
+            var stagiaire = await _dbContext.Apprenants.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
+
+            if (stagiaire == null)
+            {
+                var formateur = await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
+
+
+                if (formateur == null)
+                {
+                    var admin = await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
+
+                    if (admin == null)
+                    {
+                        return BadRequest("Pas de compte avec cet adresse mail");
+                    }
+                    else
+                    {
+                        var role = admin.Status;
+
+                        List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Role, role),
+                new Claim(ClaimTypes.NameIdentifier, admin.Id.ToString()),
+            };
+
+                        SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
+
+                        JwtSecurityToken jwt = new JwtSecurityToken(
+                            issuer: _appSettings.ValidIssuer,
+                            audience: _appSettings.ValidAudience,
+                            claims: claims,
+                            signingCredentials: signingCredentials,
+                            expires: DateTime.Now.AddDays(7));
+
+                        var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+                        return Ok(new
+                        {
+                            Token = token,
+                            Message = "Connexion réussie !",
+                            User = admin
+                        });
+                    }
+
+
+                }
+
+                else
+                {
+                    var role = formateur.Status;
+
+                    List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Role, role),
+                new Claim(ClaimTypes.NameIdentifier, formateur.Id.ToString()),
+            };
+
+                    SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
+
+                    JwtSecurityToken jwt = new JwtSecurityToken(
+                        issuer: _appSettings.ValidIssuer,
+                        audience: _appSettings.ValidAudience,
+                        claims: claims,
+                        signingCredentials: signingCredentials,
+                        expires: DateTime.Now.AddDays(7));
+
+                    var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+                    return Ok(new
+                    {
+                        Token = token,
+                        Message = "Connexion réussie !",
+                        User = formateur
+                    });
+                }
+
+            }
+
+            else
+            {
+                var role = stagiaire.Status;
+
+                List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Role, role),
+                new Claim(ClaimTypes.NameIdentifier, stagiaire.Id.ToString()),
+            };
+
+                SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
+
+                JwtSecurityToken jwt = new JwtSecurityToken(
+                    issuer: _appSettings.ValidIssuer,
+                    audience: _appSettings.ValidAudience,
+                    claims: claims,
+                    signingCredentials: signingCredentials,
+                    expires: DateTime.Now.AddDays(7));
+
+                var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+                return Ok(new
+                {
+                    Token = token,
+                    Message = "Connexion réussie !",
+                    User = stagiaire
+                });
+            }
 
         }
 

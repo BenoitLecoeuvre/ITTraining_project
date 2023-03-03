@@ -7,7 +7,12 @@ const HeaderComponents = ({
   setUserStatus,
   userName,
   setUserName,
+  userConnexion
 }) => {
+  
+  
+
+  
   // States pour le login
   const [displayLogin, setDisplayLogin] = useState(false);
 

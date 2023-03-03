@@ -11,6 +11,7 @@ function App() {
   const [formationList, setFormationList] = useState([]);
   const [stagiaireList, setStagiaireList] = useState([]);
   const [formateursList, setFormateursList] = useState([]);
+  const [messageList, setMessageList] = useState([]);
 
   const client = axios.create({ baseURL: "https://localhost:7083" });
 
@@ -60,6 +61,31 @@ function App() {
     getFormateurList();
   }, [])
 
+  async function postStagiaire(newStagiaire) {
+    await client.post("/inscription/stagiaire", newStagiaire);
+    const response = await client.get("/admin/stagiaires");
+    setStagiaireList(response.data);
+  }
+
+  async function postFormateur(newFormateur) {
+    await client.post("/inscription/formateur", newFormateur);
+    const response = await client.get("/admin/formateurs");
+    setFormateursList(response.data);
+  }
+
+  React.useEffect(() => {
+    async function getMessageList() {
+      const response = await client.get("/admin/messages");
+      setMessageList(response.data);
+    }
+    getMessageList();
+  }, [])
+
+  async function postMessage(newMessage) {
+    console.log(newMessage);
+  }
+
+
   // State pour les droits des utilisateurs ( 0= guest, 1= stagiaire, 2= formateur, 3=admin)
   const [userStatus, setUserStatus] = useState(0);
   const [userName, setUserName] = useState('');
@@ -82,6 +108,9 @@ function App() {
         putFormation={putFormation}
         stagiaireList={stagiaireList} setStagiaireList={setStagiaireList}
         formateursList={formateursList} setFormateursList={setFormateursList}
+        postStagiaire={postStagiaire} postFormateur={postFormateur}
+        postMessage={postMessage}
+        messageList={messageList} setMessageList={setMessageList}
       />
       <FooterComponents />
     </div>
