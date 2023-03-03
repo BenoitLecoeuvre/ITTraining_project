@@ -8031,23 +8031,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\benoi\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrateur\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\benoi\\Desktop\\OnionDevHub\\Formation_m2i\\project_ittraining\\ITTraining_project\\webapi\\webapi.csproj",
+      "projectUniqueName": "C:\\Users\\Administrateur\\Documents\\ITTraining_project\\webapi\\webapi.csproj",
       "projectName": "webapi",
-      "projectPath": "C:\\Users\\benoi\\Desktop\\OnionDevHub\\Formation_m2i\\project_ittraining\\ITTraining_project\\webapi\\webapi.csproj",
-      "packagesPath": "C:\\Users\\benoi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\benoi\\Desktop\\OnionDevHub\\Formation_m2i\\project_ittraining\\ITTraining_project\\webapi\\obj\\",
+      "projectPath": "C:\\Users\\Administrateur\\Documents\\ITTraining_project\\webapi\\webapi.csproj",
+      "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrateur\\Documents\\ITTraining_project\\webapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\benoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
