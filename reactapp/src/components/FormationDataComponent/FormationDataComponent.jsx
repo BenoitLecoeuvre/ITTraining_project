@@ -19,12 +19,12 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
 
     return (
 
-        <div className='section'>
+        <section className='section'>
             <div className='bloc'>
 
                 <div>
                     <div className='name'>
-                        <span><b>{formationData.name}</b></span>
+                        <b>{formationData.name}</b>
                     </div>
 
                     <div className='formationLogo'>
@@ -33,34 +33,38 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
                 </div>
 
                 <div className='detail'>
-                    <span><b>Description : </b> {formationData.descriptionDetail}</span>
+                    <b><span className='underline'>Description</span> :</b> <span>{formationData.descriptionDetail}</span>
                 </div>
 
-                <div className='lieux'>
-                    <span>{`Lieux de la formation : `}</span>
-                    <span className='underline'><strong>{`${lieuFormat(formationData.lieu)}`}</strong></span>
+                <div className='dates_lieux'>
+                    <div className='lieux'>
+                        <p>{`Lieu de la formation : `}
+                        <strong>{`${lieuFormat(formationData.lieu)}`}</strong></p>
+                    </div>
+
+                    <div className='dates'>
+                        <p>{`Dates de la formation : `}
+                        <strong>{`${dateFormat(formationData.startDate)} - ${dateFormat(formationData.endDate)}`}</strong></p>
+                    </div>
                 </div>
 
-                <div className='dates'>
-                <span>{`Dates de la formation : `}</span>
-                    <span className='underline'><strong>{`${dateFormat(formationData.startDate)} - ${dateFormat(formationData.endDate)}`}</strong></span>
-                </div>
-
-                <div>
-                    <span className='underline'><strong>Important :</strong></span>
+                <div className='important'>
+                    <b><span className='underline'>Important</span> :</b>
                     <span> Avant de commencer nos formations nous devons nous assurer que vous avez les prérequis. Voici un lien qui vous permettra de vous évaluer : <a href='https://www.w3schools.com/' target="_blank" rel="noreferrer">W3 School</a></span>
                 </div>
 
-                <div className='inscription'>
-                    <button> <NavLink to={"/inscription"}> S'inscrire à cette formation </NavLink> </button>
-                </div>
+                <div className='details_buttons'>
+                    <div className='inscription'>
+                        <button> <NavLink to={"/inscription"}> S'inscrire à cette formation </NavLink> </button>
+                    </div>
 
-                <div>
-                    <button className='retour' onClick={() => setEditFormations(true)}> Retour </button>
+                    <div>
+                        <button className='retour' onClick={() => setEditFormations(true)}> Retour </button>
+                    </div>
                 </div>
             </div>
 
-        </div >
+        </section>
 
     );
 }

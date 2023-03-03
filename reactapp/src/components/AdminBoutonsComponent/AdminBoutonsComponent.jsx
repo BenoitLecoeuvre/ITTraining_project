@@ -20,7 +20,7 @@ const AdminBoutonsComponent = ({ contact, setContact, addFormation, setAddFormat
                 </button>
                 {
                 (addForm) ?
-                <p>Add Formation</p> :
+                <p>Ajouter</p> :
                 <span></span>
                 }       
             </div>
