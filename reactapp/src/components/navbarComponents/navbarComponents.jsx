@@ -12,22 +12,32 @@ const NavbarComponents = ({formationList, setFormationList, putFormation, delete
         <div>
             <BrowserRouter>
                 <div className='navigation'>
-                    <button className='bouton'>
-                        <Link to="/">Accueil</Link>
-                    </button>
-                    <button className='bouton'>
-                        <Link to="/formations">Nos formations</Link>
-                    </button>
-                    <button className='bouton'>
-                        <Link to="/inscription">S'inscrire</Link>
-                    </button>
-                    <button className='bouton'>
-                        <Link to="/contact">Contact</Link>
-                    </button>
-                    {userStatus === 3 ? 
-                    <button className='bouton'>
-                        <Link to='/admin'>Admin</Link>
-                    </button>
+                    <Link to="/">
+                        <button className='bouton'>
+                            <p>Accueil</p>
+                        </button>
+                    </Link>
+                    <Link to="/formations">
+                        <button className='bouton'>
+                            <p>Nos formations</p>
+                        </button>
+                    </Link>
+                    <Link to="/inscription">
+                        <button className='bouton'>
+                            <p>S'inscrire</p>
+                        </button>
+                    </Link>
+                    <Link to="/contact">
+                        <button className='bouton'>
+                            <p>Contact</p>
+                        </button>
+                    </Link>
+                    {userStatus === 3 ?
+                    <Link to='/admin'> 
+                        <button className='admin bouton'>
+                            <p>Admin</p>
+                        </button>
+                    </Link>
                     : null}
                 </div>
                 <Routes>
