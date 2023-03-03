@@ -28,7 +28,9 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
                     </div>
 
                     <div className='formationLogo'>
-                        <img className='dataLogo' src={formationData.logo} alt="Formation-logo" />
+                        {(formationData.logo === null) ?
+                            <img className='logo' src=".\img\Nologo.png" alt="No-logo" /> :
+                            <img className='logo' src={formationData.logo} alt="Formation-logo" />}
                     </div>
                 </div>
 
