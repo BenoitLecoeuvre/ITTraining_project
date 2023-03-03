@@ -27,13 +27,14 @@ const AdminHistoriqueFormationDisplay = (formationList, setFormationList) => {
     let updateFormation = [];
     for (let formation of formationList.formationList) {
         let id = formation.id;
+        let name = formation.name
         let cat = formation.category;
         let subCat = formation.subCategory;
         let duree = formation.duree;
         let start = dateFormat(formation.startDate);
         let end = dateFormat(formation.endDate);
         let status = changeStatus(start, end);
-        let tmpFormation = { id, cat, subCat, duree, start, end, status }
+        let tmpFormation = { id, name, cat, subCat, duree, start, end, status }
         updateFormation.push(tmpFormation)
     }
 
@@ -71,6 +72,7 @@ const AdminHistoriqueFormationDisplay = (formationList, setFormationList) => {
             <table className='formationHistorique' style={{ border: '1px solid black' }}>
                 <thead>
                     <th>Formation N°</th>
+                    <th>Nom</th>
                     <th>Catégorie</th>
                     <th>Sous-catégorie</th>
                     <th>Durée</th>
@@ -86,6 +88,7 @@ const AdminHistoriqueFormationDisplay = (formationList, setFormationList) => {
                             ?
                             <tr key={index} style={{ border: '1px solid black' }}>
                                 <td>{formation.id}</td>
+                                <td>{formation.name}</td>
                                 <td>{formation.cat}</td>
                                 <td>{formation.subCat}</td>
                                 <td>{formation.duree} jours</td>
