@@ -6,7 +6,6 @@ const RegisterView = ({userStatus, setUserStatus, userName, setUserName }) => {
 
   // States
   const [changeForm, setChangeForm] = useState('apprenant');
-  const [displayLogin, setDisplayLogin] = useState(false);
 
   // Render
   return (

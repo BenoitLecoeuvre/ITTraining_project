@@ -20,10 +20,10 @@ const HeaderComponents = ({
   return (
     <div className="banner">
       <div className="head_logo">
-        <img src="./img/ti_training_logo.jpg" alt="Logo-Ti-training" />
+        <img src="./img/it_training_logo_new_white.png" alt="Logo-Ti-training" />
       </div>
 
-      <div className="header">
+      <div className="header_title">
         <h1>IT - Training</h1>
         <span className="credo">
           La formation qui vous aidera à devenir le meilleur !
@@ -42,7 +42,7 @@ const HeaderComponents = ({
         ) : (
           <div className="user_div">
             <div>
-              <p className="username_header">Bonjour {userName}</p>
+              <p className="username_header">Bonjour {userName},</p>
               <p className="userstatus_header">Votre statut: {userStatus}</p>
             </div>
             <div className="logout_button">

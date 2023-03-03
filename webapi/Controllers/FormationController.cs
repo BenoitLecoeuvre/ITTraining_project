@@ -13,7 +13,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = Constants.RoleAdmin)]
+    //[Authorize(Roles = Constants.RoleAdmin)]
     public class FormationController : ControllerBase
     {
         private readonly DataDbContext _dbContext;
@@ -26,7 +26,7 @@ namespace webapi.Controllers
         }
 
         [HttpGet("/formations")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> GetAllFormations()
         {
             List<Formation> formations;
@@ -35,9 +35,11 @@ namespace webapi.Controllers
             return Ok(formations);
         }
 
-        [HttpPost("/formations")]
+        [HttpPost("/admin/formations")]
         public async Task<IActionResult> AddFormation([FromBody] Formation formation)
         {
+            formation.NbInscrit = 0;
+            formation.Status = "";
             await _dbContext.Formations.AddAsync(formation);
 
             if (await _dbContext.SaveChangesAsync() >= 1)
@@ -46,7 +48,7 @@ namespace webapi.Controllers
             return BadRequest("Une erreur est survenue...");
         }
 
-        [HttpPut("/formations/{id}")]
+        [HttpPut("/admin/formations/{id}")]
         public async Task<IActionResult> UpdateFormation(int id, [FromBody] Formation formation, int? formateurId, int? todoId)
         {
 
@@ -73,18 +75,18 @@ namespace webapi.Controllers
                 formationFromDb.ApprenantsList = formation.ApprenantsList;
                 formationFromDb.TodoList = formation.TodoList;
 
-                // ajout d'un formateur à la formation (optionnel)
-                var formateurFromDb = _dbContext.Formateurs.FirstOrDefault(f => f.Id == formateurId);
-                if (formateurFromDb == null)
-                {
-                    return NotFound("Pas de formateur à cet ID");
-                }
-                else
-                {
-                    formationFromDb.Formateur = formateurFromDb;
-                    formationFromDb.Formateur.Prenom = formateurFromDb.Prenom;
-                    formationFromDb.Formateur.Nom = formateurFromDb.Nom;
-                }
+                //// ajout d'un formateur à la formation (optionnel)
+                //var formateurFromDb = _dbContext.Formateurs.FirstOrDefault(f => f.Id == formateurId);
+                //if (formateurFromDb == null)
+                //{
+                //    return NotFound("Pas de formateur à cet ID");
+                //}
+                //else
+                //{
+                //    formationFromDb.Formateur = formateurFromDb;
+                //    formationFromDb.Formateur.Prenom = formateurFromDb.Prenom;
+                //    formationFromDb.Formateur.Nom = formateurFromDb.Nom;
+                //}
 
                 if (await _dbContext.SaveChangesAsync() > 0)
                 {
@@ -94,7 +96,7 @@ namespace webapi.Controllers
             }
         }
 
-        [HttpDelete("/formations/{id}")]
+        [HttpDelete("/admin/{id}")]
         public async Task<IActionResult> Remove(int id)
         {
             var formation = await _formationRepository.GetById(id);

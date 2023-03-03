@@ -33,7 +33,7 @@ const FormationDataComponent = ({ formationData, setEditFormations }) => {
                 </div>
 
                 <div className='detail'>
-                    <span>{`Description complète : ${formationData.descriptionDetail}`}</span>
+                    <span><b>Description : </b> {formationData.descriptionDetail}</span>
                 </div>
 
                 <div className='lieux'>

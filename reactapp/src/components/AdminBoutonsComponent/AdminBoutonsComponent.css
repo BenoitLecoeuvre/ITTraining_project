@@ -1,25 +1,28 @@
 .admin_buttons {
-    height: 67vh;
     display : flex;
     flex-flow : row wrap;
     justify-content: space-around;
+    height: auto;
 }
 
 .button_div {
+    width: 145px;
+    height: 200px;
+    margin-left: 50px;
     /* display: flex;
     flex-direction: column; */
     /* justify-content: center; */
 }
 
 .admin_button {
-    margin : 290px 50px 0 0;
+    margin : 60px 0 0 0;
     padding: 30px;
     border : none;
     border-radius: 5px;
 }
 
 .admin_button:hover{
-    transform: translateY(-5%);
+    /* transform: translateY(-5%); */
     cursor: pointer;
 }
 
@@ -33,6 +36,10 @@
 
 .admin_todo {
     background-color: rgb(80, 61, 97);
+}
+
+.admin_user {
+    background-color: orangered;
 }
 
 .admin_formhistory {
@@ -51,6 +58,41 @@
     background-color: rgb(65, 49, 78);
 }
 
+.admin_user:hover{
+    background-color: rgb(211, 58, 3);
+}
+
 .admin_formhistory:hover {
     background-color: #2a74b9;
 }
+
+.admin_contacthistory {
+    margin-right: 0;
+}
+
+.button_div p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0E2A39;
+    font-weight: 700;
+    padding-left: 30px ; 
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 1s steps(40, end),
+      blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
