@@ -8031,7 +8031,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\benoi\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrateur\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -8047,7 +8047,7 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\benoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
