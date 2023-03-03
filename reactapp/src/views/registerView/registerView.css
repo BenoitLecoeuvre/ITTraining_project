@@ -5,6 +5,7 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 #register_form, #register_header {
@@ -15,6 +16,7 @@
     justify-content: center;
     align-items: center;
 }
+
 
 #register_header .success_state{
     margin-top: 8px;
@@ -93,8 +95,8 @@
     cursor: pointer;
 }
 #register button:hover {
-    background-color: rgba(46, 103, 129, 0.877);
-    border: 1px solid rgba(38, 99, 128, 0.877);
+    background-color: #1473CC;
+    border: 1px solid #1473CC;
 }
 
 .apprenant {
@@ -128,8 +130,8 @@
     border: 1px solid #d4a2bd;
 }
 #register_header .button2:hover {
-    background-color: #6d5160;
-    border: 1px solid #775969;
+    background-color: #CC8FB0;
+    border: 1px solid #CC8FB0;
 }
 
 #register_form form .form_submit {

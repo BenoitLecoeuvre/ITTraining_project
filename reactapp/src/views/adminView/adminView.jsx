@@ -10,7 +10,7 @@ import FormateurList from "../../../src/datas/formateursList.json";
 import UserList from "../../../src/datas/apprenantsList.json";
 import UserListComponent from "../../components/UserListComponent/UserListComponent";
 import FormateurListComponent from "../../components/FormateurListComponent/FormateurListComponent";
-
+import "./adminView.css";
 
 const AdminView = ({
   name,
@@ -80,7 +80,11 @@ const AdminView = ({
   }
 
     return (
-        <div>
+        <section id="admin_view">
+            <h1>Panneau d'administration</h1>
+            <div className="shadow">
+              <div></div>
+            </div>
             <div>
                 <AdminBoutonsComponent
                     addFormation={addFormation}
@@ -180,7 +184,7 @@ const AdminView = ({
                     />
                 ) : null}
             </div>
-        </div>
+        </section>
     );
 };
 export default AdminView;
