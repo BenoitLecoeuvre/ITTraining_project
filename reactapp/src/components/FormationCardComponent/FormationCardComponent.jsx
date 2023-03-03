@@ -15,7 +15,7 @@ const FormationCardComponent = ({ formation, index }) => {
 
             <div className='div_logo'>
                 {(formation.logo === null) ?
-                <img className='logo' src="reactapp\public\img\NoLogo.png" alt="Formation-logo" /> :
+                <img className='logo' src=".\img\Nologo.png" alt="No-logo" /> :
                 <img className='logo' src={formation.logo} alt="Formation-logo" /> }
             </div>
 
