@@ -11,7 +11,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = Constants.RoleAdmin)]
+    //[Authorize(Roles = Constants.RoleAdmin)]
     public class FormateurController : ControllerBase
     {
 
@@ -24,7 +24,7 @@ namespace webapi.Controllers
             _formateurRepository = formateurRepository;
         }
 
-        [HttpGet("/formateurs")]
+        [HttpGet("/admin/formateurs")]
         public async Task<IActionResult> GetAllFormateurs()
         {
             List<Formateur> formateurs;

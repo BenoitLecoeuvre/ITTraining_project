@@ -17,7 +17,7 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = Constants.RoleAdmin)]
+    //[Authorize(Roles = Constants.RoleAdmin)]
     public class AuthenticationController : ControllerBase
     {
 
@@ -34,17 +34,17 @@ namespace webapi.Controllers
 
         // Création d'un compte stagiaire
         [HttpPost("[action]")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> RegisterStagiaire([FromBody] Apprenant apprenant)
         {
-            if (await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == apprenant.Email) != null)
+            if (await _dbContext.Apprenants.FirstOrDefaultAsync(u => u.Email == apprenant.Email) != null)
                 return BadRequest("Un compte avec cet email est déjà existant !");
 
             apprenant.Password = EncryptPassword(apprenant.Password);
             apprenant.Status = "user";
             apprenant.Inscrit = false;
 
-            await _dbContext.Utilisateurs.AddAsync(apprenant);
+            await _dbContext.Apprenants.AddAsync(apprenant);
             if (await _dbContext.SaveChangesAsync() > 0)
                 return Ok("Profil stagiaire enregistré");
             return BadRequest("Erreur...");
@@ -52,7 +52,6 @@ namespace webapi.Controllers
         }
 
         // Création d'un compte admin
-
         [HttpPost("[action]")]
         public async Task<IActionResult> RegisterAdmin([FromBody] Utilisateur utilisateur)
         {
@@ -70,9 +69,9 @@ namespace webapi.Controllers
         }
 
 
-        [HttpPost("login")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Login([FromBody] LoginRequestDTO login)
+        [HttpPost("[action]")]
+        //[AllowAnonymous]
+        public async Task<IActionResult> LoginAdmin([FromBody] LoginRequestDTO login)
         {
             login.PassWord = EncryptPassword(login.PassWord);
             var utilisateur = await _dbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
@@ -113,7 +112,7 @@ namespace webapi.Controllers
 
         // Voir pour ajouter un role formateur
         [HttpPost("loginFormateur")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> LoginFormateur([FromBody] LoginRequestDTO login)
         {
             login.PassWord = EncryptPassword(login.PassWord);
@@ -154,9 +153,52 @@ namespace webapi.Controllers
         }
 
 
+        // Voir pour ajouter un role formateur
+        [HttpPost("loginStagiaire")]
+        //[AllowAnonymous]
+        public async Task<IActionResult> LoginStagiaire([FromBody] LoginRequestDTO login)
+        {
+            login.PassWord = EncryptPassword(login.PassWord);
+            var stagiaire = await _dbContext.Apprenants.FirstOrDefaultAsync(u => u.Email == login.Email && u.Password == login.PassWord);
+
+            if (stagiaire == null)
+            {
+                return BadRequest("Pas de compte avec cet adresse email");
+
+            }
+
+            var role = stagiaire.Status;
+
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Role, role),
+                new Claim(ClaimTypes.NameIdentifier, stagiaire.Id.ToString()),
+            };
+
+            SigningCredentials signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appSettings.SecretKey!)), SecurityAlgorithms.HmacSha256);
+
+            JwtSecurityToken jwt = new JwtSecurityToken(
+                issuer: _appSettings.ValidIssuer,
+                audience: _appSettings.ValidAudience,
+                claims: claims,
+                signingCredentials: signingCredentials,
+                expires: DateTime.Now.AddDays(7));
+
+            var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+            return Ok(new
+            {
+                Token = token,
+                Message = "Connexion réussie !",
+                User = stagiaire
+            });
+
+        }
+
+
 
         [HttpPost("[action]")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> RegisterFormateur([FromBody] Formateur formateur)
         {
             if (await _dbContext.Formateurs.FirstOrDefaultAsync(u => u.Email == formateur.Email) != null)

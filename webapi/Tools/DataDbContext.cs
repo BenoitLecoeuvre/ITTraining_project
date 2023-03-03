@@ -14,6 +14,8 @@ namespace webapi.Tools
 
         public DbSet<Utilisateur> Utilisateurs { get; set; }
 
+        public DbSet<Apprenant> Apprenants { get; set; }
+
         public DbSet<Formation> Formations { get; set; }
 
         public DbSet<Todo> Todos { get; set; }

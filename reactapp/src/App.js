@@ -9,6 +9,8 @@ import axios from 'axios';
 function App() {
 
   const [formationList, setFormationList] = useState([]);
+  const [stagiaireList, setStagiaireList] = useState([]);
+  const [formateursList, setFormateursList] = useState([]);
 
   const client = axios.create({ baseURL: "https://localhost:7083" });
 
@@ -42,6 +44,21 @@ function App() {
     setFormationList(response.data);
   }
 
+  React.useEffect(() => {
+    async function getStagiairelist() {
+      const response = await client.get("/admin/stagiaires");
+      setStagiaireList(response.data);
+    }
+    getStagiairelist();
+  }, [])
+
+  React.useEffect(() => {
+    async function getFormateurList() {
+      const response = await client.get("/admin/formateurs");
+      setFormateursList(response.data);
+    }
+    getFormateurList();
+  }, [])
 
   // State pour les droits des utilisateurs ( 0= guest, 1= stagiaire, 2= formateur, 3=admin)
   const [userStatus, setUserStatus] = useState(0);
@@ -63,6 +80,8 @@ function App() {
         deleteFormation={deleteFormation}
         postFormation={postFormation}
         putFormation={putFormation}
+        stagiaireList={stagiaireList} setStagiaireList={setStagiaireList}
+        formateursList={formateursList} setFormateursList={setFormateursList}
       />
       <FooterComponents />
     </div>
