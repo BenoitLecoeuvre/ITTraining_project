@@ -1,0 +1,33 @@
+#formation_list {
+    width: 80%;
+    margin: auto;
+}
+
+#formation_list  h1 {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+#formation_list .shadow {
+    display: flex;
+    justify-content: center;
+}
+
+#formation_list .shadow div {
+    width: 12vw;
+    height: 20px;
+    border-top: #3794eb solid;
+    margin-bottom: 20px;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+
+
+

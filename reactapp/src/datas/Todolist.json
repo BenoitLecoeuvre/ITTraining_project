@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "todo": "Réservation de la salle",
+        "detail": "Salle n° XXX",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 2,
+        "todo": "Installation des machines et des logiciels requis",
+        "detail": "-",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 3,
+        "todo": "Avertir le formateur et confirmer",
+        "detail": "Nom du formateur",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 4,
+        "todo": "Impression des supports de cours",
+        "detail": "-",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 5,
+        "todo": "Envoi des convocations",
+        "detail": "-",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 6,
+        "todo": "Mise à jour du planning",
+        "detail": "-",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 7,
+        "todo": "Impression des listes de présence",
+        "detail": "-",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 8,
+        "todo": "Impression des tickets repas",
+        "detail": "-",
+        "date": "",
+        "completed":" "
+    },
+    {
+        "id": 9,
+        "todo": "Formulaires d'évaluation en ligne",
+        "detail": "-",
+        "date": "",
+        "completed":" "
+    }
+]

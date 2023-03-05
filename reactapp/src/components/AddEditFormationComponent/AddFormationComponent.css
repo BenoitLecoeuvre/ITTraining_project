@@ -1,0 +1,73 @@
+.formContainer{
+    border: solid 2px black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.formContainer input {
+    padding-left: 8px;
+}
+
+.nomFormation, .formationCat{
+    margin: 10px;
+}
+
+.labelSelect{
+    font-family: 'Bebas Neue', cursive;
+}
+
+.formationName{
+    font-family: 'Bebas Neue', cursive;
+    margin-right: 3px;
+}
+
+.description, .formationDure, .formationPrix, .formationDifficulty, .formationLieux,
+.formationDate, .addFormationLogo{
+    margin: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.formationCat select, .formationDifficulty select, .formationLieux select{
+    border: 2px solid black;
+}
+
+.formationCat select:hover{
+    background-color: #2b71b3;
+}
+
+#formationName{
+    width: 50%;
+}
+
+#description{
+    width:100%;
+}
+
+#descriptionDetail{
+    width: 100%;
+    height: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+.formationDifficulty select:hover, .formationLieux select:hover{
+    background-color: #2b71b3;
+}
+
+#logo{
+    cursor: pointer;
+}
+
+.formContainer input[type="submit"] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    background: rgba(66, 182, 124, 0.877);
+    border: 1px solid rgba(255, 255, 255, 0.877);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    FONT-WEIGHT: 700;
+}

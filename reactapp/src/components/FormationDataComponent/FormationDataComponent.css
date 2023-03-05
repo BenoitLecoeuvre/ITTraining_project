@@ -1,0 +1,103 @@
+.section{
+    width: 80%;
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    margin: 50px auto;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.3em;
+}
+
+.bloc{
+    display: flex;
+    flex-flow: column wrap;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+}
+
+.formationLogo {
+    display: flex;
+    justify-content: center;
+}
+
+.dataLogo {
+    height: 300px;
+    margin: 20px;
+}
+
+.name {
+    text-align: center;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.5em;
+}
+
+.dates_lieux {
+    display: flex;
+}
+
+.dates p, .lieux p {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #3794eb;
+}
+
+.detail, .lieux, .dates, .important, .name{
+    margin: 15px;
+}
+
+.details_buttons {
+ display: flex;
+ justify-content: center;
+} 
+
+.details_buttons button {
+    margin: 20px 20px 20px 0;
+    width: 12vw;
+    padding: 2px;
+    height: 50px;
+    color: white;
+    background-color: #3794eb;
+    border: 1px solid #3794eb;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.inscription button:hover {
+    background-color: #1473CC;
+    border: 1px solid #1473CC;
+}
+
+
+.details_buttons div .retour {
+    background-color: #0e2a39;
+    border: 1px solid #0e2a39;
+}
+
+.details_buttons .inscription button a{
+    text-decoration: none;
+    color: white;
+}
+
+.details_buttons div .retour:hover {
+    background-color: #133b50;
+    border: 1px solid #17465f;
+}
+
+.underline{
+text-decoration: underline;
+}
+
+.details_buttons .retour a{
+    text-decoration: none;
+}
+
+.important a {
+    text-decoration: none;
+    color: #3794eb;
+    font-weight: 700;
+}
+
+.important a:hover {
+    text-decoration: underline;
+}

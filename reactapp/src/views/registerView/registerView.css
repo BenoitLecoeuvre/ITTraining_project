@@ -1,0 +1,150 @@
+/* REGISTER */
+
+#register {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+#register_form, #register_header {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0e2a39;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#register_header .success_state{
+    margin-top: 8px;
+    background-color: #5CB85C;
+    border: 3px solid #9DCCB6;
+    border-radius: 5px;
+    color: white;
+    width: 50%
+}
+
+#register_header h1 {
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+#register_header div {
+    display: flex;
+    justify-content: center;
+}
+
+#register_header .shadow div {
+    width: 12vw;
+    height: 20px;
+    border-top: #3794eb solid;
+    margin-bottom: 20px;
+}
+
+#register_form form .formflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#register_form form .formflex .formflex_sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+#register_form form .formflex .formflex_sub div {
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+    margin-top: 20px;
+}
+
+#register_form form .formflex .formflex_sub2 div {
+ width: 11.5vw;
+}
+
+#register_form form .formflex div input {
+    margin: 0 20px 20px 0;
+}
+
+#register_form form label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#register_form form label i{
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#register button {
+    margin: 20px 20px 20px 0;
+    width: 25vw;
+    padding: 2px;
+    height: 50px;
+    color: white;
+    background-color: #3794eb;
+    border: 1px solid #3794eb;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+#register button:hover {
+    background-color: #1473CC;
+    border: 1px solid #1473CC;
+}
+
+.apprenant {
+    width: 60%;
+    border: 5px solid #3794eb;
+    border-radius: 5px;
+    margin: 50px 0 10px;
+    padding: 80px 0 70px;
+}
+.formateur {
+    width: 60%;
+    border: 5px solid #d4a2bd;
+    border-radius: 5px;
+    margin: 50px 0 10px;
+    padding: 80px 0 70px;
+}
+
+#register_form .form_submit .register_button {
+    margin-top: 40px;
+    width: 25vw;
+    background-color: #0e2a39;
+    border: 1px solid #0e2a39;
+}
+#register_form .form_submit .register_button:hover {
+    background-color: #133b50;
+    border: 1px solid #17465f;
+}
+
+#register_header .button2 {
+    background-color: #d4a2bd;
+    border: 1px solid #d4a2bd;
+}
+#register_header .button2:hover {
+    background-color: #CC8FB0;
+    border: 1px solid #CC8FB0;
+}
+
+#register_form form .form_submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register_form #email, #register_form #phone, #register_form #firm {
+    width: 250px;
+}
+
+#register_form #lastname, #register_form #firstname, #register_form #password {
+    width: 200px;
+
+}

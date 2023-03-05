@@ -1,0 +1,22 @@
+C:\Users\Administrateur\Desktop\DEV\ITTraining\ITTraining\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\DEV\ITTraining\ITTraining\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Version vs\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\Version vs\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Version_vs\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\Version_vs\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\benoi\Desktop\OnionDevHub\Formation_m2i\git_issues\develop_test\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\benoi\Desktop\OnionDevHub\Formation_m2i\git_issues\develop_test\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Test\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\Test\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\ITtraining\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\ITtraining\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Documents\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Documents\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\ITTraining_Vraie_Version_Finale\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\ITTraining_Vraie_Version_Finale\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\ec\Documents\DEV\Fil rouge 2\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\ec\Documents\DEV\Fil rouge 2\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\IT_training\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Administrateur\Desktop\IT_training\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
+C:\Users\benoi\Desktop\OnionDevHub\Formation_m2i\project_ittraining\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\benoi\Desktop\OnionDevHub\Formation_m2i\project_ittraining\ITTraining_project\reactapp\obj\Debug\reactapp.esproj.CoreCompileInputs.cache
