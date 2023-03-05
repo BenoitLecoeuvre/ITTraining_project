@@ -3,9 +3,9 @@ import AdminFormation from '../../datas/AdminFormationList.json';
 import AdminFilterComponent from '../AdminFilterComponent/AdminFilterComponent';
 import './AdminHistoriqueFormationDisplay.css'
 
-const AdminHistoriqueFormationDisplay = () => {
-    // eslint-disable-next-line
-    const [adminFormation, setAdminFormation] = useState(AdminFormation);
+const AdminHistoriqueFormationDisplay = (formationList, setFormationList) => {
+
+    console.table(formationList.formationList);
 
     // Function pour mettre la date au format français
     function dateFormat(date) {
@@ -25,21 +25,21 @@ const AdminHistoriqueFormationDisplay = () => {
 
     // Function pour update le tableau des formations
     let updateFormation = [];
-    for (let formation of adminFormation) {
+    for (let formation of formationList.formationList) {
         let id = formation.id;
         let cat = formation.category;
         let subCat = formation.subCategory;
         let duree = formation.duree;
-        let start = dateFormat(formation.start);
-        let end = dateFormat(formation.end);
-        let status = changeStatus(formation.start, formation.end);
+        let start = dateFormat(formation.startDate);
+        let end = dateFormat(formation.endDate);
+        let status = changeStatus(start, end);
         let tmpFormation = { id, cat, subCat, duree, start, end, status }
         updateFormation.push(tmpFormation)
     }
 
     // Filtre pour la catégorie
     const [activeCategory, setActiveCategory] = useState('');
-    const categoryList = adminFormation.reduce(
+    const categoryList = formationList.formationList.reduce(
         (acc, elem) => acc.includes(elem.category) ? acc : acc.concat(elem.category), []
     )
 
@@ -65,7 +65,7 @@ const AdminHistoriqueFormationDisplay = () => {
 
             <AdminFilterComponent
                 activeCategory={activeCategory} setActiveCategory={setActiveCategory} categoryList={categoryList} resetInputCat={resetInputCat}
-                activeStatus={activeStatus} statusList={statusList} setActiveStatut={setActiveStatut} resetInputStat={resetInputStat} 
+                activeStatus={activeStatus} statusList={statusList} setActiveStatut={setActiveStatut} resetInputStat={resetInputStat}
             />
 
             <table className='formationHistorique' style={{ border: '1px solid black' }}>
@@ -79,9 +79,10 @@ const AdminHistoriqueFormationDisplay = () => {
                     <th>Statut</th>
                 </thead>
                 <tbody style={{ border: '1px solid black' }}>
-                    {
-                        updateFormation.map((formation, index) =>
-                        ((!activeStatus || activeStatus === formation.status) && (!activeCategory || activeCategory === formation.cat)
+                    {updateFormation.map((formation, index) =>
+                    (
+                        (!activeStatus || activeStatus === formation.status) &&
+                            (!activeCategory || activeCategory === formation.cat)
                             ?
                             <tr key={index} style={{ border: '1px solid black' }}>
                                 <td>{formation.id}</td>
@@ -92,7 +93,8 @@ const AdminHistoriqueFormationDisplay = () => {
                                 <td>{formation.end}</td>
                                 <td>{formation.status}</td>
                             </tr>
-                            : null))}
+                            : null
+                    ))}
                 </tbody>
             </table>
         </div>

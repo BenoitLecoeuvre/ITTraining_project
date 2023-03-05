@@ -22,7 +22,7 @@ namespace webapi.Models
 
         public int Difficulty { get; set; }
 
-        public LieuCentre Lieu { get; set; }
+        public string Lieu { get; set; }
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

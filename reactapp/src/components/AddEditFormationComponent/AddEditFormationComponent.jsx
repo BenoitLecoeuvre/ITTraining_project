@@ -97,7 +97,7 @@ const AddFormationComponent = ({ id, postFormation, listformation, updateFormati
 
                     <div className='description'>
                         <label className='label' htmlFor='descriptionDetail'>- Description détaillée : </label>
-                        <input type="text" placeholder='Ecrivez une description plus détaillée' name='descriptionDetail' id='descriptionDetail' />
+                        <textarea type="text" placeholder='Ecrivez une description plus détaillée' name='descriptionDetail' id='descriptionDetail' />
                     </div>
 
                     <div className='formationDure'>
