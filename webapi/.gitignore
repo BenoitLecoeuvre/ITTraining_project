@@ -13,8 +13,6 @@ obj/
 packages/
 Tools/
 Migrations/
-*.mdf
-*.ldf
 DataDbContext.cs
 
 # User-specific files
